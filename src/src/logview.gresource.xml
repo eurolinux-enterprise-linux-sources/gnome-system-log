@@ -2,7 +2,7 @@
 <gresources>
   <gresource prefix="/org/gnome/logview">
     <file preprocess="xml-stripblanks">logview-app-menu.ui</file>
-    <file preprocess="xml-stripblanks">logview-gear-menu.ui</file>
+    <file preprocess="xml-stripblanks">logview-window.ui</file>
     <file preprocess="xml-stripblanks">logview-filter.ui</file>
   </gresource>
 </gresources>

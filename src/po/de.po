@@ -19,14 +19,15 @@
 # Christian Kirbach <Christian.Kirbach@googlemail.com>, 2009, 2011, 2012.
 # Hedda Peters <hpeters@redhat.com>, 2012.
 # Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>, 2012.
+# Benjamin Steinwender <b@stbe.at>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "system-log&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-02-22 03:04+0000\n"
-"PO-Revision-Date: 2013-02-23 17:51+0100\n"
+"POT-Creation-Date: 2013-07-19 07:17+0000\n"
+"PO-Revision-Date: 2013-07-23 19:51+0100\n"
 "Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de_DE\n"
@@ -34,10 +35,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 
-#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:304
-#: ../src/logview-window.c:1180
+#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:305
+#: ../src/logview-window.c:1211
 msgid "System Log"
 msgstr "Systemprotokoll"
 
@@ -165,16 +166,36 @@ msgstr ""
 "Hedda Peters <hpeters@redhat.com>\n"
 "Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>"
 
-#: ../src/logview-app.c:287
+#: ../src/logview-app.c:288
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Beim Anzeigen der Hilfe ist ein Fehler aufgetreten: %s"
 
-#: ../src/logview-app.c:309
+#: ../src/logview-app.c:310 ../src/logview-app.c:396
 msgid "A system log viewer for GNOME."
 msgstr "Ein Systemprotokoll-Betrachter für GNOME."
 
-#: ../src/logview-app.c:440
+#: ../src/logview-app.c:389
+msgid "Show the version of the program."
+msgstr "Die Version des Programmes anzeigen."
+
+#: ../src/logview-app.c:390
+msgid "[URI...]"
+msgstr "[Adresse …]"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:406
+msgid "Could not parse arguments"
+msgstr "Konnte Argumente nicht einlesen"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:423
+msgid "Could not register the application"
+msgstr "Konnte die Anwendung nicht registrieren"
+
+#: ../src/logview-app.c:531
 #, c-format
 msgid "Impossible to open the file %s"
 msgstr "Die Datei »%s« kann nicht geöffnet werden"
@@ -225,7 +246,7 @@ msgstr "Filter bearbeiten"
 msgid "Add new filter"
 msgstr "Neuen Filter hinzufügen"
 
-#: ../src/logview-filter-manager.c:506 ../src/logview-gear-menu.ui.h:8
+#: ../src/logview-filter-manager.c:506 ../src/logview-window.ui.h:8
 msgid "Filters"
 msgstr "Filter"
 
@@ -257,71 +278,35 @@ msgstr "Hintergrund:"
 msgid "Effect:"
 msgstr "Effekt:"
 
-#: ../src/logview-gear-menu.ui.h:1
-msgid "Open..."
-msgstr "Öffnen …"
-
-#: ../src/logview-gear-menu.ui.h:2
-msgid "Close"
-msgstr "Schließen"
-
-#: ../src/logview-gear-menu.ui.h:3
-msgid "Copy"
-msgstr "Kopieren"
-
-#: ../src/logview-gear-menu.ui.h:4
-msgid "Select All"
-msgstr "Alles auswählen"
-
-#: ../src/logview-gear-menu.ui.h:5
-msgid "Zoom In"
-msgstr "Vergrößern"
-
-#: ../src/logview-gear-menu.ui.h:6
-msgid "Zoom Out"
-msgstr "Verkleinern"
-
-#: ../src/logview-gear-menu.ui.h:7
-msgid "Normal Size"
-msgstr "Normale Größe"
-
-#: ../src/logview-gear-menu.ui.h:9
-msgid "Show Matches Only"
-msgstr "Nur Übereinstimmungen anzeigen"
-
-#: ../src/logview-gear-menu.ui.h:10
-msgid "Manage Filters..."
-msgstr "Filter verwalten …"
-
-#: ../src/logview-findbar.c:163
+#: ../src/logview-findbar.c:150
 msgid "Find previous occurrence of the search string"
 msgstr "Vorhergehende Übereinstimmungen mit dem Suchtext finden"
 
-#: ../src/logview-findbar.c:172
+#: ../src/logview-findbar.c:157
 msgid "Find next occurrence of the search string"
 msgstr "Nächste Übereinstimmung mit dem Suchtext finden"
 
-#: ../src/logview-log.c:593
+#: ../src/logview-log.c:596
 msgid "Error while uncompressing the GZipped log. The file might be corrupt."
 msgstr ""
 "Fehler beim Dekomprimieren des mit GZip komprimierten Protokolls. Die Datei "
 "könnte beschädigt sein."
 
-#: ../src/logview-log.c:640
+#: ../src/logview-log.c:643
 msgid "You don't have enough permissions to read the file."
 msgstr "Sie haben keine Leserechte für das Dokument."
 
-#: ../src/logview-log.c:655
+#: ../src/logview-log.c:658
 msgid "The file is not a regular file or is not a text file."
 msgstr "Die Datei ist keine gewöhnliche oder keine Textdatei."
 
-#: ../src/logview-log.c:737
+#: ../src/logview-log.c:740
 msgid "This version of System Log does not support GZipped logs."
 msgstr ""
 "Diese Version von Systemprotokoll unterstützt keine mit GZip komprimierten "
 "Protokolle."
 
-#: ../src/logview-loglist.c:315
+#: ../src/logview-loglist.c:316
 msgid "Loading..."
 msgstr "Einlesen …"
 
@@ -333,7 +318,7 @@ msgstr "heute"
 msgid "yesterday"
 msgstr "gestern"
 
-#: ../src/logview-window.c:180 ../src/logview-window.c:356
+#: ../src/logview-window.c:178 ../src/logview-window.c:371
 #, c-format
 msgid "Search in \"%s\""
 msgstr "In »%s« suchen"
@@ -341,30 +326,66 @@ msgstr "In »%s« suchen"
 #. translators: this is part of a label composed with
 #. * a date string, for example "updated today 23:54"
 #.
-#: ../src/logview-window.c:205
+#: ../src/logview-window.c:199
 msgid "updated"
 msgstr "aktualisiert"
 
-#: ../src/logview-window.c:324
+#: ../src/logview-window.c:339
 msgid "Wrapped"
 msgstr "Fortlaufend"
 
-#: ../src/logview-window.c:339
+#: ../src/logview-window.c:354
 msgid "No matches found"
 msgstr "Keine Übereinstimmungen gefunden"
 
-#: ../src/logview-window.c:688
+#: ../src/logview-window.c:724
 #, c-format
 msgid "Can't read from \"%s\""
 msgstr "Von »%s« kann nicht gelesen werden"
 
-#: ../src/logview-window.c:1076
+#: ../src/logview-window.c:1106
 msgid "Open Log"
 msgstr "Protokoll öffnen"
 
-#: ../src/logview-window.c:1368
+#: ../src/logview-window.c:1350
 msgid "Could not open the following files:"
 msgstr "Die folgenden Dateien konnten nicht geöffnet werden:"
+
+#: ../src/logview-window.ui.h:1
+msgid "Open..."
+msgstr "Öffnen …"
+
+#: ../src/logview-window.ui.h:2
+msgid "Close"
+msgstr "Schließen"
+
+#: ../src/logview-window.ui.h:3
+msgid "Copy"
+msgstr "Kopieren"
+
+#: ../src/logview-window.ui.h:4
+msgid "Select All"
+msgstr "Alles auswählen"
+
+#: ../src/logview-window.ui.h:5
+msgid "Zoom In"
+msgstr "Vergrößern"
+
+#: ../src/logview-window.ui.h:6
+msgid "Zoom Out"
+msgstr "Verkleinern"
+
+#: ../src/logview-window.ui.h:7
+msgid "Normal Size"
+msgstr "Normale Größe"
+
+#: ../src/logview-window.ui.h:9
+msgid "Show Matches Only"
+msgstr "Nur Übereinstimmungen anzeigen"
+
+#: ../src/logview-window.ui.h:10
+msgid "Manage Filters..."
+msgstr "Filter verwalten …"
 
 #~ msgid "Log File Viewer"
 #~ msgstr "Systemprotokollbetrachter"
@@ -383,9 +404,6 @@ msgstr "Die folgenden Dateien konnten nicht geöffnet werden:"
 
 #~ msgid "Show the application's version"
 #~ msgstr "Die Version der Anwendung anzeigen"
-
-#~ msgid "[LOGFILE...]"
-#~ msgstr "[PROTOKOLLDATEI …]"
 
 #~ msgid " - Browse and monitor logs"
 #~ msgstr " - Protokolle betrachten und überwachen"

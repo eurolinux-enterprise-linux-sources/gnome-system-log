@@ -7,13 +7,14 @@
 # Reviewed by Praveen|പ്രവീണ്‍ A|എ <pravi.a@gmail.com>, 2007.
 # Praveen Arimbrathodiyil <pravi.a@gmail.com>, 2009.
 # Anish A <aneesh.nl@gmail.com>, 2013.
+# Nandaja Varma <nandaja.varma@gmail.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master.ml\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "system-log&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-27 15:30+0000\n"
-"PO-Revision-Date: 2013-02-01 12:18+0530\n"
+"POT-Creation-Date: 2013-04-25 05:22+0000\n"
+"PO-Revision-Date: 2013-04-25 21:56+0530\n"
 "Last-Translator: Anish A <aneesh.nl@gmail.com>\n"
 "Language-Team: Swatantra Malayalam Computing\n"
 "Language: ml\n"
@@ -24,8 +25,8 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:304
-#: ../src/logview-window.c:1179
+#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:305
+#: ../src/logview-window.c:1211
 msgid "System Log"
 msgstr "സിസ്റ്റം ലോഗ്"
 
@@ -136,16 +137,36 @@ msgstr ""
 "അനി പീറ്റര്‍ <peter.ani@gmail.com>\n"
 "സന്തോഷ് തോട്ടിങ്ങല്‍ <santhosh.thottingal@gmail.com>"
 
-#: ../src/logview-app.c:287
+#: ../src/logview-app.c:288
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "സഹായം കാണിയ്ക്കുന്നതില്‍ ഒരു പിശകുണ്ടായി: %s"
 
-#: ../src/logview-app.c:309
+#: ../src/logview-app.c:310 ../src/logview-app.c:396
 msgid "A system log viewer for GNOME."
 msgstr "ഗ്നോമിനുള്ള സിസ്റ്റം ലോഗ് നിരീക്ഷന്‍."
 
-#: ../src/logview-app.c:440
+#: ../src/logview-app.c:389
+msgid "Show the version of the program."
+msgstr "പ്രോഗ്രാമിന്റെ പതിപ്പു് കാണിക്കുക."
+
+#: ../src/logview-app.c:390
+msgid "[URI...]"
+msgstr "[URI...]"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:406
+msgid "Could not parse arguments"
+msgstr "ആര്‍ഗ്യുമെന്റുകള്‍ പാഴ്സ് ചെയ്യുവാന്‍ സാധ്യമല്ല"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:423
+msgid "Could not register the application"
+msgstr "പ്രയോഗം രജിസ്ടര്‍ ചെയ്യുവാന്‍ സാധ്യമല്ല"
+
+#: ../src/logview-app.c:531
 #, c-format
 msgid "Impossible to open the file %s"
 msgstr "%s ഫയല്‍ തുറക്കുവാന്‍ സാധ്യമല്ല"
@@ -195,7 +216,7 @@ msgstr "ഫില്‍‌റ്റര്‍ ചിട്ടപ്പെടു�
 msgid "Add new filter"
 msgstr "പുതിയ ഫില്‍‌റ്റര്‍ ചേര്‍ക്കുക"
 
-#: ../src/logview-filter-manager.c:506 ../src/logview-gear-menu.ui.h:8
+#: ../src/logview-filter-manager.c:506 ../src/logview-window.ui.h:8
 msgid "Filters"
 msgstr "ഫില്‍‌റ്ററുകള്‍"
 
@@ -227,67 +248,31 @@ msgstr "പശ്ചാത്തലം:"
 msgid "Effect:"
 msgstr "പ്രഭാവം:"
 
-#: ../src/logview-gear-menu.ui.h:1
-msgid "Open..."
-msgstr "തുറക്കുക..."
-
-#: ../src/logview-gear-menu.ui.h:2
-msgid "Close"
-msgstr "അടയ്ക്കുക"
-
-#: ../src/logview-gear-menu.ui.h:3
-msgid "Copy"
-msgstr "പകര്‍ത്തുക"
-
-#: ../src/logview-gear-menu.ui.h:4
-msgid "Select All"
-msgstr "എല്ലാം തിരഞ്ഞെടുക്കുക"
-
-#: ../src/logview-gear-menu.ui.h:5
-msgid "Zoom In"
-msgstr "ചെറുതാക്കുക"
-
-#: ../src/logview-gear-menu.ui.h:6
-msgid "Zoom Out"
-msgstr "വലുതാക്കുക"
-
-#: ../src/logview-gear-menu.ui.h:7
-msgid "Normal Size"
-msgstr "സാധാരണ വലിപ്പം"
-
-#: ../src/logview-gear-menu.ui.h:9
-msgid "Show Matches Only"
-msgstr "ചേരുന്നവ മാത്രം കാണിക്കുക"
-
-#: ../src/logview-gear-menu.ui.h:10
-msgid "Manage Filters..."
-msgstr "ഫില്‍‌റ്ററുകള്‍ കൈകാര്യം ചെയ്യുക..."
-
-#: ../src/logview-findbar.c:163
+#: ../src/logview-findbar.c:150
 msgid "Find previous occurrence of the search string"
 msgstr "തെരയുന്ന സ്ട്രിങ് മുമ്പെവിടെയെന്നു് കണ്ടുപിടിക്കുക"
 
-#: ../src/logview-findbar.c:172
+#: ../src/logview-findbar.c:157
 msgid "Find next occurrence of the search string"
 msgstr "തെരയുന്ന സ്ട്രിങ് അടുത്തതെവിടെയെന്നു് കണ്ടുപിടിക്കുക"
 
-#: ../src/logview-log.c:593
+#: ../src/logview-log.c:596
 msgid "Error while uncompressing the GZipped log. The file might be corrupt."
 msgstr "GZipped ലോഗ് അണ്‍കംപ്രസ്സ് ചെയ്യുമ്പോള്‍ പിശക്. ഫയല്‍ തെറ്റാവാം."
 
-#: ../src/logview-log.c:640
+#: ../src/logview-log.c:643
 msgid "You don't have enough permissions to read the file."
 msgstr "ഈ ഫയല്‍ തുറക്കുവാനുള്ള അനുവാദം നിങ്ങള്‍ക്കില്ല."
 
-#: ../src/logview-log.c:655
+#: ../src/logview-log.c:658
 msgid "The file is not a regular file or is not a text file."
 msgstr "ഈ ഫയല്‍ ഒരു സാധാരണ ഫയലോ പദാവലി ഫയലോ അല്ല."
 
-#: ../src/logview-log.c:737
+#: ../src/logview-log.c:740
 msgid "This version of System Log does not support GZipped logs."
 msgstr "സിസ്റ്റം ലോഗിന്റെ ഈ പതിപ്പു് ജിസിപ്പു് ചെയ്ത ലോഗുകളെ പിന്തുണയ്ക്കുന്നില്ല."
 
-#: ../src/logview-loglist.c:315
+#: ../src/logview-loglist.c:316
 msgid "Loading..."
 msgstr "എടുത്തുകൊണ്ടിരിയ്ക്കുന്നു..."
 
@@ -299,7 +284,7 @@ msgstr "ഇന്നു്"
 msgid "yesterday"
 msgstr "ഇന്നലെ"
 
-#: ../src/logview-window.c:178 ../src/logview-window.c:354
+#: ../src/logview-window.c:178 ../src/logview-window.c:371
 #, c-format
 msgid "Search in \"%s\""
 msgstr "\"%s\"-ല്‍ തെരയുക"
@@ -307,30 +292,66 @@ msgstr "\"%s\"-ല്‍ തെരയുക"
 #. translators: this is part of a label composed with
 #. * a date string, for example "updated today 23:54"
 #.
-#: ../src/logview-window.c:203
+#: ../src/logview-window.c:199
 msgid "updated"
 msgstr "പരിഷ്കരിച്ചിരിയ്ക്കുന്നു"
 
-#: ../src/logview-window.c:322
+#: ../src/logview-window.c:339
 msgid "Wrapped"
 msgstr "ഒതുക്കിയതു്"
 
-#: ../src/logview-window.c:337
+#: ../src/logview-window.c:354
 msgid "No matches found"
 msgstr "ചേരുന്നവ കണ്ടുകിട്ടിയില്ല"
 
-#: ../src/logview-window.c:686
+#: ../src/logview-window.c:724
 #, c-format
 msgid "Can't read from \"%s\""
 msgstr "\"%s\"-ല്‍ നിന്നും ലഭ്യമാക്കുവാന്‍ സാധ്യമല്ല"
 
-#: ../src/logview-window.c:1074
+#: ../src/logview-window.c:1106
 msgid "Open Log"
 msgstr "ലോഗ് തുറക്കുക"
 
-#: ../src/logview-window.c:1362
+#: ../src/logview-window.c:1350
 msgid "Could not open the following files:"
 msgstr "താഴെ പറയുന്ന ഫയലുകള്‍ തുറക്കുവാന്‍ സാധ്യമായില്ല:"
+
+#: ../src/logview-window.ui.h:1
+msgid "Open..."
+msgstr "തുറക്കുക..."
+
+#: ../src/logview-window.ui.h:2
+msgid "Close"
+msgstr "അടയ്ക്കുക"
+
+#: ../src/logview-window.ui.h:3
+msgid "Copy"
+msgstr "പകര്‍ത്തുക"
+
+#: ../src/logview-window.ui.h:4
+msgid "Select All"
+msgstr "എല്ലാം തിരഞ്ഞെടുക്കുക"
+
+#: ../src/logview-window.ui.h:5
+msgid "Zoom In"
+msgstr "ചെറുതാക്കുക"
+
+#: ../src/logview-window.ui.h:6
+msgid "Zoom Out"
+msgstr "വലുതാക്കുക"
+
+#: ../src/logview-window.ui.h:7
+msgid "Normal Size"
+msgstr "സാധാരണ വലിപ്പം"
+
+#: ../src/logview-window.ui.h:9
+msgid "Show Matches Only"
+msgstr "ചേരുന്നവ മാത്രം കാണിക്കുക"
+
+#: ../src/logview-window.ui.h:10
+msgid "Manage Filters..."
+msgstr "ഫില്‍‌റ്ററുകള്‍ കൈകാര്യം ചെയ്യുക..."
 
 #~ msgid "Log File Viewer"
 #~ msgstr "ലോഗ് ഫയല്‍ ദര്‍ശിനി"
@@ -349,9 +370,6 @@ msgstr "താഴെ പറയുന്ന ഫയലുകള്‍ തുറക
 
 #~ msgid "Show the application's version"
 #~ msgstr "പ്രയോഗത്തിന്റെ പതിപ്പു് കാണിക്കുക"
-
-#~ msgid "[LOGFILE...]"
-#~ msgstr "[LOGFILE...]"
 
 #~ msgid " - Browse and monitor logs"
 #~ msgstr " - ലോഗുകള്‍ പരുതി അവ നിരീക്ഷിക്കുക"

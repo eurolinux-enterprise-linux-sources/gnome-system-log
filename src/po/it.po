@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-system-log\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-25 16:04+0100\n"
-"PO-Revision-Date: 2013-01-25 16:05+0100\n"
+"POT-Creation-Date: 2013-07-19 09:17+0200\n"
+"PO-Revision-Date: 2013-07-19 09:17+0200\n"
 "Last-Translator: Milo Casagrande <milo@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -21,9 +21,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
-#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:304
-#: ../src/logview-window.c:1179
+#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:305
+#: ../src/logview-window.c:1211
 msgid "System Log"
 msgstr "Registro di sistema"
 
@@ -148,16 +149,36 @@ msgstr ""
 "Luca Ferretti <elle.uca@infinito.it>\n"
 "Milo Casagrande <milo@ubuntu.com>"
 
-#: ../src/logview-app.c:287
+#: ../src/logview-app.c:288
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "C'è stato un errore durante la visualizzazione dell'aiuto: %s"
 
-#: ../src/logview-app.c:309
+#: ../src/logview-app.c:310 ../src/logview-app.c:396
 msgid "A system log viewer for GNOME."
 msgstr "Un visualizzatore di registri di sistema per GNOME."
 
-#: ../src/logview-app.c:440
+#: ../src/logview-app.c:389
+msgid "Show the version of the program."
+msgstr "Mostra la versione del programma"
+
+#: ../src/logview-app.c:390
+msgid "[URI...]"
+msgstr "[URI...]"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:406
+msgid "Could not parse arguments"
+msgstr "Impossibile analizzare gli argomenti"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:423
+msgid "Could not register the application"
+msgstr "Impossibile registrare l'applicazione"
+
+#: ../src/logview-app.c:531
 #, c-format
 msgid "Impossible to open the file %s"
 msgstr "Impossibile aprire il file «%s»"
@@ -207,7 +228,7 @@ msgstr "Modifica filtro"
 msgid "Add new filter"
 msgstr "Aggiungi nuovo filtro"
 
-#: ../src/logview-filter-manager.c:506 ../src/logview-gear-menu.ui.h:8
+#: ../src/logview-filter-manager.c:506 ../src/logview-window.ui.h:8
 msgid "Filters"
 msgstr "Filtri"
 
@@ -239,71 +260,35 @@ msgstr "Sfondo:"
 msgid "Effect:"
 msgstr "Effetto:"
 
-#: ../src/logview-gear-menu.ui.h:1
-msgid "Open..."
-msgstr "Apri..."
-
-#: ../src/logview-gear-menu.ui.h:2
-msgid "Close"
-msgstr "Chiudi"
-
-#: ../src/logview-gear-menu.ui.h:3
-msgid "Copy"
-msgstr "Copia"
-
-#: ../src/logview-gear-menu.ui.h:4
-msgid "Select All"
-msgstr "Seleziona tutto"
-
-#: ../src/logview-gear-menu.ui.h:5
-msgid "Zoom In"
-msgstr "Aumenta ingrandimento"
-
-#: ../src/logview-gear-menu.ui.h:6
-msgid "Zoom Out"
-msgstr "Riduci ingrandimento"
-
-#: ../src/logview-gear-menu.ui.h:7
-msgid "Normal Size"
-msgstr "Dimensione normale"
-
-#: ../src/logview-gear-menu.ui.h:9
-msgid "Show Matches Only"
-msgstr "Mostra solo corrispondenze"
-
-#: ../src/logview-gear-menu.ui.h:10
-msgid "Manage Filters..."
-msgstr "Gestisci filtri..."
-
-#: ../src/logview-findbar.c:163
+#: ../src/logview-findbar.c:150
 msgid "Find previous occurrence of the search string"
 msgstr "Trova l'occorrenza precedente della stringa di ricerca"
 
-#: ../src/logview-findbar.c:172
+#: ../src/logview-findbar.c:157
 msgid "Find next occurrence of the search string"
 msgstr "Trova l'occorrenza successiva della stringa di ricerca"
 
-#: ../src/logview-log.c:593
+#: ../src/logview-log.c:596
 msgid "Error while uncompressing the GZipped log. The file might be corrupt."
 msgstr ""
 "Errore durante la compressione gzip del registro. Il file potrebbe essere "
 "danneggiato."
 
-#: ../src/logview-log.c:640
+#: ../src/logview-log.c:643
 msgid "You don't have enough permissions to read the file."
 msgstr "Non si hanno permessi sufficienti per leggere il file."
 
-#: ../src/logview-log.c:655
+#: ../src/logview-log.c:658
 msgid "The file is not a regular file or is not a text file."
 msgstr "Il file non è un file regolare o non è un file di testo."
 
-#: ../src/logview-log.c:737
+#: ../src/logview-log.c:740
 msgid "This version of System Log does not support GZipped logs."
 msgstr ""
 "Questa versione di Visualizzatore di registri di sistema non supporta "
 "registri compressi con gzip."
 
-#: ../src/logview-loglist.c:315
+#: ../src/logview-loglist.c:316
 msgid "Loading..."
 msgstr "Caricamento..."
 
@@ -315,7 +300,7 @@ msgstr "oggi"
 msgid "yesterday"
 msgstr "ieri"
 
-#: ../src/logview-window.c:178 ../src/logview-window.c:354
+#: ../src/logview-window.c:178 ../src/logview-window.c:371
 #, c-format
 msgid "Search in \"%s\""
 msgstr "Cerca in «%s»"
@@ -323,27 +308,63 @@ msgstr "Cerca in «%s»"
 #. translators: this is part of a label composed with
 #. * a date string, for example "updated today 23:54"
 #.
-#: ../src/logview-window.c:203
+#: ../src/logview-window.c:199
 msgid "updated"
 msgstr "aggiornato"
 
-#: ../src/logview-window.c:322
+#: ../src/logview-window.c:339
 msgid "Wrapped"
 msgstr "Da capo"
 
-#: ../src/logview-window.c:337
+#: ../src/logview-window.c:354
 msgid "No matches found"
 msgstr "Nessuna corrispondenza trovata"
 
-#: ../src/logview-window.c:686
+#: ../src/logview-window.c:724
 #, c-format
 msgid "Can't read from \"%s\""
 msgstr "Impossibile leggere da «%s»"
 
-#: ../src/logview-window.c:1074
+#: ../src/logview-window.c:1106
 msgid "Open Log"
 msgstr "Apri registro"
 
-#: ../src/logview-window.c:1362
+#: ../src/logview-window.c:1350
 msgid "Could not open the following files:"
 msgstr "Impossibile aprire i seguenti file:"
+
+#: ../src/logview-window.ui.h:1
+msgid "Open..."
+msgstr "Apri..."
+
+#: ../src/logview-window.ui.h:2
+msgid "Close"
+msgstr "Chiudi"
+
+#: ../src/logview-window.ui.h:3
+msgid "Copy"
+msgstr "Copia"
+
+#: ../src/logview-window.ui.h:4
+msgid "Select All"
+msgstr "Seleziona tutto"
+
+#: ../src/logview-window.ui.h:5
+msgid "Zoom In"
+msgstr "Aumenta ingrandimento"
+
+#: ../src/logview-window.ui.h:6
+msgid "Zoom Out"
+msgstr "Riduci ingrandimento"
+
+#: ../src/logview-window.ui.h:7
+msgid "Normal Size"
+msgstr "Dimensione normale"
+
+#: ../src/logview-window.ui.h:9
+msgid "Show Matches Only"
+msgstr "Mostra solo corrispondenze"
+
+#: ../src/logview-window.ui.h:10
+msgid "Manage Filters..."
+msgstr "Gestisci filtri..."

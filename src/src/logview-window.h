@@ -32,11 +32,9 @@
 
 typedef struct _LogviewWindow LogviewWindow;
 typedef struct _LogviewWindowClass LogviewWindowClass;
-typedef struct _LogviewWindowPrivate LogviewWindowPrivate;
 
 struct _LogviewWindow {
   GtkApplicationWindow parent_instance;
-  LogviewWindowPrivate *priv;
 };
 
 struct _LogviewWindowClass {

@@ -36,8 +36,6 @@ main (int argc, char *argv[])
   LogviewApp *app;
   gint result;
 
-  g_type_init ();
-
   bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);

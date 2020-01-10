@@ -464,7 +464,7 @@ logview_filter_manager_init (LogviewFilterManager *manager)
 
   gtk_window_set_default_size (GTK_WINDOW (manager), 400, -1);
   gtk_dialog_add_button (GTK_DIALOG(manager),
-                         GTK_STOCK_CLOSE,
+                         _("_Close"),
                          GTK_RESPONSE_CLOSE);
   gtk_window_set_modal (GTK_WINDOW (manager),
                         TRUE);
@@ -498,9 +498,9 @@ logview_filter_manager_init (LogviewFilterManager *manager)
   gtk_tree_view_append_column (GTK_TREE_VIEW (priv->tree),
                                column);
 
-  priv->add_button = gtk_button_new_from_stock (GTK_STOCK_ADD);
-  priv->edit_button = gtk_button_new_from_stock (GTK_STOCK_PROPERTIES);
-  priv->remove_button = gtk_button_new_from_stock (GTK_STOCK_REMOVE);
+  priv->add_button = gtk_button_new_with_mnemonic (_("_Add"));
+  priv->edit_button = gtk_button_new_with_mnemonic (_("_Properties"));
+  priv->remove_button = gtk_button_new_with_mnemonic (_("_Remove"));
 
   gtk_window_set_title (GTK_WINDOW (manager),
                         _("Filters"));

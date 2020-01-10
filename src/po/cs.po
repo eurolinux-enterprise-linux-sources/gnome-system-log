@@ -22,8 +22,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "system-log&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-03 12:36+0000\n"
-"PO-Revision-Date: 2013-02-19 11:06+0100\n"
+"POT-Creation-Date: 2013-08-13 12:40+0000\n"
+"PO-Revision-Date: 2013-08-20 09:39+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -33,8 +33,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
-#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:304
-#: ../src/logview-window.c:1179
+#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:305
+#: ../src/logview-window.c:1246
 msgid "System Log"
 msgstr "Systémový protokol"
 
@@ -155,16 +155,36 @@ msgstr ""
 "Adrian Guniš <andygun696@gmail.com>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: ../src/logview-app.c:287
+#: ../src/logview-app.c:288
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Při zobrazování nápovědy došlo k chybě: %s"
 
-#: ../src/logview-app.c:309
+#: ../src/logview-app.c:310 ../src/logview-app.c:396
 msgid "A system log viewer for GNOME."
 msgstr "Prohlížeč systémových protokolů pro GNOME."
 
-#: ../src/logview-app.c:440
+#: ../src/logview-app.c:389
+msgid "Show the version of the program."
+msgstr "Zobrazit verzi programu."
+
+#: ../src/logview-app.c:390
+msgid "[URI...]"
+msgstr "[URI…]"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:406
+msgid "Could not parse arguments"
+msgstr "Nelze zpracovat argumenty"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:423
+msgid "Could not register the application"
+msgstr "Nelze zaregistrovat aplikaci"
+
+#: ../src/logview-app.c:531
 #, c-format
 msgid "Impossible to open the file %s"
 msgstr "Nelze otevřít soubor %s"
@@ -214,7 +234,23 @@ msgstr "Upravit filtr"
 msgid "Add new filter"
 msgstr "Přidat nový filtr"
 
-#: ../src/logview-filter-manager.c:506 ../src/logview-gear-menu.ui.h:8
+#: ../src/logview-filter-manager.c:467 ../src/logview-window.c:1276
+msgid "_Close"
+msgstr "_Zavřít"
+
+#: ../src/logview-filter-manager.c:501
+msgid "_Add"
+msgstr "Přid_at"
+
+#: ../src/logview-filter-manager.c:502
+msgid "_Properties"
+msgstr "_Vlastnosti"
+
+#: ../src/logview-filter-manager.c:503
+msgid "_Remove"
+msgstr "Odeb_rat"
+
+#: ../src/logview-filter-manager.c:506 ../src/logview-window.ui.h:8
 msgid "Filters"
 msgstr "Filtry"
 
@@ -246,71 +282,35 @@ msgstr "Pozadí:"
 msgid "Effect:"
 msgstr "Efekt:"
 
-#: ../src/logview-gear-menu.ui.h:1
-msgid "Open..."
-msgstr "Otevřít…"
-
-#: ../src/logview-gear-menu.ui.h:2
-msgid "Close"
-msgstr "Zavřít"
-
-#: ../src/logview-gear-menu.ui.h:3
-msgid "Copy"
-msgstr "Kopírovat"
-
-#: ../src/logview-gear-menu.ui.h:4
-msgid "Select All"
-msgstr "Vybrat vše"
-
-#: ../src/logview-gear-menu.ui.h:5
-msgid "Zoom In"
-msgstr "Zvětšit"
-
-#: ../src/logview-gear-menu.ui.h:6
-msgid "Zoom Out"
-msgstr "Zmenšit"
-
-#: ../src/logview-gear-menu.ui.h:7
-msgid "Normal Size"
-msgstr "Normální velikost"
-
-#: ../src/logview-gear-menu.ui.h:9
-msgid "Show Matches Only"
-msgstr "Zobrazit pouze shody"
-
-#: ../src/logview-gear-menu.ui.h:10
-msgid "Manage Filters..."
-msgstr "Spravovat filtry..."
-
-#: ../src/logview-findbar.c:163
+#: ../src/logview-findbar.c:152
 msgid "Find previous occurrence of the search string"
 msgstr "Najít předchozí výskyt hledaného řetězce"
 
-#: ../src/logview-findbar.c:172
+#: ../src/logview-findbar.c:162
 msgid "Find next occurrence of the search string"
 msgstr "Najít následující výskyt hledaného řetězce"
 
-#: ../src/logview-log.c:593
+#: ../src/logview-log.c:596
 msgid "Error while uncompressing the GZipped log. The file might be corrupt."
 msgstr ""
 "Chyba při rozbalování protokolu zabaleného do GZip. Soubor je možná "
 "poškozený."
 
-#: ../src/logview-log.c:640
+#: ../src/logview-log.c:643
 msgid "You don't have enough permissions to read the file."
 msgstr "Nemáte dostatečná oprávnění ke čtení souboru."
 
-#: ../src/logview-log.c:655
+#: ../src/logview-log.c:658
 msgid "The file is not a regular file or is not a text file."
 msgstr "Soubor není obyčejným nebo textovým souborem."
 
-#: ../src/logview-log.c:737
+#: ../src/logview-log.c:740
 msgid "This version of System Log does not support GZipped logs."
 msgstr ""
 "Tato verze systémového protokolu nepodporuje protokoly zabalené ve formátu "
 "GZip."
 
-#: ../src/logview-loglist.c:315
+#: ../src/logview-loglist.c:316
 msgid "Loading..."
 msgstr "Načítá se…"
 
@@ -322,7 +322,7 @@ msgstr "dnes"
 msgid "yesterday"
 msgstr "včera"
 
-#: ../src/logview-window.c:178 ../src/logview-window.c:354
+#: ../src/logview-window.c:178 ../src/logview-window.c:374
 #, c-format
 msgid "Search in \"%s\""
 msgstr "Prohledat „%s“"
@@ -330,27 +330,71 @@ msgstr "Prohledat „%s“"
 #. translators: this is part of a label composed with
 #. * a date string, for example "updated today 23:54"
 #.
-#: ../src/logview-window.c:203
+#: ../src/logview-window.c:199
 msgid "updated"
 msgstr "aktualizováno"
 
-#: ../src/logview-window.c:322
+#: ../src/logview-window.c:342
 msgid "Wrapped"
 msgstr "Zabalený"
 
-#: ../src/logview-window.c:337
+#: ../src/logview-window.c:357
 msgid "No matches found"
 msgstr "Žádné shody nenalezeny"
 
-#: ../src/logview-window.c:686
+#: ../src/logview-window.c:737
 #, c-format
 msgid "Can't read from \"%s\""
 msgstr "Nelze číst z „%s“"
 
-#: ../src/logview-window.c:1074
+#: ../src/logview-window.c:1137
 msgid "Open Log"
 msgstr "Otevřít protokol"
 
-#: ../src/logview-window.c:1362
+#: ../src/logview-window.c:1140
+msgid "_Cancel"
+msgstr "_Zrušit"
+
+#: ../src/logview-window.c:1141
+msgid "_Open"
+msgstr "_Otevřít"
+
+#: ../src/logview-window.c:1370
 msgid "Could not open the following files:"
 msgstr "Nelze otevřít následující soubory:"
+
+#: ../src/logview-window.ui.h:1
+msgid "Open..."
+msgstr "Otevřít…"
+
+#: ../src/logview-window.ui.h:2
+msgid "Close"
+msgstr "Zavřít"
+
+#: ../src/logview-window.ui.h:3
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: ../src/logview-window.ui.h:4
+msgid "Select All"
+msgstr "Vybrat vše"
+
+#: ../src/logview-window.ui.h:5
+msgid "Zoom In"
+msgstr "Zvětšit"
+
+#: ../src/logview-window.ui.h:6
+msgid "Zoom Out"
+msgstr "Zmenšit"
+
+#: ../src/logview-window.ui.h:7
+msgid "Normal Size"
+msgstr "Normální velikost"
+
+#: ../src/logview-window.ui.h:9
+msgid "Show Matches Only"
+msgstr "Zobrazit pouze shody"
+
+#: ../src/logview-window.ui.h:10
+msgid "Manage Filters..."
+msgstr "Spravovat filtry…"

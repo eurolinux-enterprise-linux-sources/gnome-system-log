@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils-master-po-gl-14799\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-13 17:26+0100\n"
-"PO-Revision-Date: 2013-01-13 17:26+0200\n"
+"POT-Creation-Date: 2013-05-16 03:31+0200\n"
+"PO-Revision-Date: 2013-05-16 03:32+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -30,8 +30,8 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:304
-#: ../src/logview-window.c:1179
+#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:305
+#: ../src/logview-window.c:1211
 msgid "System Log"
 msgstr "Rexistro do sistema"
 
@@ -157,16 +157,36 @@ msgstr ""
 "Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas\n"
 "colaborar connosco, podes atopar máis información en http://www.trasno.net"
 
-#: ../src/logview-app.c:287
+#: ../src/logview-app.c:288
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Produciuse un erro ao mostrar a axuda: %s"
 
-#: ../src/logview-app.c:309
+#: ../src/logview-app.c:310 ../src/logview-app.c:396
 msgid "A system log viewer for GNOME."
 msgstr "Un visualizador do rexistro do sistema para o GNOME."
 
-#: ../src/logview-app.c:440
+#: ../src/logview-app.c:389
+msgid "Show the version of the program."
+msgstr "Mostrar a versión do programa."
+
+#: ../src/logview-app.c:390
+msgid "[URI...]"
+msgstr "[URI…]"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:406
+msgid "Could not parse arguments"
+msgstr "Non foi posíbel analizar os argumentos"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:423
+msgid "Could not register the application"
+msgstr "Non é posíbel rexistrar o aplicativo"
+
+#: ../src/logview-app.c:531
 #, c-format
 msgid "Impossible to open the file %s"
 msgstr "Non foi posíbel abrir o ficheiro %s"
@@ -216,7 +236,7 @@ msgstr "Editar filtro"
 msgid "Add new filter"
 msgstr "Engadir novo filtro"
 
-#: ../src/logview-filter-manager.c:506 ../src/logview-gear-menu.ui.h:8
+#: ../src/logview-filter-manager.c:506 ../src/logview-window.ui.h:8
 msgid "Filters"
 msgstr "Filtros"
 
@@ -248,69 +268,33 @@ msgstr "Fondo:"
 msgid "Effect:"
 msgstr "Efecto:"
 
-#: ../src/logview-gear-menu.ui.h:1
-msgid "Open..."
-msgstr "Abrir…"
-
-#: ../src/logview-gear-menu.ui.h:2
-msgid "Close"
-msgstr "Pechar"
-
-#: ../src/logview-gear-menu.ui.h:3
-msgid "Copy"
-msgstr "Copiar"
-
-#: ../src/logview-gear-menu.ui.h:4
-msgid "Select All"
-msgstr "Seleccionar todo"
-
-#: ../src/logview-gear-menu.ui.h:5
-msgid "Zoom In"
-msgstr "Acercar"
-
-#: ../src/logview-gear-menu.ui.h:6
-msgid "Zoom Out"
-msgstr "Afastar"
-
-#: ../src/logview-gear-menu.ui.h:7
-msgid "Normal Size"
-msgstr "Tamaño normal"
-
-#: ../src/logview-gear-menu.ui.h:9
-msgid "Show Matches Only"
-msgstr "Só mostrar coincidencias"
-
-#: ../src/logview-gear-menu.ui.h:10
-msgid "Manage Filters..."
-msgstr "Xestionar filtros…"
-
-#: ../src/logview-findbar.c:163
+#: ../src/logview-findbar.c:150
 msgid "Find previous occurrence of the search string"
 msgstr "Buscar a aparición anterior da cadea que busca"
 
-#: ../src/logview-findbar.c:172
+#: ../src/logview-findbar.c:157
 msgid "Find next occurrence of the search string"
 msgstr "Buscar a seguinte aparición da cadea que busca"
 
-#: ../src/logview-log.c:593
+#: ../src/logview-log.c:596
 msgid "Error while uncompressing the GZipped log. The file might be corrupt."
 msgstr ""
 "Produciuse un erro ao descomprimir o rexistro comprimido con Gzip. O "
 "ficheiro podería estar danado."
 
-#: ../src/logview-log.c:640
+#: ../src/logview-log.c:643
 msgid "You don't have enough permissions to read the file."
 msgstr "Non ten os permisos necesarios para ler o ficheiro."
 
-#: ../src/logview-log.c:655
+#: ../src/logview-log.c:658
 msgid "The file is not a regular file or is not a text file."
 msgstr "O ficheiro non é un ficheiro estándar ou de texto."
 
-#: ../src/logview-log.c:737
+#: ../src/logview-log.c:740
 msgid "This version of System Log does not support GZipped logs."
 msgstr "Esta versión do System Log non permite os rexistros GZipped."
 
-#: ../src/logview-loglist.c:315
+#: ../src/logview-loglist.c:316
 msgid "Loading..."
 msgstr "Cargando…"
 
@@ -322,7 +306,7 @@ msgstr "hoxe"
 msgid "yesterday"
 msgstr "onte"
 
-#: ../src/logview-window.c:178 ../src/logview-window.c:354
+#: ../src/logview-window.c:178 ../src/logview-window.c:371
 #, c-format
 msgid "Search in \"%s\""
 msgstr "Buscar en «%s»"
@@ -330,30 +314,66 @@ msgstr "Buscar en «%s»"
 #. translators: this is part of a label composed with
 #. * a date string, for example "updated today 23:54"
 #.
-#: ../src/logview-window.c:203
+#: ../src/logview-window.c:199
 msgid "updated"
 msgstr "actualizado"
 
-#: ../src/logview-window.c:322
+#: ../src/logview-window.c:339
 msgid "Wrapped"
 msgstr "Axustado"
 
-#: ../src/logview-window.c:337
+#: ../src/logview-window.c:354
 msgid "No matches found"
 msgstr "Non hai coincidencias"
 
-#: ../src/logview-window.c:686
+#: ../src/logview-window.c:724
 #, c-format
 msgid "Can't read from \"%s\""
 msgstr "Non é posíbel ler desde «%s»"
 
-#: ../src/logview-window.c:1074
+#: ../src/logview-window.c:1106
 msgid "Open Log"
 msgstr "Abrir rexistro"
 
-#: ../src/logview-window.c:1362
+#: ../src/logview-window.c:1350
 msgid "Could not open the following files:"
 msgstr "Non foi posíbel abrir os seguintes ficheiros:"
+
+#: ../src/logview-window.ui.h:1
+msgid "Open..."
+msgstr "Abrir…"
+
+#: ../src/logview-window.ui.h:2
+msgid "Close"
+msgstr "Pechar"
+
+#: ../src/logview-window.ui.h:3
+msgid "Copy"
+msgstr "Copiar"
+
+#: ../src/logview-window.ui.h:4
+msgid "Select All"
+msgstr "Seleccionar todo"
+
+#: ../src/logview-window.ui.h:5
+msgid "Zoom In"
+msgstr "Acercar"
+
+#: ../src/logview-window.ui.h:6
+msgid "Zoom Out"
+msgstr "Afastar"
+
+#: ../src/logview-window.ui.h:7
+msgid "Normal Size"
+msgstr "Tamaño normal"
+
+#: ../src/logview-window.ui.h:9
+msgid "Show Matches Only"
+msgstr "Só mostrar coincidencias"
+
+#: ../src/logview-window.ui.h:10
+msgid "Manage Filters..."
+msgstr "Xestionar filtros…"
 
 #~ msgid "Log File Viewer"
 #~ msgstr "Visualizador de ficheiros de rexistro"
@@ -447,9 +467,6 @@ msgstr "Non foi posíbel abrir os seguintes ficheiros:"
 
 #~ msgid "Show the application's version"
 #~ msgstr "Mostrar a versión do aplicativo"
-
-#~ msgid "[LOGFILE...]"
-#~ msgstr "[FICHEIRO DE REXISTROS…]"
 
 #~ msgid " - Browse and monitor logs"
 #~ msgstr " - Examinar e monitorizar os rexistros"

@@ -26,8 +26,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "system-log&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-02 21:53+0000\n"
-"PO-Revision-Date: 2013-03-03 11:38-0300\n"
+"POT-Creation-Date: 2013-04-12 23:06+0000\n"
+"PO-Revision-Date: 2013-04-18 19:52-0300\n"
 "Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -39,8 +39,8 @@ msgstr ""
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: Brazil\n"
 
-#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:304
-#: ../src/logview-window.c:1180
+#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:305
+#: ../src/logview-window.c:1213
 msgid "System Log"
 msgstr "Log do sistema"
 
@@ -172,16 +172,36 @@ msgstr ""
 "André Gondim <In Memoriam>\n"
 "Enrico Nicoletto <liverig@gmail.com>"
 
-#: ../src/logview-app.c:287
+#: ../src/logview-app.c:288
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Ocorreu um erro ao exibir a ajuda: %s"
 
-#: ../src/logview-app.c:309
+#: ../src/logview-app.c:310 ../src/logview-app.c:396
 msgid "A system log viewer for GNOME."
 msgstr "Um visualizador de log para o GNOME."
 
-#: ../src/logview-app.c:440
+#: ../src/logview-app.c:389
+msgid "Show the version of the program."
+msgstr "Mostra a versão do programa."
+
+#: ../src/logview-app.c:390
+msgid "[URI...]"
+msgstr "[URI...]"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:406
+msgid "Could not parse arguments"
+msgstr "Não foi possível analisar argumentos"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:423
+msgid "Could not register the application"
+msgstr "Não foi possível registrar o aplicativo"
+
+#: ../src/logview-app.c:531
 #, c-format
 msgid "Impossible to open the file %s"
 msgstr "Impossível abrir o arquivo %s"
@@ -301,34 +321,34 @@ msgstr "Mostrar somente ocorrências"
 msgid "Manage Filters..."
 msgstr "Gerenciar filtros..."
 
-#: ../src/logview-findbar.c:163
+#: ../src/logview-findbar.c:150
 msgid "Find previous occurrence of the search string"
 msgstr "Localizar ocorrência anterior da expressão pesquisada"
 
-#: ../src/logview-findbar.c:172
+#: ../src/logview-findbar.c:157
 msgid "Find next occurrence of the search string"
 msgstr "Localizar próxima ocorrência da expressão pesquisada"
 
-#: ../src/logview-log.c:593
+#: ../src/logview-log.c:596
 msgid "Error while uncompressing the GZipped log. The file might be corrupt."
 msgstr ""
 "Erro ao descompactar um arquivo de log compactado com o GZip. O arquivo pode "
 "estar corrompido."
 
-#: ../src/logview-log.c:640
+#: ../src/logview-log.c:643
 msgid "You don't have enough permissions to read the file."
 msgstr "Você não tem permissões suficientes para ler o arquivo."
 
-#: ../src/logview-log.c:655
+#: ../src/logview-log.c:658
 msgid "The file is not a regular file or is not a text file."
 msgstr "Este arquivo não é um arquivo comum ou não é um arquivo texto."
 
-#: ../src/logview-log.c:737
+#: ../src/logview-log.c:740
 msgid "This version of System Log does not support GZipped logs."
 msgstr ""
 "Esta versão do sistema de logs não suporta logs compactados com o GZip."
 
-#: ../src/logview-loglist.c:315
+#: ../src/logview-loglist.c:316
 msgid "Loading..."
 msgstr "Carregando..."
 
@@ -340,7 +360,7 @@ msgstr "hoje"
 msgid "yesterday"
 msgstr "ontem"
 
-#: ../src/logview-window.c:180 ../src/logview-window.c:356
+#: ../src/logview-window.c:181 ../src/logview-window.c:374
 #, c-format
 msgid "Search in \"%s\""
 msgstr "Pesquisar em \"%s\""
@@ -348,28 +368,28 @@ msgstr "Pesquisar em \"%s\""
 #. translators: this is part of a label composed with
 #. * a date string, for example "updated today 23:54"
 #.
-#: ../src/logview-window.c:205
+#: ../src/logview-window.c:202
 msgid "updated"
 msgstr "atualizado"
 
-#: ../src/logview-window.c:324
+#: ../src/logview-window.c:342
 msgid "Wrapped"
 msgstr "Quebrado"
 
-#: ../src/logview-window.c:339
+#: ../src/logview-window.c:357
 msgid "No matches found"
 msgstr "Não foram encontradas ocorrências"
 
-#: ../src/logview-window.c:688
+#: ../src/logview-window.c:727
 #, c-format
 msgid "Can't read from \"%s\""
 msgstr "Não é possível ler \"%s\""
 
-#: ../src/logview-window.c:1076
+#: ../src/logview-window.c:1109
 msgid "Open Log"
 msgstr "Abrir log"
 
-#: ../src/logview-window.c:1368
+#: ../src/logview-window.c:1398
 msgid "Could not open the following files:"
 msgstr "Não foi possível abrir os seguintes arquivos:"
 
@@ -390,9 +410,6 @@ msgstr "Não foi possível abrir os seguintes arquivos:"
 
 #~ msgid "Show the application's version"
 #~ msgstr "Mostra a versão do aplicativo"
-
-#~ msgid "[LOGFILE...]"
-#~ msgstr "[ARQUIVODELOG...]"
 
 #~ msgid " - Browse and monitor logs"
 #~ msgstr " - Navegar e monitorar logs"

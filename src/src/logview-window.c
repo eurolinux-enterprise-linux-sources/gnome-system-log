@@ -25,8 +25,6 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 #include <glib/gi18n.h>
-#include <libgd/gd-main-toolbar.h>
-#include <libgd/gd-revealer.h>
 
 #include "logview-window.h"
 
@@ -39,16 +37,16 @@
 #define SEARCH_START_MARK "lw-search-start-mark"
 #define SEARCH_END_MARK "lw-search-end-mark"
 
-struct _LogviewWindowPrivate {
+typedef struct {
   PangoFontDescription *monospace_description;
 
+  GtkWidget *header_bar;
+  GtkWidget *window_content;
   GtkWidget *find_bar_revealer;
   GtkWidget *find_bar;
+  GtkWidget *sidebar_scrolledwindow;
   GtkWidget *loglist;
-  GtkWidget *sidebar;
-  GtkWidget *hpaned;
   GtkWidget *text_view;
-  GtkWidget *toolbar;
 
   GtkWidget *message_area;
   GtkWidget *message_primary;
@@ -72,12 +70,9 @@ struct _LogviewWindowPrivate {
   GList *active_filters;
   gboolean matches_only;
   gboolean auto_scroll;
-};
+} LogviewWindowPrivate;
 
-#define GET_PRIVATE(o) \
-  (G_TYPE_INSTANCE_GET_PRIVATE ((o), LOGVIEW_TYPE_WINDOW, LogviewWindowPrivate))
-
-G_DEFINE_TYPE (LogviewWindow, logview_window, GTK_TYPE_APPLICATION_WINDOW);
+G_DEFINE_TYPE_WITH_PRIVATE (LogviewWindow, logview_window, GTK_TYPE_APPLICATION_WINDOW);
 
 static void findbar_close_cb  (LogviewFindbar *findbar,
                                gpointer user_data);
@@ -109,11 +104,11 @@ populate_tag_table (GtkTextTagTable *tag_table)
   gtk_text_tag_table_add (tag_table, tag); 
 }
 
-
 static void
 populate_style_tag_table (LogviewWindow *logview)
 {
-  GtkTextTagTable *tag_table = logview->priv->tag_table;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
+  GtkTextTagTable *tag_table = priv->tag_table;
   GtkTextTag *tag;
   GtkStyleContext *context;
   GdkRGBA rgba;
@@ -126,7 +121,7 @@ populate_style_tag_table (LogviewWindow *logview)
 
   tag = gtk_text_tag_new ("gray");
 
-  context = gtk_widget_get_style_context (logview->priv->text_view);
+  context = gtk_widget_get_style_context (priv->text_view);
   gtk_style_context_save (context);
   gtk_style_context_add_class (context, "dim-label");
   gtk_style_context_get_color (context, GTK_STATE_FLAG_NORMAL, &rgba);
@@ -163,43 +158,40 @@ _gtk_text_buffer_apply_tag_to_rectangle (GtkTextBuffer *buffer, int line_start, 
 }
 
 static void
-logview_update_toolbar (LogviewWindow *logview, 
-                        LogviewLog *active,
-                        Day *selected_day)
+logview_update_header (LogviewWindow *logview,
+                       LogviewLog *active,
+                       Day *selected_day)
 {
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
   GString *string;
   GDateTime *log_time;
-  gchar *text;
+  gchar *title, *subtitle, *text;
   time_t timestamp;
 
+  title = subtitle = NULL;
+
   if (active == NULL) {
-    gd_main_toolbar_set_labels (GD_MAIN_TOOLBAR (logview->priv->toolbar),
-                                NULL, NULL);
-    return;
+    goto out;
   }
 
-  if (gd_revealer_get_reveal_child (GD_REVEALER (logview->priv->find_bar_revealer))) {
-    text = g_strdup_printf (_("Search in \"%s\""),
-                            logview_log_get_display_name (active));
-    gd_main_toolbar_set_labels (GD_MAIN_TOOLBAR (logview->priv->toolbar),
-                                text, NULL);
-    g_free (text);
-    return;
+  if (gtk_revealer_get_reveal_child (GTK_REVEALER (priv->find_bar_revealer))) {
+    title = g_strdup_printf (_("Search in \"%s\""),
+                             logview_log_get_display_name (active));
+    goto out;
   }
+
+  title = g_strdup (logview_log_get_display_name (active));
 
   if (selected_day != NULL) {
-    text = logview_utils_format_date (selected_day->date);
-    gd_main_toolbar_set_labels (GD_MAIN_TOOLBAR (logview->priv->toolbar),
-                                logview_log_get_display_name (active), text);
-    g_free (text);
-
-    return;
+    subtitle = logview_utils_format_date (selected_day->date);
+    goto out;
   }
 
   timestamp = logview_log_get_timestamp (active);
   log_time = g_date_time_new_from_unix_local (timestamp);
 
   text = logview_utils_format_date (log_time);
+  g_date_time_unref (log_time);
 
   /* translators: this is part of a label composed with
    * a date string, for example "updated today 23:54"
@@ -214,11 +206,14 @@ logview_update_toolbar (LogviewWindow *logview,
   g_string_append (string, text);
   g_free (text);
 
-  gd_main_toolbar_set_labels (GD_MAIN_TOOLBAR (logview->priv->toolbar),
-                              logview_log_get_display_name (active), string->str);
+  subtitle = g_string_free (string, FALSE);
 
-  g_string_free (string, TRUE);
-  g_date_time_unref (log_time);
+ out:
+  gtk_header_bar_set_title (GTK_HEADER_BAR (priv->header_bar), title);
+  gtk_header_bar_set_subtitle (GTK_HEADER_BAR (priv->header_bar), subtitle);
+
+  g_free (title);
+  g_free (subtitle);
 }
 
 #define DEFAULT_LOGVIEW_FONT "Monospace 10"
@@ -227,7 +222,7 @@ static void
 logview_set_font (LogviewWindow *logview,
                   const char    *fontname)
 {
-  LogviewWindowPrivate *priv = logview->priv;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
 
   if (fontname == NULL)
     fontname = DEFAULT_LOGVIEW_FONT;
@@ -246,14 +241,14 @@ logview_set_font (LogviewWindow *logview,
 static void
 logview_set_fontsize (LogviewWindow *logview, gboolean store)
 {
-  LogviewWindowPrivate *priv = logview->priv;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
 
   pango_font_description_set_size (priv->monospace_description,
                                    (priv->fontsize) * PANGO_SCALE);
   gtk_widget_override_font (priv->text_view, priv->monospace_description);
 
   if (store) {
-    logview_prefs_store_fontsize (logview->priv->prefs, priv->fontsize);
+    logview_prefs_store_fontsize (priv->prefs, priv->fontsize);
   }
 }
 
@@ -269,9 +264,11 @@ static void
 logview_clear_active_log_state (LogviewWindow *window,
                                 LogviewLog *old_log)
 {
-  if (window->priv->monitor_id) {
-    g_signal_handler_disconnect (old_log, window->priv->monitor_id);
-    window->priv->monitor_id = 0;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (window);
+
+  if (priv->monitor_id) {
+    g_signal_handler_disconnect (old_log, priv->monitor_id);
+    priv->monitor_id = 0;
   }
 
   logview_set_search_visible (window, FALSE);
@@ -288,6 +285,7 @@ findbar_close_cb (LogviewFindbar *findbar,
 static void
 logview_search_text (LogviewWindow *logview, gboolean forward)
 {
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
   GtkTextBuffer *buffer;
   GtkTextMark *search_start, *search_end;
   GtkTextIter search, start_m, end_m;
@@ -298,13 +296,13 @@ logview_search_text (LogviewWindow *logview, gboolean forward)
 
   wrapped = FALSE;
 
-  text = logview_findbar_get_text (LOGVIEW_FINDBAR (logview->priv->find_bar));
+  text = logview_findbar_get_text (LOGVIEW_FINDBAR (priv->find_bar));
 
   if (!text || g_strcmp0 (text, "") == 0) {
     return;
   }
 
-  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (logview->priv->text_view));
+  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (priv->text_view));
   search_start = gtk_text_buffer_get_mark (buffer, SEARCH_START_MARK);
   search_end = gtk_text_buffer_get_mark (buffer, SEARCH_END_MARK);
 
@@ -338,7 +336,7 @@ wrap:
     gtk_text_buffer_move_mark (buffer, search_start, &start_m);
     gtk_text_buffer_move_mark (buffer, search_end, &end_m);
 
-    gtk_text_view_scroll_mark_onscreen (GTK_TEXT_VIEW (logview->priv->text_view), search_end);
+    gtk_text_view_scroll_mark_onscreen (GTK_TEXT_VIEW (priv->text_view), search_end);
 
     if (wrapped) {
       secondary = _("Wrapped");
@@ -375,7 +373,10 @@ wrap:
 
   primary = g_strdup_printf (_("Search in \"%s\""),
                              logview_log_get_display_name (active_log));
-  gd_main_toolbar_set_labels (GD_MAIN_TOOLBAR (logview->priv->toolbar), primary, secondary);
+
+  gtk_header_bar_set_title (GTK_HEADER_BAR (priv->header_bar), primary);
+  gtk_header_bar_set_subtitle (GTK_HEADER_BAR (priv->header_bar), secondary);
+
 
   g_free (primary);
 }
@@ -402,13 +403,14 @@ static gboolean
 text_changed_timeout_cb (gpointer user_data)
 {
   LogviewWindow *logview = user_data;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (user_data);
   GtkTextMark *search_start, *search_end;
   GtkTextIter start;
   GtkTextBuffer *buffer;
 
-  logview->priv->search_timeout_id = 0;
+  priv->search_timeout_id = 0;
 
-  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (logview->priv->text_view));
+  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (priv->text_view));
   search_start = gtk_text_buffer_get_mark (buffer, SEARCH_START_MARK);
   search_end = gtk_text_buffer_get_mark (buffer, SEARCH_END_MARK);
   
@@ -429,17 +431,19 @@ findbar_text_changed_cb (LogviewFindbar *findbar,
                          gpointer user_data)
 {
   LogviewWindow *logview = user_data;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (user_data);
 
-  if (logview->priv->search_timeout_id != 0) {
-    g_source_remove (logview->priv->search_timeout_id);
+  if (priv->search_timeout_id != 0) {
+    g_source_remove (priv->search_timeout_id);
   }
 
-  logview->priv->search_timeout_id = g_timeout_add (300, text_changed_timeout_cb, logview);
+  priv->search_timeout_id = g_timeout_add (300, text_changed_timeout_cb, logview);
 }
 
 static void
 filter_buffer (LogviewWindow *logview, gint start_line)
 {
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
   GtkTextBuffer *buffer;
   GtkTextIter start, *end;
   gchar* text;
@@ -447,7 +451,7 @@ filter_buffer (LogviewWindow *logview, gint start_line)
   gboolean matched;
   int lines, i;
 
-  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (logview->priv->text_view));
+  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (priv->text_view));
   lines = gtk_text_buffer_get_line_count (buffer);
 
   for (i = start_line; i < lines; i++) {
@@ -459,7 +463,7 @@ filter_buffer (LogviewWindow *logview, gint start_line)
 
     text = gtk_text_buffer_get_text (buffer, &start, end, TRUE);
 
-    for (cur_filter = logview->priv->active_filters; cur_filter != NULL;
+    for (cur_filter = priv->active_filters; cur_filter != NULL;
          cur_filter = g_list_next (cur_filter))
     {
       if (logview_filter_filter (LOGVIEW_FILTER (cur_filter->data), text)) {
@@ -472,7 +476,7 @@ filter_buffer (LogviewWindow *logview, gint start_line)
 
     g_free (text);
 
-    if (!matched && logview->priv->matches_only) {
+    if (!matched && priv->matches_only) {
       gtk_text_buffer_apply_tag_by_name (buffer, 
                                          "invisible-filter",
                                          &start, end);
@@ -489,10 +493,11 @@ filter_buffer (LogviewWindow *logview, gint start_line)
 static void
 filter_remove (LogviewWindow *logview, LogviewFilter *filter)
 {
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
   GtkTextIter start, end;  
   GtkTextBuffer *buffer;
 
-  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (logview->priv->text_view));
+  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (priv->text_view));
   gtk_text_buffer_get_bounds (buffer, &start, &end);
 
   gtk_text_buffer_remove_tag (buffer, logview_filter_get_tag (filter),
@@ -505,7 +510,7 @@ filter_activate (GSimpleAction *action,
                  gpointer user_data)
 {
   LogviewWindow *logview = user_data;
-  LogviewWindowPrivate *priv = logview->priv;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
   const gchar* action_name, *name;
   LogviewFilter *filter;
   GVariant *state_variant;
@@ -537,7 +542,7 @@ filter_activate (GSimpleAction *action,
 static void
 update_filter_menu (LogviewWindow *window)
 {
-  LogviewWindowPrivate *priv = window->priv;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (window);
   GVariant *variant;
   GtkTextTagTable *table;
   GtkTextTag *tag;
@@ -548,9 +553,9 @@ update_filter_menu (LogviewWindow *window)
 
   table = priv->tag_table;
 
-  for (idx = g_menu_model_get_n_items (window->priv->filters_placeholder); idx > 0; idx--)
+  for (idx = g_menu_model_get_n_items (priv->filters_placeholder); idx > 0; idx--)
     {
-      variant = g_menu_model_get_item_attribute_value (window->priv->filters_placeholder,
+      variant = g_menu_model_get_item_attribute_value (priv->filters_placeholder,
                                                        idx - 1, G_MENU_ATTRIBUTE_ACTION, NULL);
       name = (gchar *) g_variant_get_string (variant, NULL) + strlen ("win.filter_");
       action_name = (gchar *) g_variant_get_string (variant, NULL) + strlen ("win.");
@@ -558,7 +563,7 @@ update_filter_menu (LogviewWindow *window)
       tag = gtk_text_tag_table_lookup (table, name);
       gtk_text_tag_table_remove (table, tag);
 
-      g_menu_remove (G_MENU (window->priv->filters_placeholder), idx - 1);
+      g_menu_remove (G_MENU (priv->filters_placeholder), idx - 1);
       g_action_map_remove_action (G_ACTION_MAP (window), action_name);
 
       g_variant_unref (variant);
@@ -574,7 +579,7 @@ update_filter_menu (LogviewWindow *window)
     g_action_map_add_action (G_ACTION_MAP (window), G_ACTION (action));
 
     menu_action_name = g_strconcat ("win.", action_name, NULL);
-    g_menu_append (G_MENU (window->priv->filters_placeholder), name, menu_action_name);
+    g_menu_append (G_MENU (priv->filters_placeholder), name, menu_action_name);
     g_signal_connect (action, "activate",
                       G_CALLBACK (filter_activate), window);
 
@@ -595,8 +600,9 @@ window_size_changed_cb (GtkWidget *widget, GdkEventConfigure *event,
                         gpointer data)
 {
   LogviewWindow *window = data;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (window);
 
-  logview_prefs_store_window_size (window->priv->prefs,
+  logview_prefs_store_window_size (priv->prefs,
                                    event->width, event->height);
 
   return FALSE;
@@ -606,11 +612,12 @@ static void
 real_select_day (LogviewWindow *logview,
                  int first_line, int last_line)
 {
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
   GtkTextBuffer *buffer;
   GtkTextIter start_iter, end_iter, start_vis, end_vis;
   GdkRectangle visible_rect;
 
-  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (logview->priv->text_view));
+  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (priv->text_view));
 
   gtk_text_buffer_get_bounds (buffer, &start_iter, &end_iter);
   gtk_text_buffer_get_iter_at_line (buffer, &start_vis, first_line);
@@ -626,9 +633,9 @@ real_select_day (LogviewWindow *logview,
                                      &end_vis, &end_iter);
 
   /* FIXME: why is this needed to update the view when selecting a day back? */
-  gtk_text_view_get_visible_rect (GTK_TEXT_VIEW (logview->priv->text_view),
+  gtk_text_view_get_visible_rect (GTK_TEXT_VIEW (priv->text_view),
                                   &visible_rect);
-  gdk_window_invalidate_rect (gtk_widget_get_window (logview->priv->text_view),
+  gdk_window_invalidate_rect (gtk_widget_get_window (priv->text_view),
                               &visible_rect, TRUE);
 }
 
@@ -641,7 +648,7 @@ loglist_day_selected_cb (LogviewLoglist *loglist,
   LogviewLog *active_log = logview_manager_get_active_log (logview_manager_get ());
 
   real_select_day (logview, day->first_line, day->last_line);
-  logview_update_toolbar (logview, active_log, day);
+  logview_update_header (logview, active_log, day);
 }
 
 static void
@@ -649,32 +656,35 @@ loglist_day_cleared_cb (LogviewLoglist *loglist,
                         gpointer user_data)
 {
   LogviewWindow *logview = user_data;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (user_data);
   GtkTextBuffer *buffer;
   GtkTextIter start, end;
   LogviewLog *active_log = logview_manager_get_active_log (logview_manager_get ());
 
-  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (logview->priv->text_view));
+  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (priv->text_view));
   gtk_text_buffer_get_bounds (buffer, &start, &end);
 
   /* clear all previous invisible tags */
   gtk_text_buffer_remove_tag_by_name (buffer, "invisible",
                                       &start, &end);
 
-  logview_update_toolbar (logview, active_log, NULL);
+  logview_update_header (logview, active_log, NULL);
 }
 
 static void
 logview_window_schedule_log_read (LogviewWindow *window,
                                   LogviewLog *log)
 {
-  if (window->priv->read_cancellable != NULL) {
-    g_cancellable_cancel (window->priv->read_cancellable);
-    g_clear_object (&window->priv->read_cancellable);
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (window);
+
+  if (priv->read_cancellable != NULL) {
+    g_cancellable_cancel (priv->read_cancellable);
+    g_clear_object (&priv->read_cancellable);
   }
 
-  window->priv->read_cancellable = g_cancellable_new ();
+  priv->read_cancellable = g_cancellable_new ();
   logview_log_read_new_lines (log,
-                              window->priv->read_cancellable,
+                              priv->read_cancellable,
                               (LogviewNewLinesCallback) read_new_lines_cb,
                               window);
 }
@@ -713,6 +723,7 @@ read_new_lines_cb (LogviewLog *log,
                    gpointer user_data)
 {
   LogviewWindow *window = user_data;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (window);
   GtkTextBuffer *buffer;
   gboolean boldify = FALSE;
   int i, old_line_count, filter_start_line;
@@ -737,7 +748,7 @@ read_new_lines_cb (LogviewLog *log,
     return;
   }
 
-  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (window->priv->text_view));
+  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (priv->text_view));
   old_line_count = gtk_text_buffer_get_line_count (buffer);
   filter_start_line = old_line_count > 0 ? (old_line_count - 1) : 0;
 
@@ -774,15 +785,15 @@ read_new_lines_cb (LogviewLog *log,
   }
   filter_buffer (window, filter_start_line);
 
-  if (window->priv->auto_scroll) {
-    gtk_text_view_scroll_to_iter (GTK_TEXT_VIEW (window->priv->text_view),
+  if (priv->auto_scroll) {
+    gtk_text_view_scroll_to_iter (GTK_TEXT_VIEW (priv->text_view),
                                   &iter, 0.0, FALSE, 0.0, 0.0);
   }
 
   paint_timestamps (buffer, old_line_count, new_days);
 
-  logview_update_toolbar (window, log, NULL);
-  logview_loglist_update_lines (LOGVIEW_LOGLIST (window->priv->loglist), log);
+  logview_update_header (window, log, NULL);
+  logview_loglist_update_lines (LOGVIEW_LOGLIST (priv->loglist), log);
 }
 
 static void
@@ -792,14 +803,15 @@ active_log_changed_cb (LogviewManager *manager,
                        gpointer data)
 {
   LogviewWindow *window = data;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (window);
   const char **lines;
   GtkTextBuffer *buffer;
 
   logview_clear_active_log_state (window, old_log);
-  logview_update_toolbar (window, log, NULL);
+  logview_update_header (window, log, NULL);
 
   lines = logview_log_get_cached_lines (log);
-  buffer = gtk_text_buffer_new (window->priv->tag_table);
+  buffer = gtk_text_buffer_new (priv->tag_table);
 
   if (lines != NULL) {
     int i;
@@ -818,7 +830,7 @@ active_log_changed_cb (LogviewManager *manager,
     paint_timestamps (buffer, 1, logview_log_get_days_for_cached_lines (log));
   }
 
-  window->priv->monitor_id =
+  priv->monitor_id =
     g_signal_connect (log, "log-changed",
                       G_CALLBACK (log_monitor_changed_cb), window);
 
@@ -832,7 +844,7 @@ active_log_changed_cb (LogviewManager *manager,
    * and will help us to distinguish the two cases of the following if
    * cause in the callback.
    */
-  gtk_text_view_set_buffer (GTK_TEXT_VIEW (window->priv->text_view), buffer);
+  gtk_text_view_set_buffer (GTK_TEXT_VIEW (priv->text_view), buffer);
   g_object_unref (buffer);
 }
 
@@ -852,6 +864,7 @@ static void
 message_area_create_error_box (LogviewWindow *window,
                                GtkWidget *message_area)
 {
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (window);
   GtkWidget *hbox_content;
   GtkWidget *image;
   GtkWidget *vbox;
@@ -861,8 +874,8 @@ message_area_create_error_box (LogviewWindow *window,
   hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
   gtk_widget_show (hbox_content);
 
-  image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_ERROR,
-                                    GTK_ICON_SIZE_DIALOG);
+  image = gtk_image_new_from_icon_name ("dialog-error",
+                                        GTK_ICON_SIZE_DIALOG);
   gtk_widget_show (image);
   gtk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
   gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0);
@@ -880,7 +893,7 @@ message_area_create_error_box (LogviewWindow *window,
   gtk_widget_set_can_focus (primary_label, TRUE);
   gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
 
-  window->priv->message_primary = primary_label;
+  priv->message_primary = primary_label;
 
   secondary_label = gtk_label_new (NULL);
   gtk_widget_show (secondary_label);
@@ -891,7 +904,7 @@ message_area_create_error_box (LogviewWindow *window,
   gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
   gtk_misc_set_alignment (GTK_MISC (secondary_label), 0, 0.5);
 
-  window->priv->message_secondary = secondary_label;
+  priv->message_secondary = secondary_label;
 
   gtk_container_add
       (GTK_CONTAINER (gtk_info_bar_get_content_area
@@ -904,15 +917,16 @@ message_area_set_labels (LogviewWindow *window,
                          const char *primary,
                          const char *secondary)
 {
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (window);
   char *primary_markup, *secondary_markup;
 
   primary_markup = g_markup_printf_escaped ("<b>%s</b>", primary);
   secondary_markup = g_markup_printf_escaped ("<small>%s</small>",
                                               secondary);
 
-  gtk_label_set_markup (GTK_LABEL (window->priv->message_primary),
+  gtk_label_set_markup (GTK_LABEL (priv->message_primary),
                         primary_markup);
-  gtk_label_set_markup (GTK_LABEL (window->priv->message_secondary),
+  gtk_label_set_markup (GTK_LABEL (priv->message_secondary),
                         secondary_markup);
 
   g_free (primary_markup);
@@ -934,14 +948,15 @@ static void
 logview_window_finalize (GObject *object)
 {
   LogviewWindow *logview = LOGVIEW_WINDOW (object);
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
 
-  if (logview->priv->read_cancellable != NULL) {
-    g_cancellable_cancel (logview->priv->read_cancellable);
-    g_clear_object (&logview->priv->read_cancellable);
+  if (priv->read_cancellable != NULL) {
+    g_cancellable_cancel (priv->read_cancellable);
+    g_clear_object (&priv->read_cancellable);
   }
 
-  g_clear_object (&logview->priv->filters_placeholder);
-  pango_font_description_free (logview->priv->monospace_description);
+  g_clear_object (&priv->filters_placeholder);
+  pango_font_description_free (priv->monospace_description);
 
   G_OBJECT_CLASS (logview_window_parent_class)->finalize (object);
 }
@@ -952,8 +967,9 @@ action_matches_only_change_state (GSimpleAction *action,
                                   gpointer user_data)
 {
   LogviewWindow *logview = user_data;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
 
-  logview->priv->matches_only = g_variant_get_boolean (state);
+  priv->matches_only = g_variant_get_boolean (state);
   filter_buffer (logview, 0);
 
   g_simple_action_set_state (action, state);
@@ -964,10 +980,12 @@ filter_manager_response_cb (GtkDialog *dialog,
                             gint response,
                             LogviewWindow *logview)
 {
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
+
   update_filter_menu (logview);
 
-  g_list_free (logview->priv->active_filters);
-  logview->priv->active_filters = NULL;
+  g_list_free (priv->active_filters);
+  priv->active_filters = NULL;
 }
 
 static void
@@ -993,7 +1011,9 @@ action_zoom_in (GSimpleAction *action,
                 gpointer user_data)
 {
   LogviewWindow *logview = user_data;
-  logview->priv->fontsize = MIN (logview->priv->fontsize + 1, 24);
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
+
+  priv->fontsize = MIN (priv->fontsize + 1, 24);
   logview_set_fontsize (logview, TRUE);
 }	
 
@@ -1003,7 +1023,9 @@ action_zoom_out (GSimpleAction *action,
                  gpointer user_data)
 {
   LogviewWindow *logview = user_data;
-  logview->priv->fontsize = MAX (logview->priv->fontsize - 1, 6);
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
+
+  priv->fontsize = MAX (priv->fontsize - 1, 6);
   logview_set_fontsize (logview, TRUE);
 }	
 
@@ -1013,7 +1035,9 @@ action_zoom_normal (GSimpleAction *action,
                     gpointer user_data)
 {
   LogviewWindow *logview = user_data;
-  logview->priv->fontsize = logview->priv->original_fontsize;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
+
+  priv->fontsize = priv->original_fontsize;
   logview_set_fontsize (logview, TRUE);
 }
 
@@ -1023,15 +1047,16 @@ action_select_all (GSimpleAction *action,
                    gpointer user_data)
 {
   LogviewWindow *logview = user_data;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
   GtkTextIter start, end;
   GtkTextBuffer *buffer;
 
-  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (logview->priv->text_view));
+  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (priv->text_view));
 
   gtk_text_buffer_get_bounds (buffer, &start, &end);
   gtk_text_buffer_select_range (buffer, &start, &end);
 
-  gtk_widget_grab_focus (GTK_WIDGET (logview->priv->text_view));
+  gtk_widget_grab_focus (GTK_WIDGET (priv->text_view));
 }
 
 static void
@@ -1040,15 +1065,16 @@ action_copy (GSimpleAction *action,
              gpointer user_data)
 {
   LogviewWindow *logview = user_data;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
   GtkTextBuffer *buffer;
   GtkClipboard *clipboard;
 
-  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (logview->priv->text_view));
+  buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (priv->text_view));
   clipboard = gtk_clipboard_get (GDK_SELECTION_CLIPBOARD);
 
   gtk_text_buffer_copy_clipboard (buffer, clipboard);
 
-  gtk_widget_grab_focus (GTK_WIDGET (logview->priv->text_view));
+  gtk_widget_grab_focus (GTK_WIDGET (priv->text_view));
 }
 
 static void
@@ -1057,9 +1083,10 @@ action_close (GSimpleAction *action,
               gpointer user_data)
 {
   LogviewWindow *logview = user_data;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
 
   logview_set_search_visible (logview, FALSE);
-  logview_manager_close_active_log (logview->priv->manager);
+  logview_manager_close_active_log (priv->manager);
 }
 
 static void
@@ -1067,6 +1094,7 @@ open_file_selected_cb (GtkWidget *chooser,
                        gint response,
                        LogviewWindow *logview)
 {
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
   GFile *f;
   char *file_uri;
   LogviewLog *log;
@@ -1079,17 +1107,17 @@ open_file_selected_cb (GtkWidget *chooser,
   f = gtk_file_chooser_get_file (GTK_FILE_CHOOSER (chooser));
   file_uri = g_file_get_uri (f);
 
-  log = logview_manager_get_if_loaded (logview->priv->manager, file_uri);
+  log = logview_manager_get_if_loaded (priv->manager, file_uri);
 
   g_free (file_uri);
 
   if (log) {
-    logview_manager_set_active_log (logview->priv->manager, log);
+    logview_manager_set_active_log (priv->manager, log);
     g_object_unref (log);
     goto out;
   }
 
-  logview_manager_add_log_from_gfile (logview->priv->manager, f, TRUE);
+  logview_manager_add_log_from_gfile (priv->manager, f, TRUE);
 
 out:
   g_object_unref (f);
@@ -1101,6 +1129,7 @@ action_open (GSimpleAction *action,
              gpointer user_data)
 {
   LogviewWindow *logview = user_data;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
   static GtkWidget *chooser = NULL;
   char *active;
 
@@ -1108,8 +1137,8 @@ action_open (GSimpleAction *action,
     chooser = gtk_file_chooser_dialog_new (_("Open Log"),
                                            GTK_WINDOW (logview),
                                            GTK_FILE_CHOOSER_ACTION_OPEN,
-                                           GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                           GTK_STOCK_OPEN, GTK_RESPONSE_OK,
+                                           _("_Cancel"), GTK_RESPONSE_CANCEL,
+                                           _("_Open"), GTK_RESPONSE_OK,
                                            NULL);
     gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_OK);
     gtk_window_set_modal (GTK_WINDOW (chooser), TRUE);
@@ -1117,7 +1146,7 @@ action_open (GSimpleAction *action,
                       G_CALLBACK (open_file_selected_cb), logview);
     g_signal_connect (chooser, "destroy",
                       G_CALLBACK (gtk_widget_destroyed), &chooser);
-    active = logview_prefs_get_active_logfile (logview->priv->prefs);
+    active = logview_prefs_get_active_logfile (priv->prefs);
     if (active != NULL) {
       gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (chooser), active);
       g_free (active);
@@ -1133,16 +1162,17 @@ action_search_change_state (GSimpleAction *action,
                             gpointer user_data)
 {
   LogviewWindow *logview = user_data;
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
   gboolean open = g_variant_get_boolean (state);
   LogviewLog *active_log = logview_manager_get_active_log (logview_manager_get ());
 
-  gd_revealer_set_reveal_child (GD_REVEALER (logview->priv->find_bar_revealer),
+  gtk_revealer_set_reveal_child (GTK_REVEALER (priv->find_bar_revealer),
                                 open);
   if (open) {
-    gtk_widget_grab_focus (logview->priv->find_bar);
+    gtk_widget_grab_focus (priv->find_bar);
   }
 
-  logview_update_toolbar (logview, active_log, NULL);
+  logview_update_header (logview, active_log, NULL);
 
   g_simple_action_set_state (action, state);
 }
@@ -1153,7 +1183,9 @@ action_autoscroll_change_state (GSimpleAction *action,
                                 gpointer user_data)
 {
   LogviewWindow *logview = user_data;
-  logview->priv->auto_scroll = g_variant_get_boolean (state);
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (logview);
+
+  priv->auto_scroll = g_variant_get_boolean (state);
   g_simple_action_set_state (action, state);
 }
 
@@ -1187,173 +1219,110 @@ static GActionEntry action_entries[] = {
 static void
 logview_window_init_actions (LogviewWindow *window)
 {
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (window);
+
   g_action_map_add_action_entries (G_ACTION_MAP (window), action_entries,
                                    G_N_ELEMENTS (action_entries), window);
-  window->priv->auto_scroll = TRUE;
+  priv->auto_scroll = TRUE;
 }
 
 static void
-logview_window_init (LogviewWindow *logview)
+logview_window_init (LogviewWindow *window)
 {
-  GtkWidget *hpaned, *main_view, *vbox, *w;
   gchar *monospace_font_name;
   LogviewWindowPrivate *priv;
   int width, height;
-  GtkBuilder *builder;
+  GError *err = NULL;
   GMenuModel *menu;
 
-  priv = logview->priv = GET_PRIVATE (logview);
+  priv = logview_window_get_instance_private (window);
   priv->prefs = logview_prefs_get ();
   priv->manager = logview_manager_get ();
   priv->monitor_id = 0;
 
-  logview_window_init_actions (logview);
+  logview_window_init_actions (window);
+  gtk_widget_init_template (GTK_WIDGET (window));
 
-  gtk_window_set_title (GTK_WINDOW (logview), _("System Log"));
-  gtk_window_set_icon_name (GTK_WINDOW (logview), "logview");
-  gtk_window_set_hide_titlebar_when_maximized (GTK_WINDOW (logview), TRUE);
+  gtk_window_set_title (GTK_WINDOW (window), _("System Log"));
 
   logview_prefs_get_stored_window_size (priv->prefs, &width, &height);
-  gtk_window_set_default_size (GTK_WINDOW (logview), width, height);
-
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_container_add (GTK_CONTAINER (logview), vbox);
-
-  /* create toolbar and menus */
-  priv->toolbar = gd_main_toolbar_new ();
-  gtk_style_context_add_class (gtk_widget_get_style_context (priv->toolbar),
-                               "menubar");
-  gtk_box_pack_start (GTK_BOX (vbox), priv->toolbar, FALSE, FALSE, 0);
-  gtk_widget_show_all (priv->toolbar);
-
-  w = gd_main_toolbar_add_toggle (GD_MAIN_TOOLBAR (priv->toolbar),
-                                  "edit-find-symbolic", NULL, FALSE);
-  gtk_actionable_set_action_name (GTK_ACTIONABLE (w), "win.search");
-
-  w = gd_main_toolbar_add_menu (GD_MAIN_TOOLBAR (priv->toolbar),
-                                "emblem-system-symbolic", NULL, FALSE);
-  gtk_widget_show (w);
-
-  builder = gtk_builder_new ();
-  gtk_builder_add_from_resource (builder, "/org/gnome/logview/logview-gear-menu.ui", NULL);
-  menu = G_MENU_MODEL (gtk_builder_get_object (builder, "gear-menu"));
-  gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (w), menu);
-  gtk_actionable_set_action_name (GTK_ACTIONABLE (w), "win.gear-menu");
-
-  priv->filters_placeholder = G_MENU_MODEL (gtk_builder_get_object (builder, "filters-placeholder"));
-  g_object_unref (builder);
-
-  priv->find_bar_revealer = gd_revealer_new ();
-  gtk_widget_show (priv->find_bar_revealer);
-  gtk_box_pack_start (GTK_BOX (vbox), priv->find_bar_revealer, FALSE, FALSE, 0);
+  gtk_window_set_default_size (GTK_WINDOW (window), width, height);
 
   priv->find_bar = logview_findbar_new ();
   gtk_widget_show (priv->find_bar);
   gtk_container_add (GTK_CONTAINER (priv->find_bar_revealer), priv->find_bar);
 
   g_signal_connect (priv->find_bar, "previous",
-                    G_CALLBACK (findbar_previous_cb), logview);
+                    G_CALLBACK (findbar_previous_cb), window);
   g_signal_connect (priv->find_bar, "next",
-                    G_CALLBACK (findbar_next_cb), logview);
+                    G_CALLBACK (findbar_next_cb), window);
   g_signal_connect (priv->find_bar, "text_changed",
-                    G_CALLBACK (findbar_text_changed_cb), logview);
+                    G_CALLBACK (findbar_text_changed_cb), window);
   g_signal_connect (priv->find_bar, "close",
-                    G_CALLBACK (findbar_close_cb), logview);
-  
-  /* panes */
-  hpaned = gtk_paned_new (GTK_ORIENTATION_HORIZONTAL);
-  gtk_box_pack_start (GTK_BOX (vbox), hpaned, TRUE, TRUE, 0);
-  priv->hpaned = hpaned;
-  gtk_widget_show (hpaned);
-
-  /* first pane : sidebar (list of logs) */
-  priv->sidebar = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_widget_show (priv->sidebar);
-
-  /* first pane: log list */
-  w = gtk_scrolled_window_new (NULL, NULL);
-  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (w),
-                                  GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
-  gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (w),
-                                       GTK_SHADOW_ETCHED_IN);
+                    G_CALLBACK (findbar_close_cb), window);
 
   priv->loglist = logview_loglist_new ();
-  gtk_container_add (GTK_CONTAINER (w), priv->loglist);
-  gtk_box_pack_start (GTK_BOX (priv->sidebar), w, TRUE, TRUE, 0);
-  gtk_paned_pack1 (GTK_PANED (hpaned), priv->sidebar, FALSE, FALSE);
-  gtk_widget_show (w);
   gtk_widget_show (priv->loglist);
+  gtk_container_add (GTK_CONTAINER (priv->sidebar_scrolledwindow), priv->loglist);
 
   g_signal_connect (priv->loglist, "day_selected",
-                    G_CALLBACK (loglist_day_selected_cb), logview);
+                    G_CALLBACK (loglist_day_selected_cb), window);
   g_signal_connect (priv->loglist, "day_cleared",
-                    G_CALLBACK (loglist_day_cleared_cb), logview);
+                    G_CALLBACK (loglist_day_cleared_cb), window);
 
   /* second pane: log */
-  main_view = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_paned_pack2 (GTK_PANED (hpaned), main_view, TRUE, TRUE);
-
-  /* second pane: error message area */
-  priv->message_area = gtk_info_bar_new ();
-  message_area_create_error_box (logview, priv->message_area);
+  message_area_create_error_box (window, priv->message_area);
   gtk_info_bar_add_button (GTK_INFO_BAR (priv->message_area),
-                           GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
-  gtk_box_pack_start (GTK_BOX (main_view), priv->message_area, FALSE, FALSE, 0);
-
-  /* second pane: text view */
-  w = gtk_scrolled_window_new (NULL, NULL);
-  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (w),
-                                  GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
-  gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (w), GTK_SHADOW_IN);
-  gtk_box_pack_start (GTK_BOX (main_view), w, TRUE, TRUE, 0);
-  gtk_widget_show (w);
+                           _("_Close"), GTK_RESPONSE_CLOSE);
 
   priv->tag_table = gtk_text_tag_table_new ();
   populate_tag_table (priv->tag_table);
 
-  priv->text_view = gtk_text_view_new ();
-  g_object_set (priv->text_view, "editable", FALSE, NULL);
-  populate_style_tag_table (logview);
-
-  gtk_container_add (GTK_CONTAINER (w), priv->text_view);
-  gtk_widget_show (priv->text_view);
+  populate_style_tag_table (window);
 
   /* use the desktop monospace font */
   monospace_font_name = logview_prefs_get_monospace_font_name (priv->prefs);
-  logview_set_font (logview, monospace_font_name);
+  logview_set_font (window, monospace_font_name);
   g_free (monospace_font_name);
 
   /* restore saved zoom */
   priv->fontsize = logview_prefs_get_stored_fontsize (priv->prefs);
 
   if (priv->fontsize > 0) {
-    logview_set_fontsize (logview, FALSE);
+    logview_set_fontsize (window, FALSE);
   }
 
   /* signal handlers
    * - first is used to remember/restore the window size on quit.
    */
-  g_signal_connect (logview, "configure_event",
-                    G_CALLBACK (window_size_changed_cb), logview);
+  g_signal_connect (window, "configure_event",
+                    G_CALLBACK (window_size_changed_cb), window);
   g_signal_connect (priv->prefs, "system-font-changed",
-                    G_CALLBACK (font_changed_cb), logview);
+                    G_CALLBACK (font_changed_cb), window);
   g_signal_connect (priv->manager, "active-changed",
-                    G_CALLBACK (active_log_changed_cb), logview);
+                    G_CALLBACK (active_log_changed_cb), window);
 
-  update_filter_menu (logview);
-  
-  gtk_widget_show (vbox);
-  gtk_widget_show (main_view);
+  update_filter_menu (window);
 }
 
 static void
 logview_window_class_init (LogviewWindowClass *klass)
 {
-  GObjectClass *object_class = (GObjectClass *) klass;
+  GObjectClass *object_class = G_OBJECT_CLASS (klass);
+  GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
   object_class->finalize = logview_window_finalize;
 
-  g_type_class_add_private (klass, sizeof (LogviewWindowPrivate));
+  gtk_widget_class_set_template_from_resource (widget_class,
+                                               "/org/gnome/logview/logview-window.ui");
+  gtk_widget_class_bind_template_child_private (widget_class, LogviewWindow, header_bar);
+  gtk_widget_class_bind_template_child_private (widget_class, LogviewWindow, window_content);
+  gtk_widget_class_bind_template_child_private (widget_class, LogviewWindow, filters_placeholder);
+  gtk_widget_class_bind_template_child_private (widget_class, LogviewWindow, find_bar_revealer);
+  gtk_widget_class_bind_template_child_private (widget_class, LogviewWindow, message_area);
+  gtk_widget_class_bind_template_child_private (widget_class, LogviewWindow, sidebar_scrolledwindow);
+  gtk_widget_class_bind_template_child_private (widget_class, LogviewWindow, message_area);
+  gtk_widget_class_bind_template_child_private (widget_class, LogviewWindow, text_view);
 }
 
 /* public methods */
@@ -1374,7 +1343,7 @@ logview_window_add_error (LogviewWindow *window,
   LogviewWindowPrivate *priv;
 
   g_assert (LOGVIEW_IS_WINDOW (window));
-  priv = window->priv;
+  priv = logview_window_get_instance_private (window);
 
   message_area_set_labels (window,
                            primary, secondary); 
@@ -1389,6 +1358,7 @@ void
 logview_window_add_errors (LogviewWindow *window,
                            GPtrArray *errors)
 {
+  LogviewWindowPrivate *priv = logview_window_get_instance_private (window);
   char *primary, *secondary;
   GString *str;
   char **err;
@@ -1412,13 +1382,11 @@ logview_window_add_errors (LogviewWindow *window,
 
   message_area_set_labels (window, primary, secondary);
 
-  gtk_widget_show (window->priv->message_area);
+  gtk_widget_show (priv->message_area);
 
-  g_signal_connect (window->priv->message_area, "response",
+  g_signal_connect (priv->message_area, "response",
                     G_CALLBACK (message_area_response_cb), window);
 
   g_free (primary);
   g_free (secondary);
 }
-
-

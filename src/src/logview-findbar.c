@@ -113,20 +113,10 @@ entry_key_press_event_cb (GtkWidget *entry,
   return FALSE;
 }
 
-static gint
-get_icon_margin (void)
-{
-  gint toolbar_size, menu_size;
-
-  gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, &menu_size, NULL);
-  gtk_icon_size_lookup (GTK_ICON_SIZE_LARGE_TOOLBAR, &toolbar_size, NULL);
-  return (gint) floor ((toolbar_size - menu_size) / 2.0);
-}
-
 static void 
 logview_findbar_init (LogviewFindbar *findbar)
 {
-  GtkWidget *w, *box;
+  GtkWidget *w, *box, *buttons, *images;
   GtkToolbar *gtoolbar;
   GtkToolItem *item;
   LogviewFindbarPrivate *priv;
@@ -135,44 +125,45 @@ logview_findbar_init (LogviewFindbar *findbar)
 
   gtoolbar = GTK_TOOLBAR (findbar);
 
+  gtk_style_context_add_class (gtk_widget_get_style_context (GTK_WIDGET (findbar)),
+                               GTK_STYLE_CLASS_PRIMARY_TOOLBAR);
   gtk_toolbar_set_style (gtoolbar, GTK_TOOLBAR_BOTH_HORIZ);
 
+  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+  gtk_widget_set_halign (box, GTK_ALIGN_CENTER);
+
   priv->entry = gtk_search_entry_new ();
+	gtk_widget_set_size_request (priv->entry, 500, -1);
+  gtk_container_add (GTK_CONTAINER (box), priv->entry);
 
-  item = gtk_tool_item_new ();
-  gtk_tool_item_set_expand (GTK_TOOL_ITEM (item), TRUE);
-  gtk_container_add (GTK_CONTAINER (item), priv->entry);
-  gtk_toolbar_insert (gtoolbar, item, -1);
-  gtk_widget_show_all (GTK_WIDGET (item));
-
-  item = gtk_separator_tool_item_new ();
-  gtk_separator_tool_item_set_draw (GTK_SEPARATOR_TOOL_ITEM (item), FALSE);
-  gtk_toolbar_insert (gtoolbar, item, -1);
-  gtk_widget_show (GTK_WIDGET (item));
-
-  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-  gtk_style_context_add_class (gtk_widget_get_style_context (box), "linked");
+  buttons = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+  gtk_style_context_add_class (gtk_widget_get_style_context (buttons), "linked");
+  gtk_style_context_add_class (gtk_widget_get_style_context (buttons), "raised");
+  gtk_container_add (GTK_CONTAINER (box), buttons);
 
   /* "Previous" and "Next" buttons */
   priv->back_button = gtk_button_new ();
-  w = gtk_image_new_from_icon_name ("go-up-symbolic", GTK_ICON_SIZE_MENU);
-  g_object_set (w, "margin", get_icon_margin (), NULL);
-  gtk_container_add (GTK_CONTAINER (priv->back_button), w);
-  gtk_container_add (GTK_CONTAINER (box), priv->back_button);
+  images = gtk_image_new_from_icon_name ("go-up-symbolic", GTK_ICON_SIZE_MENU);
+  gtk_button_set_image (GTK_BUTTON (priv->back_button), images);
+  gtk_widget_set_valign (priv->back_button, GTK_ALIGN_CENTER);
+  gtk_style_context_add_class (gtk_widget_get_style_context (priv->back_button),
+                               "image-button");
   gtk_widget_set_tooltip_text (priv->back_button,
                                _("Find previous occurrence of the search string"));
-  gtk_widget_show_all (GTK_WIDGET (priv->back_button));
+  gtk_container_add (GTK_CONTAINER (buttons), priv->back_button);
 
   priv->forward_button = gtk_button_new ();
-  w = gtk_image_new_from_icon_name ("go-down-symbolic", GTK_ICON_SIZE_MENU);
-  g_object_set (w, "margin", get_icon_margin (), NULL);
-  gtk_container_add (GTK_CONTAINER (priv->forward_button), w);
-  gtk_container_add (GTK_CONTAINER (box), priv->forward_button);
+  images = gtk_image_new_from_icon_name ("go-down-symbolic", GTK_ICON_SIZE_MENU);
+  gtk_button_set_image (GTK_BUTTON (priv->forward_button), images);
+  gtk_widget_set_valign (priv->forward_button, GTK_ALIGN_CENTER);
+  gtk_style_context_add_class (gtk_widget_get_style_context (priv->forward_button),
+                               "image-button");
   gtk_widget_set_tooltip_text (priv->forward_button,
                                _("Find next occurrence of the search string"));
-  gtk_widget_show_all (GTK_WIDGET (priv->forward_button));
+  gtk_container_add (GTK_CONTAINER (buttons), priv->forward_button);
 
   item = gtk_tool_item_new ();
+  gtk_tool_item_set_expand (item, TRUE);
   gtk_container_add (GTK_CONTAINER (item), box);
   gtk_toolbar_insert (gtoolbar, item, -1);
   gtk_widget_show_all (GTK_WIDGET (item));

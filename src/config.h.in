@@ -58,12 +58,6 @@
 /* Define to 1 if we're building with ZLib support */
 #undef HAVE_ZLIB
 
-/* Description */
-#undef LIBGD_MAIN_TOOLBAR
-
-/* Description */
-#undef LIBGD_REVEALER
-
 /* Define to the sub-directory in which libtool stores uninstalled libraries.
    */
 #undef LT_OBJDIR

@@ -6,10 +6,10 @@
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-system-log 3.7.x\n"
+"Project-Id-Version: gnome-system-log 3.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-07 11:51+0100\n"
-"PO-Revision-Date: 2013-01-07 11:51+0100\n"
+"POT-Creation-Date: 2013-08-14 14:56+0200\n"
+"PO-Revision-Date: 2013-08-14 14:56+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:304
-#: ../src/logview-window.c:1179
+#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:305
+#: ../src/logview-window.c:1246
 msgid "System Log"
 msgstr "Systemlogg"
 
@@ -133,16 +133,36 @@ msgstr ""
 "Espen Stefansen <libbe AT stefansen DOT net>\n"
 "Torstein Adolf Winterseth <kvikende@fsfe.org>"
 
-#: ../src/logview-app.c:287
+#: ../src/logview-app.c:288
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Det oppsto en feil under visning av hjelp: %s"
 
-#: ../src/logview-app.c:309
+#: ../src/logview-app.c:310 ../src/logview-app.c:396
 msgid "A system log viewer for GNOME."
 msgstr "Visningsprogramm for systemlogger for GNOME."
 
-#: ../src/logview-app.c:440
+#: ../src/logview-app.c:389
+msgid "Show the version of the program."
+msgstr "Vis programmets versjon."
+
+#: ../src/logview-app.c:390
+msgid "[URI...]"
+msgstr "[URI …]"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:406
+msgid "Could not parse arguments"
+msgstr "Kunne ikke tolke argumentene"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:423
+msgid "Could not register the application"
+msgstr "Kunne ikke registrere programmet"
+
+#: ../src/logview-app.c:531
 #, c-format
 msgid "Impossible to open the file %s"
 msgstr "Kam ikke åpne filen %s"
@@ -192,7 +212,23 @@ msgstr "Rediger filter"
 msgid "Add new filter"
 msgstr "Legg til nytt filter"
 
-#: ../src/logview-filter-manager.c:506 ../src/logview-gear-menu.ui.h:8
+#: ../src/logview-filter-manager.c:467 ../src/logview-window.c:1276
+msgid "_Close"
+msgstr "L_ukk"
+
+#: ../src/logview-filter-manager.c:501
+msgid "_Add"
+msgstr "_Legg til"
+
+#: ../src/logview-filter-manager.c:502
+msgid "_Properties"
+msgstr "E_genskaper"
+
+#: ../src/logview-filter-manager.c:503
+msgid "_Remove"
+msgstr "Fje_rn"
+
+#: ../src/logview-filter-manager.c:506 ../src/logview-window.ui.h:8
 msgid "Filters"
 msgstr "Filtre"
 
@@ -224,67 +260,31 @@ msgstr "Bakgrunn:"
 msgid "Effect:"
 msgstr "Effekter:"
 
-#: ../src/logview-gear-menu.ui.h:1
-msgid "Open..."
-msgstr "Åpne …"
-
-#: ../src/logview-gear-menu.ui.h:2
-msgid "Close"
-msgstr "Lukk"
-
-#: ../src/logview-gear-menu.ui.h:3
-msgid "Copy"
-msgstr "Kopier"
-
-#: ../src/logview-gear-menu.ui.h:4
-msgid "Select All"
-msgstr "Velg alt"
-
-#: ../src/logview-gear-menu.ui.h:5
-msgid "Zoom In"
-msgstr "Zoom inn"
-
-#: ../src/logview-gear-menu.ui.h:6
-msgid "Zoom Out"
-msgstr "Zoom ut"
-
-#: ../src/logview-gear-menu.ui.h:7
-msgid "Normal Size"
-msgstr "Normal størrelse"
-
-#: ../src/logview-gear-menu.ui.h:9
-msgid "Show Matches Only"
-msgstr "Vis kun treff"
-
-#: ../src/logview-gear-menu.ui.h:10
-msgid "Manage Filters..."
-msgstr "Håndter filtre …"
-
-#: ../src/logview-findbar.c:163
+#: ../src/logview-findbar.c:152
 msgid "Find previous occurrence of the search string"
 msgstr "Finn forrige oppføring av søkestrengen"
 
-#: ../src/logview-findbar.c:172
+#: ../src/logview-findbar.c:162
 msgid "Find next occurrence of the search string"
 msgstr "Finn neste oppføring av søkestrengen"
 
-#: ../src/logview-log.c:593
+#: ../src/logview-log.c:596
 msgid "Error while uncompressing the GZipped log. The file might be corrupt."
 msgstr "Feil under dekomprimering av GZippet logg. Filen kan være korrupt."
 
-#: ../src/logview-log.c:640
+#: ../src/logview-log.c:643
 msgid "You don't have enough permissions to read the file."
 msgstr "Du har ikke nok rettigheter til å lese filen."
 
-#: ../src/logview-log.c:655
+#: ../src/logview-log.c:658
 msgid "The file is not a regular file or is not a text file."
 msgstr "Filen er ikke en vanlig fil eller tekstfil."
 
-#: ../src/logview-log.c:737
+#: ../src/logview-log.c:740
 msgid "This version of System Log does not support GZipped logs."
 msgstr "Denne versjonen av systemlogg støtter ikke komprimerte logger."
 
-#: ../src/logview-loglist.c:315
+#: ../src/logview-loglist.c:316
 msgid "Loading..."
 msgstr "Laster …"
 
@@ -296,7 +296,7 @@ msgstr "i dag"
 msgid "yesterday"
 msgstr "i går"
 
-#: ../src/logview-window.c:178 ../src/logview-window.c:354
+#: ../src/logview-window.c:178 ../src/logview-window.c:374
 #, c-format
 msgid "Search in \"%s\""
 msgstr "Søk i «%s»"
@@ -304,27 +304,71 @@ msgstr "Søk i «%s»"
 #. translators: this is part of a label composed with
 #. * a date string, for example "updated today 23:54"
 #.
-#: ../src/logview-window.c:203
+#: ../src/logview-window.c:199
 msgid "updated"
 msgstr "oppdatert"
 
-#: ../src/logview-window.c:322
+#: ../src/logview-window.c:342
 msgid "Wrapped"
 msgstr "Brutt"
 
-#: ../src/logview-window.c:337
+#: ../src/logview-window.c:357
 msgid "No matches found"
 msgstr "Ingen treff funnet"
 
-#: ../src/logview-window.c:686
+#: ../src/logview-window.c:737
 #, c-format
 msgid "Can't read from \"%s\""
 msgstr "Kan ikke lese fra «%s»"
 
-#: ../src/logview-window.c:1074
+#: ../src/logview-window.c:1137
 msgid "Open Log"
 msgstr "Åpne logg"
 
-#: ../src/logview-window.c:1362
+#: ../src/logview-window.c:1140
+msgid "_Cancel"
+msgstr "A_vbryt"
+
+#: ../src/logview-window.c:1141
+msgid "_Open"
+msgstr "_Åpne"
+
+#: ../src/logview-window.c:1370
 msgid "Could not open the following files:"
 msgstr "Kunne ikke åpne følgende filer:"
+
+#: ../src/logview-window.ui.h:1
+msgid "Open..."
+msgstr "Åpne …"
+
+#: ../src/logview-window.ui.h:2
+msgid "Close"
+msgstr "Lukk"
+
+#: ../src/logview-window.ui.h:3
+msgid "Copy"
+msgstr "Kopier"
+
+#: ../src/logview-window.ui.h:4
+msgid "Select All"
+msgstr "Velg alt"
+
+#: ../src/logview-window.ui.h:5
+msgid "Zoom In"
+msgstr "Zoom inn"
+
+#: ../src/logview-window.ui.h:6
+msgid "Zoom Out"
+msgstr "Zoom ut"
+
+#: ../src/logview-window.ui.h:7
+msgid "Normal Size"
+msgstr "Normal størrelse"
+
+#: ../src/logview-window.ui.h:9
+msgid "Show Matches Only"
+msgstr "Vis kun treff"
+
+#: ../src/logview-window.ui.h:10
+msgid "Manage Filters..."
+msgstr "Håndter filtre …"

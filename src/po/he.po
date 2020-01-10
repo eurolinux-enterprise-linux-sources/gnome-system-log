@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.HEAD.he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 11:07+0200\n"
-"PO-Revision-Date: 2013-01-05 11:07+0200\n"
+"POT-Creation-Date: 2013-05-25 11:28+0300\n"
+"PO-Revision-Date: 2013-05-25 11:29+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "Language: he\n"
@@ -30,8 +30,8 @@ msgstr ""
 "X-Poedit-Language: Hebrew\n"
 
 #: ../data/gnome-system-log.desktop.in.in.h:1
-#: ../src/logview-app.c:304
-#: ../src/logview-window.c:1179
+#: ../src/logview-app.c:305
+#: ../src/logview-window.c:1211
 msgid "System Log"
 msgstr "יומני המערכת"
 
@@ -116,19 +116,40 @@ msgstr ""
 "פרויקט תרגום GNOME לעברית:\n"
 "‏http://gnome-il.berlios.de"
 
-#: ../src/logview-app.c:287
+#: ../src/logview-app.c:288
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "אירעה שגיאה בהצגת העזרה: %s"
 
-#: ../src/logview-app.c:309
+#: ../src/logview-app.c:310
+#: ../src/logview-app.c:396
 msgid "A system log viewer for GNOME."
 msgstr "מציג יומני מערכת ל־GNOME."
 
-#: ../src/logview-app.c:440
+#: ../src/logview-app.c:389
+msgid "Show the version of the program."
+msgstr "Show the version of the program."
+
+#: ../src/logview-app.c:390
+msgid "[URI...]"
+msgstr "[URI...]"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:406
+msgid "Could not parse arguments"
+msgstr "Could not parse arguments"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:423
+msgid "Could not register the application"
+msgstr "Could not register the application"
+
+#: ../src/logview-app.c:531
 #, c-format
 msgid "Impossible to open the file %s"
-msgstr "לא ניתן לפתוח את הקובץ %s"
+msgstr "Impossible to open the file %s"
 
 #: ../src/logview-app-menu.ui.h:1
 msgid "Auto Scroll"
@@ -176,7 +197,7 @@ msgid "Add new filter"
 msgstr "הוספת מסנן חדש"
 
 #: ../src/logview-filter-manager.c:506
-#: ../src/logview-gear-menu.ui.h:8
+#: ../src/logview-window.ui.h:8
 msgid "Filters"
 msgstr "מסננים"
 
@@ -208,67 +229,31 @@ msgstr "רקע:"
 msgid "Effect:"
 msgstr "אפקט:"
 
-#: ../src/logview-gear-menu.ui.h:1
-msgid "Open..."
-msgstr "פתיחה..."
-
-#: ../src/logview-gear-menu.ui.h:2
-msgid "Close"
-msgstr "סגירה"
-
-#: ../src/logview-gear-menu.ui.h:3
-msgid "Copy"
-msgstr "העתקה"
-
-#: ../src/logview-gear-menu.ui.h:4
-msgid "Select All"
-msgstr "בחירת הכול"
-
-#: ../src/logview-gear-menu.ui.h:5
-msgid "Zoom In"
-msgstr "התקרבות"
-
-#: ../src/logview-gear-menu.ui.h:6
-msgid "Zoom Out"
-msgstr "התרחקות"
-
-#: ../src/logview-gear-menu.ui.h:7
-msgid "Normal Size"
-msgstr "גודל רגיל"
-
-#: ../src/logview-gear-menu.ui.h:9
-msgid "Show Matches Only"
-msgstr "הצגת התאמות בלבד"
-
-#: ../src/logview-gear-menu.ui.h:10
-msgid "Manage Filters..."
-msgstr "ניהול מסננים..."
-
-#: ../src/logview-findbar.c:163
+#: ../src/logview-findbar.c:150
 msgid "Find previous occurrence of the search string"
 msgstr "חיפוש המופע הקודם של מחרוזת החיפוש"
 
-#: ../src/logview-findbar.c:172
+#: ../src/logview-findbar.c:157
 msgid "Find next occurrence of the search string"
 msgstr "חיפוש המופע הבא של מחרוזת החיפוש"
 
-#: ../src/logview-log.c:593
+#: ../src/logview-log.c:596
 msgid "Error while uncompressing the GZipped log. The file might be corrupt."
 msgstr "אירעה שגיאה בעת חילוץ היומן הדחוס ב־Gzip. יתכן שהקובץ פגום."
 
-#: ../src/logview-log.c:640
+#: ../src/logview-log.c:643
 msgid "You don't have enough permissions to read the file."
 msgstr "אין לך די הרשאות כדי לקרוא את הקובץ."
 
-#: ../src/logview-log.c:655
+#: ../src/logview-log.c:658
 msgid "The file is not a regular file or is not a text file."
 msgstr "הקובץ אינו קובץ רגיל או שאינו קובץ טקסט."
 
-#: ../src/logview-log.c:737
+#: ../src/logview-log.c:740
 msgid "This version of System Log does not support GZipped logs."
 msgstr "גרסה זו של יומן המערכת אינה תומכת ביומנים הדחוסים ב־Gzip."
 
-#: ../src/logview-loglist.c:315
+#: ../src/logview-loglist.c:316
 msgid "Loading..."
 msgstr "בטעינה..."
 
@@ -281,7 +266,7 @@ msgid "yesterday"
 msgstr "אתמול"
 
 #: ../src/logview-window.c:178
-#: ../src/logview-window.c:354
+#: ../src/logview-window.c:371
 #, c-format
 msgid "Search in \"%s\""
 msgstr "חיפוש תחת „%s“"
@@ -289,30 +274,66 @@ msgstr "חיפוש תחת „%s“"
 #. translators: this is part of a label composed with
 #. * a date string, for example "updated today 23:54"
 #.
-#: ../src/logview-window.c:203
+#: ../src/logview-window.c:199
 msgid "updated"
 msgstr "עודכן"
 
-#: ../src/logview-window.c:322
+#: ../src/logview-window.c:339
 msgid "Wrapped"
 msgstr "גולש"
 
-#: ../src/logview-window.c:337
+#: ../src/logview-window.c:354
 msgid "No matches found"
 msgstr "לא נמצאו התאמות"
 
-#: ../src/logview-window.c:686
+#: ../src/logview-window.c:724
 #, c-format
 msgid "Can't read from \"%s\""
 msgstr "לא ניתן לקרוא מ־\"%s\""
 
-#: ../src/logview-window.c:1074
+#: ../src/logview-window.c:1106
 msgid "Open Log"
 msgstr "פתיחת יומן"
 
-#: ../src/logview-window.c:1362
+#: ../src/logview-window.c:1350
 msgid "Could not open the following files:"
 msgstr "לא ניתן לפתוח את הקבצים הבאים:"
+
+#: ../src/logview-window.ui.h:1
+msgid "Open..."
+msgstr "פתיחה..."
+
+#: ../src/logview-window.ui.h:2
+msgid "Close"
+msgstr "סגירה"
+
+#: ../src/logview-window.ui.h:3
+msgid "Copy"
+msgstr "העתקה"
+
+#: ../src/logview-window.ui.h:4
+msgid "Select All"
+msgstr "בחירת הכול"
+
+#: ../src/logview-window.ui.h:5
+msgid "Zoom In"
+msgstr "התקרבות"
+
+#: ../src/logview-window.ui.h:6
+msgid "Zoom Out"
+msgstr "התרחקות"
+
+#: ../src/logview-window.ui.h:7
+msgid "Normal Size"
+msgstr "גודל רגיל"
+
+#: ../src/logview-window.ui.h:9
+msgid "Show Matches Only"
+msgstr "הצגת התאמות בלבד"
+
+#: ../src/logview-window.ui.h:10
+msgid "Manage Filters..."
+msgstr "ניהול מסננים..."
 
 #~ msgid "Log File Viewer"
 #~ msgstr "מציג קובצי יומן"
@@ -406,9 +427,6 @@ msgstr "לא ניתן לפתוח את הקבצים הבאים:"
 
 #~ msgid "Show the application's version"
 #~ msgstr "Show the application's version"
-
-#~ msgid "[LOGFILE...]"
-#~ msgstr "[LOGFILE...]"
 
 #~ msgid " - Browse and monitor logs"
 #~ msgstr " - Browse and monitor logs"

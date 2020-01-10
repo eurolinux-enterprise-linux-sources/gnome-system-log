@@ -18,4 +18,4 @@ HELP_FILES = \
 	pref-font-size.page
 
 # List of translations
-HELP_LINGUAS = ca cs de el en_GB es eu fi fr gl hu id it ja ko oc ru sl sv uk zh_CN
+HELP_LINGUAS = ca cs de el en_GB es eu fi fr gl hu id it ja ko oc pt_BR ru sl sv uk zh_CN

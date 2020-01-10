@@ -1,13 +1,13 @@
 Name:           gnome-system-log
-Version:        3.8.1
-Release:        5%{?dist}
+Version:        3.9.90
+Release:        3%{?dist}
 Epoch:          1
 Summary:        A log file viewer for GNOME
 
 Group:          Applications/System
 License:        GPLv2+ and GFDL
 URL:            http://www.gnome.org
-Source0:        http://download.gnome.org/sources/gnome-system-log/3.8/gnome-system-log-%{version}.tar.xz
+Source0:        http://download.gnome.org/sources/gnome-system-log/3.9/gnome-system-log-%{version}.tar.xz
 Source1:        gnome-system-log
 Source2:        org.gnome.logview.policy
 
@@ -21,16 +21,12 @@ Obsoletes: gnome-utils < 1:3.3
 Obsoletes: gnome-utils-devel < 1:3.3
 Obsoletes: gnome-utils-libs < 1:3.3
 
-# https://bugzilla.gnome.org/show_bug.cgi?id=1030350
-# [gnome-system-log] Translations incomplete
-Patch0: complete-l10n.patch
-
 %description
 gnome-system-log lets you view various log files on your system.
 
 %prep
 %setup -q
-%patch0 -p2 -b .complete-l10n
+
 
 %build
 %configure
@@ -91,6 +87,10 @@ done
 %doc %{_mandir}/man1/gnome-system-log.1.gz
 
 %changelog
+* Thu Mar 19 2015 Richard Hughes <rhughes@redhat.com> - 1:3.9.90-1
+- Update to 3.9.90
+- Resolves: #1174561
+
 * Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 1:3.8.1-5
 - Mass rebuild 2014-01-24
 

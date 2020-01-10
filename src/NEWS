@@ -1,3 +1,17 @@
+GNOME System Log 3.9.90 - 20th August 2013
+==========================================
+
+- Port to GtkRevealer (Yosef Or Boczko)
+- Use header bar as titlebar (Yosef Or Boczko)
+- Drop deprecated GtkStock (Yosef Or Boczko)
+
+GNOME System Log 3.9.3 - 17th June 2013
+=======================================
+
+- Use a more modern style for the findbar
+- Add simple commandline parsing options
+- Port to GtkHeaderBar
+
 GNOME System Log 3.8.1 - 15th April 2013
 ========================================
 

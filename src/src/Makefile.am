@@ -5,7 +5,6 @@ INCLUDES = \
 	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"	\
 	-DDATADIR=\""$(datadir)"\"				\
 	-DLOGVIEWINSTALLPREFIX=\""$(prefix)/\""			\
-	-I$(top_srcdir)/libgd					\
 	$(NULL)
 
 bin_PROGRAMS = gnome-system-log
@@ -52,7 +51,6 @@ gnome_system_log_CFLAGS =	\
 gnome_system_log_LDADD =	\
 	$(LOGVIEW_LIBS)		\
 	$(Z_LIBS)		\
-	$(top_builddir)/libgd/libgd.la \
 	-lm
 
 EXTRA_DIST =			\

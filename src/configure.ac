@@ -1,6 +1,6 @@
 dnl -*- mode: m4 -*-
 AC_PREREQ(2.63)
-AC_INIT([gnome-system-log],[3.8.1],[],[gnome-system-log])
+AC_INIT([gnome-system-log],[3.9.90],[],[gnome-system-log])
 
 AC_CONFIG_HEADERS(config.h)
 AC_CONFIG_MACRO_DIR([m4])
@@ -63,24 +63,17 @@ AS_IF([test "x$enable_zlib" != "xno"],
 AC_SUBST(Z_LIBS)
 
 GLIB_MIN_VERSION=2.31.0
-GTK_MIN_VERSION=3.8.0
+GTK_MIN_VERSION=3.9.11
 
 PKG_CHECK_MODULES(LOGVIEW,
                   glib-2.0 >= $GLIB_MIN_VERSION
                   gtk+-3.0 >= $GTK_MIN_VERSION)
-
-LIBGD_INIT([
-  main-toolbar
-  revealer
-  static
-])
 
 AC_CONFIG_FILES([
 Makefile
 data/Makefile
 data/icons/Makefile
 help/Makefile
-libgd/Makefile
 src/Makefile
 src/tests/Makefile
 po/Makefile.in

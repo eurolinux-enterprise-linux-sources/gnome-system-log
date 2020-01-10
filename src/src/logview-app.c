@@ -25,6 +25,7 @@
 #endif
 
 #include <glib/gi18n.h>
+#include <stdlib.h>
 
 #include "logview-app.h"
 
@@ -370,6 +371,95 @@ logview_app_init_actions (LogviewApp *app)
   g_object_unref (app_menu);
 }
 
+static gboolean
+logview_app_local_command_line (GApplication *application,
+                                gchar ***arguments,
+                                gint *exit_status)
+{
+  gchar **argv;
+  gint argc, idx, len = 0;
+  gchar **remaining = NULL;
+  gboolean version = FALSE;
+  GError *error = NULL;
+  GFile **files = NULL;
+
+  GOptionContext *context;
+  const GOptionEntry entries[] = {
+    { "version", '\0', 0, G_OPTION_ARG_NONE, &version,
+      N_("Show the version of the program."), NULL },
+    { G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_STRING_ARRAY, &remaining, NULL,  N_("[URI...]") },
+    { NULL }
+  };
+
+  *exit_status = EXIT_SUCCESS;
+
+  context = g_option_context_new (_("A system log viewer for GNOME."));
+  g_option_context_add_main_entries (context, entries, NULL);
+  g_option_context_add_group (context, gtk_get_option_group (FALSE));
+
+  argv = *arguments;
+  argc = g_strv_length (argv);
+
+  if (!g_option_context_parse (context, &argc, &argv, &error)) {
+    /* Translators: this is a fatal error quit message printed on the
+     * command line */
+    g_printerr ("%s: %s\n", _("Could not parse arguments"), error->message);
+    g_error_free (error);
+
+    *exit_status = EXIT_FAILURE;
+    goto out;
+  }
+
+  if (version) {
+    g_print ("GNOME System Log " PACKAGE_VERSION "\n");
+    goto out;
+  }
+
+  g_application_register (application, NULL, &error);
+
+  if (error != NULL) {
+    /* Translators: this is a fatal error quit message printed on the
+     * command line */
+    g_printerr ("%s: %s\n", _("Could not register the application"), error->message);
+    g_error_free (error);
+
+    *exit_status = EXIT_FAILURE;
+    goto out;
+  }
+
+  /* Convert args to GFiles */
+  if (remaining != NULL) {
+    GFile *file;
+    GPtrArray *file_array;
+
+    file_array = g_ptr_array_new ();
+
+    for (idx = 0; remaining[idx] != NULL; idx++) {
+      file = g_file_new_for_commandline_arg (remaining[idx]);
+      if (file != NULL)
+        g_ptr_array_add (file_array, file);
+    }
+
+    len = file_array->len;
+    files = (GFile **) g_ptr_array_free (file_array, FALSE);
+    g_strfreev (remaining);
+  }
+
+  if (len > 0)
+    g_application_open (application, files, len, "");
+  else
+    g_application_activate (application);
+
+  for (idx = 0; idx < len; idx++)
+    g_object_unref (files[idx]);
+  g_free (files);
+
+ out:
+  g_option_context_free (context);
+
+  return TRUE;
+}
+
 static void
 logview_app_startup (GApplication *application)
 {
@@ -413,6 +503,7 @@ logview_app_class_init (LogviewAppClass *klass)
   aclass->activate = logview_app_activate;
   aclass->open = logview_app_open;
   aclass->startup = logview_app_startup;
+  aclass->local_command_line = logview_app_local_command_line;
 
   g_type_class_add_private (klass, sizeof (LogviewAppPrivate));
 }
