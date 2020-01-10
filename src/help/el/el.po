@@ -1,0 +1,617 @@
+# translation of logview.HEAD.po to
+# Fotis Tsamis <ftsamis@gmail.com>, 2009.
+# Chris Triantafillis <christriant1995@gmail.com>, 2011.
+# Efstathios Iosifidis <diamond_gr@freemail.gr>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: logview.HEAD\n"
+"POT-Creation-Date: 2012-09-25 23:17+0000\n"
+"PO-Revision-Date: 2012-10-23 01:38+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
+"Language-Team: Ελληνικά, Σύγχρονα <opensuse-translation-el@opensuse.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: C/index.page:5(page/title)
+msgid "Log File Viewer Help"
+msgstr "Βοήθεια Παρακολούθησης καταγραφών συστήματος"
+
+#: C/index.page:8(section/title)
+msgid "Working with the <app>Log File Viewer</app>"
+msgstr "Δουλεύοντας με την <app>Παρακολούθηση καταγραφών συστήματος</app>"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"rizitis <elahistos@yahoo.gr>, 2011\n"
+"Efstathios Iosifidis <diamond_gr@freemail.gr>, 2011"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:40(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/log-viewer-main.png' "
+"md5='019eaf56737c3fd7c1ae085e77962384'"
+msgstr ""
+"external ref='figures/log-viewer-main.png' "
+"md5='019eaf56737c3fd7c1ae085e77962384'"
+
+#: C/introduction.page:8(info/desc)
+msgid "Introduction to the <app>GNOME System Log</app>."
+msgstr "Εισαγωγή στο <app>Σύστημα καταγραφών του GNOME</app>"
+
+#: C/introduction.page:11(credit/name) C/log-close.page:12(credit/name)
+#: C/log-copy.page:11(credit/name) C/log-filter.page:12(credit/name)
+#: C/log-search.page:11(credit/name) C/log-view.page:12(credit/name)
+#: C/pref-font-size.page:11(credit/name)
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#: C/introduction.page:16(license/p) C/log-close.page:17(license/p)
+#: C/log-copy.page:16(license/p) C/log-filter.page:17(license/p)
+#: C/log-search.page:16(license/p) C/log-view.page:17(license/p)
+#: C/pref-font-size.page:16(license/p)
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons Share Alike 3.0"
+
+#: C/introduction.page:20(page/title)
+msgid "Introduction"
+msgstr "Εισαγωγή"
+
+#: C/introduction.page:22(page/p)
+msgid ""
+"<app>Log File Viewer</app> is a graphical, menu-driven viewer that you can "
+"use to view and monitor your system logs. <app>Log File Viewer</app> comes "
+"with a few functions that can help you manage your logs, including a log "
+"monitor and log statistics display."
+msgstr ""
+"Η <app>Παρακολούθηση καταγραφών συστήματος</app> είναι μια εφαρμογή γραφικού "
+"περιβάλλοντος, όπου με χρήση μενού μπορείτε δείτε και να ελέγξετε τις "
+"καταγραφές του συστήματος σας. Η <app>Παρακολούθηση καταγραφών συστήματος</"
+"app> εμπεριέχει λειτουργίες που θα σας βοηθήσουν να διαχειριστείτε τις "
+"καταγραφές σας, συμπεριλαμβάνοντας έναν διαχειριστή καταγραφών και εμφάνιση "
+"στατιστικών για τις καταγραφές σας."
+
+#: C/introduction.page:27(page/p)
+msgid ""
+"<app>Log File Viewer</app> is useful if you are new to system administration "
+"because it provides an easier, more user-friendly display of your logs than "
+"a text display of the log file. It is also useful for more experienced "
+"administrators, as it contains a monitor to enable you to continuously "
+"monitor crucial logs."
+msgstr ""
+"Η <app>Παρακολούθηση καταγραφών συστήματος</app> είναι χρήσιμη εάν είστε "
+"νέοι στη διαχείριση συστημάτων επειδή παρέχει μια ευκολότερη, φιλικότερη "
+"προς το χρήστη εμφάνιση των καταγραφών σας από ότι η απλή προβολή κειμένου "
+"του αρχείου καταγραφών. Είναι επίσης χρήσιμο για τους πιο πεπειραμένους "
+"διαχειριστές, καθώς περιέχει και εργαλείο διαχείρισης για να ελέγχονται "
+"συνεχώς οι κρίσιμες καταγραφές."
+
+#: C/introduction.page:34(note/p)
+msgid ""
+"<app>Log File Viewer</app> is useful only to those who have access to the "
+"system log files, which generally requires root access."
+msgstr ""
+"Η <app> Παρακολούθηση καταγραφών συστήματος</app> είναι χρήσιμη μόνο στους "
+"χρήστες που έχουν δικαιώματα root στα αρχεία καταγραφής συστήματος."
+
+#: C/log-close.page:9(info/desc)
+msgid "Remove the log you are currently viewing from the <gui>side pane</gui>."
+msgstr ""
+"Αφαιρέστε την καταγραφή την οποία δουλεύετε από την <gui>πλαϊνή στήλη</gui>."
+
+#: C/log-close.page:21(page/title)
+msgid "Close log"
+msgstr "Κλείσιμο καταγραφής"
+
+#: C/log-close.page:23(page/p)
+msgid ""
+"Close the log that you are currently viewing by pressing <keyseq><key>Ctrl</"
+"key><key>W</key></keyseq>, or by clicking <guiseq><gui>File</gui><gui>Close</"
+"gui></guiseq>. This removes it from the <gui>side pane</gui> until you open "
+"the log again."
+msgstr ""
+"Κλείστε την καταγραφή την οποία δουλεύετε πατώντας <keyseq><key>Ctrl</"
+"key><key>W</key></keyseq>, ή πατήστε <guiseq><gui>Αρχείο</gui><gui>Κλείσιμο</"
+"gui></guiseq>. Αυτό θα την αφαιρέσει από την <gui>πλευρική στήλη</gui> μέχρι "
+"να την ξανανοίξετε."
+
+#: C/log-copy.page:8(info/desc)
+msgid "Copy text from the log."
+msgstr "Αντιγράψτε κείμενο από τις καταγραφές"
+
+#: C/log-copy.page:20(page/title)
+msgid "Copy log"
+msgstr "Αντιγραφή καταγραφής"
+
+#: C/log-copy.page:22(page/p)
+msgid ""
+"Highlight the section of the log that you want to copy with the cursor and "
+"press <keyseq><key>Ctrl</key><key>C</key></keyseq>, or click "
+"<guiseq><gui>Edit</gui><gui>Copy</gui></guiseq>."
+msgstr ""
+"Επιλέξτε με το ποντίκι το κομμάτι της καταγραφής που θέλετε να αντιγράψετε "
+"και πατήστε <keyseq><key>Ctrl</key><key>C</key></keyseq>, ή πατήστε "
+"<guiseq><gui>Επεξεργασία</gui><gui>Αντιγραφή</gui></guiseq>."
+
+#: C/log-copy.page:27(note/p)
+msgid ""
+"You can press <keyseq><key>Ctrl</key><key>A</key></keyseq>, or click "
+"<guiseq><gui>Edit</gui><gui>Select All</gui></guiseq>, to select all the "
+"text in the log which you are currently viewing."
+msgstr ""
+"Μπορείτε να πατήσετε <keyseq><key>Ctrl</key><key>A</key></keyseq>, ή "
+"<guiseq><gui>Επεξεργασία</gui><gui>Επιλογή όλων</gui></guiseq>, για να "
+"επιλέξετε όλο το κείμενο της καταγραφής της οποίας δουλεύετε."
+
+#: C/log-filter.page:9(info/desc)
+msgid "Include or exclude shown lines using regular expressions."
+msgstr "Προσθέστε ή εξαιρέστε γραμμές χρησιμοποιώντας κανονικές εκφράσεις."
+
+#: C/log-filter.page:22(page/title)
+msgid "Filter log"
+msgstr "Φίλτρα καταγραφών"
+
+#: C/log-filter.page:24(page/p)
+msgid ""
+"The log viewer allows you to filter log content based on regular "
+"expressions. To set up or manage a new filter:"
+msgstr ""
+"Η παρακολούθηση καταγραφών σας επιτρέπει να φιλτράρετε τα περιεχόμενα των "
+"καταγραφών με κανονικές εκφράσεις. Για να ρυθμίσετε ή να διαχειριστείτε ένα "
+"νέο φίλτρο:"
+
+#: C/log-filter.page:29(item/p)
+msgid ""
+"Open the filter manager dialog by clicking <guiseq><gui>Filters:</gui> "
+"<gui>Manage Filters</gui></guiseq>."
+msgstr ""
+"Ανοίξτε το διαχειριστή φίλτρων πατώντας <guiseq><gui>Φίλτρα:</gui> "
+"<gui>Διαχείριση φίλτρων</gui></guiseq>."
+
+#: C/log-filter.page:33(item/p)
+msgid ""
+"Click <gui>Add</gui> to add a new filter, or select an existing filter and "
+"click <gui>Properties</gui> to edit it."
+msgstr ""
+"Πατήστε <gui>Προσθήκη</gui> για να προσθέσετε ένα νέο φίλτρο, ή επιλέξτε ένα "
+"υπάρχον φίλτρο και κάντε κλικ στις <gui>Προτιμήσεις</gui> για να το "
+"επεξεργαστείτε."
+
+#: C/log-filter.page:37(item/p)
+msgid "Fill in the form or edit the fields that you wish to change:"
+msgstr "Συμπληρώστε τη φόρμα ή επεξεργαστείτε τα πεδία που θέλετε να αλλάξετε:"
+
+#: C/log-filter.page:40(item/title)
+msgid "Name:"
+msgstr "Όνομα:"
+
+#: C/log-filter.page:41(item/p)
+msgid "The identifier for the filter"
+msgstr "Το αναγνωριστικό για το φίλτρο"
+
+#: C/log-filter.page:44(item/title)
+msgid "Regular Expression:"
+msgstr "Κανονική έκφραση:"
+
+#: C/log-filter.page:45(item/p)
+msgid "What the filter will filter for"
+msgstr "Τι θα φιλτράρει το φίλτρο"
+
+#: C/log-filter.page:48(item/title)
+msgid "Highlight:"
+msgstr "Επισήμανση:"
+
+#: C/log-filter.page:49(item/p)
+msgid "This option emphasizes the line containing the regular expression"
+msgstr "Η επιλογή δίνει έμφαση στην γραμμή που περιέχει την κανονική έκφραση"
+
+#: C/log-filter.page:52(item/title)
+msgid "Background:"
+msgstr "Παρασκήνιο:"
+
+#: C/log-filter.page:53(item/p)
+msgid "This is the font color"
+msgstr "Το χρώμα της γραμματοσειράς"
+
+#: C/log-filter.page:55(note/p)
+msgid "The default font color is black, which does not emphasize the text."
+msgstr ""
+"Το προεπιλεγμένο χρώμα της γραμματοσειράς είναι το μαύρο, το οποίο δεν δίνει "
+"έμφαση στο κείμενο."
+
+#: C/log-filter.page:60(item/title)
+msgid "Foreground:"
+msgstr "Προσκήνιο:"
+
+#: C/log-filter.page:61(item/p)
+msgid "This is the highlight color"
+msgstr "Αυτό είναι το χρώμα επισήμανσης"
+
+#: C/log-filter.page:63(note/p)
+msgid ""
+"The default highlight color is black, which shows solid black lines as a "
+"result, so it would be wise to change it."
+msgstr ""
+"Το προεπιλεγμένο χρώμα επισήμανσης είναι το μαύρο, το οποίο δείχνει μαύρες "
+"γραμμές σαν αποτέλεσμα, θα είναι σοφό λοιπόν να το αλλάξετε."
+
+#: C/log-filter.page:70(item/title)
+msgid "Hide:"
+msgstr "Απόκρυψη:"
+
+#: C/log-filter.page:71(item/p)
+msgid ""
+"This option hides the lines containing the regular expression from the shown "
+"log"
+msgstr ""
+"Η επιλογή αυτή κρύβει τις γραμμές που περιέχουν την κανονική έκφραση από την "
+"καταγραφή"
+
+#: C/log-filter.page:77(item/p)
+msgid ""
+"Click <gui>Apply</gui> to save the new filter or save changes to an existing "
+"one"
+msgstr ""
+"Πατήστε <gui>Εφαρμογή</gui> για να αποθηκεύσετε το νέο φίλτρο ή αποθηκεύστε "
+"τις αλλαγές κάποιου υπάρχοντος."
+
+#: C/log-filter.page:81(item/p)
+msgid ""
+"Back at the filter manager dialog, click <gui>Close</gui> to apply the "
+"changes."
+msgstr ""
+"Πίσω στον διαχειριστή φίλτρων, πατήστε <gui>Κλείσιμο</gui> για να εφαρμόσετε "
+"τις αλλαγές."
+
+#: C/log-filter.page:86(page/p)
+msgid ""
+"Check the box next to the name of the filter that you want to enable in "
+"<gui>Filters:</gui>. If you want to view only the filters which have "
+"<gui>Highlight</gui> enabled and are checked, check <guiseq><gui>Filters:</"
+"gui><gui>Show matches only</gui></guiseq>."
+msgstr ""
+"Επιλέξτε το κουτί δίπλα στο όνομα του φίλτρου που θέλετε να ενεργοποιήσετε "
+"στο μενού <gui>φίλτρα</gui>. Αν θέλετε να δείτε μόνο τα φίλτρα που έχουν "
+"ενεργοποιημένη την <gui>επισήμανση</gui> και είναι επιλεγμένα, επιλέξτε το "
+"<guiseq><gui>Φίλτρα</gui><gui>Προβολή μόνο τα σχετικών</gui></guiseq>."
+
+#: C/log-filter.page:92(note/p)
+msgid ""
+"If there is a conflict between a hidden and a highlighted filter, the line "
+"many show as an empty white line."
+msgstr ""
+"Αν υπάρχει σύγκρουση μεταξύ ενός κρυφού και ενός επισημασμένου φίλτρου, η "
+"γραμμή ίσως εμφανιστεί σαν άσπρη γραμμή."
+
+#: C/log-filter.page:97(note/p)
+msgid ""
+"If you uncheck a filter while viewing only matches, the log will show the "
+"lines without any formatting, regardless of whether they were hidden or "
+"highlighted before. The filter should reset when you check a highlighted "
+"filter."
+msgstr ""
+"Αν αποεπιλέξετε ένα φίλτρο καθώς κοιτάτε μόνο τις σχετικές εγγραφές, η "
+"καταγραφή θα δείξει τις σειρές χωρίς κάποια μορφοποίηση, ανεξαρτήτως αν ήταν "
+"κρυφά ή επισημασμένα από πριν. Θα γίνει επαναφορά του φίλτρου όταν επιλέξετε "
+"ένα επισημασμένο φίλτρο."
+
+#: C/log-search.page:8(info/desc)
+msgid "Search the text in the log that you are currently viewing."
+msgstr "Αναζητήστε κείμενο στην καταγραφή που έχετε ανοικτή."
+
+#: C/log-search.page:21(page/title)
+msgid "Search log"
+msgstr "Αναζήτηση καταγραφής"
+
+#: C/log-search.page:23(page/p)
+msgid "To search the log you are currently viewing:"
+msgstr "Για να αναζητήσετε το αρχείο καταγραφών που βλέπετε:"
+
+#: C/log-search.page:27(item/p)
+msgid ""
+"Show the <gui>Find</gui> bar by pressing <keyseq><key>Ctrl</key><key>F</"
+"key></keyseq>, or by clicking <guiseq><gui>View</gui><gui>Find</gui></"
+"guiseq>. The bar will be shown below the log."
+msgstr ""
+"Εμφανίστε τη μπάρα <gui>Αναζήτησης</gui> πατώντας <keyseq><key>Ctrl</"
+"key><key>F</key></keyseq>, ή πατώντας <guiseq><gui>Προβολή</"
+"gui><gui>Αναζήτηση</gui></guiseq>. Η μπάρα θα εμφανιστεί κάτω από την "
+"καταγραφή."
+
+#: C/log-search.page:33(item/p)
+msgid ""
+"Enter your search term into the field and press <key>Enter</key> to see the "
+"first result."
+msgstr ""
+"Πληκτρολογήστε τον όρο που θέλετε να αναζητήσετε στο πεδία και πατήστε "
+"<key>Enter</key> για να δείτε το πρώτο αποτέλεσμα."
+
+#: C/log-search.page:36(note/p)
+msgid "The search is case sensitive."
+msgstr "Η αναζήτηση έχει διάκριση πεζών/κεφαλαίων."
+
+#: C/log-search.page:40(item/p)
+msgid ""
+"Use the <gui>Find Previous</gui> and <gui>Find Next</gui> buttons to browse "
+"through the results."
+msgstr ""
+"Χρησιμοποιήστε τα κουμπιά <gui>Εύρεση προηγούμενου</gui> και <gui>Εύρεση "
+"επόμενου</gui> για να περιηγηθείτε ανάμεσα στα αποτελέσματα."
+
+#: C/log-search.page:43(note/p)
+msgid "If you can not see the result highlighted, try scrolling to the left."
+msgstr ""
+"Αν δεν μπορείτε να δείτε τα αποτελέσματα επισημασμένα, δοκιμάστε να κυλίσετε "
+"στα αριστερά."
+
+#: C/log-search.page:47(item/p)
+msgid ""
+"Press <key>Esc</key> to hide the find bar once you are finished with the "
+"search."
+msgstr ""
+"Μόλις τελειώσετε με την αναζήτηση πατήστε <key>Esc</key> για να κρύψετε τη "
+"μπάρα αναζήτησης."
+
+#: C/log-search.page:50(note/p)
+msgid ""
+"You can only hide the <gui>find bar</gui> if you are currently focused on "
+"the search field. The bar will hide itself if you view another log."
+msgstr ""
+"Μπορείτε να κρύψετε τη <gui>μπάρα αναζήτησης</gui> μόνο εάν είστε "
+"εστιασμένοι στην περιοχή αναζήτησης. Η μπάρα θα κρυφτεί από μόνη της εάν "
+"δείτε άλλη καταγραφή."
+
+#: C/log-view.page:9(info/desc)
+msgid "Open and view logs."
+msgstr "Ανοίξτε και προβάλλετε καταγραφές."
+
+#: C/log-view.page:22(page/title)
+msgid "Open log"
+msgstr "Άνοιγμα καταγραφών"
+
+#: C/log-view.page:24(page/p)
+msgid ""
+"Open logs by clicking <guiseq><gui>File</gui><gui>Open</gui></guiseq>. Your "
+"opened logs will be displayed in the side pane, to the left of the main "
+"area. You can view a log in the side pane by clicking it."
+msgstr ""
+"Ανοίξτε τις καταγραφές πατώντας <guiseq><gui>Αρχείο</gui><gui>Άνοιγμα</gui></"
+"guiseq>. Οι ανοιχτές καταγραφές θα εμφανιστούν στην πλευρική στήλη, στα "
+"αριστερά της κύριας περιοχής. Μπορείτε να δείτε την καταγραφή στην πλευρική "
+"στήλη πατώντας πάνω της."
+
+#: C/log-view.page:29(note/p)
+msgid ""
+"You can expand some logs. This will show you a list of dates. By clicking "
+"one of the dates, you can view only the log lines from that date, instead of "
+"the whole log."
+msgstr ""
+"Μπορείτε να επεκτείνετε μερικές καταγραφές. Αυτό θα σας εμφανίσει μια λίστα "
+"με ημερομηνίες. Πατώντας σε μια ημερομηνία, μπορείτε να δείτε μόνο τις "
+"καταγραφές από αυτήν την ημερομηνία, αντί για όλη την καταγραφή."
+
+#: C/log-view.page:34(page/p)
+msgid ""
+"The logs you have open when you quit the log viewer will be opened when you "
+"start it up again."
+msgstr ""
+"Οι καταγραφές που ανοίξατε όταν τερματίσατε τον προβολέα καταγραφών θα "
+"ανοίξουν την επόμενη φορά που θα εκκινήσετε το πρόγραμμα."
+
+#: C/pref-font-size.page:8(info/desc)
+msgid "Increase or decrease the size of the text."
+msgstr "Αυξήστε ή ελαττώστε το μέγεθος του κειμένου."
+
+#: C/pref-font-size.page:21(page/title)
+msgid "Change font size"
+msgstr "Αλλαγή μεγέθους γραμματοσειράς"
+
+#: C/pref-font-size.page:23(page/p)
+msgid ""
+"You can increase, decrease and reset the font size that the log is displayed "
+"in:"
+msgstr ""
+"Μπορείτε να αυξήσετε, να μικρύνεται και να επαναφέρετε το μέγεθος της "
+"γραμματοσειράς που εμφανίζεται στην καταγραφή:"
+
+#: C/pref-font-size.page:28(item/title)
+msgid "Increase font size"
+msgstr "Αύξηση μεγέθους γραμματοσειράς"
+
+#: C/pref-font-size.page:29(item/p)
+msgid ""
+"Click <guiseq><gui>View</gui><gui>Zoom In</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>+</key></keyseq>"
+msgstr ""
+"Πατήστε <guiseq><gui>Προβολή</gui><gui>Σμίκρυνση</gui></guiseq>, ή πατήστε "
+"<keyseq><key>Ctrl</key><key>+</key></keyseq>"
+
+#: C/pref-font-size.page:33(item/title)
+msgid "Decrease font size"
+msgstr "Ελάττωση μεγέθους γραμματοσειράς"
+
+#: C/pref-font-size.page:34(item/p)
+msgid ""
+"Click <guiseq><gui>View</gui><gui>Zoom Out</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>-</key></keyseq>"
+msgstr ""
+"Πατήστε <guiseq><gui>Προβολή</gui><gui>Μεγέθυνση</gui></guiseq>, ή πατήστε "
+"<keyseq><key>Ctrl</key><key>-</key></keyseq>"
+
+#: C/pref-font-size.page:38(item/title)
+msgid "Reset to default size"
+msgstr "Επαναφορά στο προεπιλεγμένο μέγεθος"
+
+#: C/pref-font-size.page:39(item/p)
+msgid ""
+"Click <guiseq><gui>View</gui><gui>Normal Size</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>0</key></keyseq>"
+msgstr ""
+"Πατήστε <guiseq><gui>Προβολή</gui><gui>Κανονικό μέγεθος</gui></guiseq>, ή "
+"πατήστε <keyseq><key>Ctrl</key><key>0</key></keyseq>"
+
+#~ msgid "kittykat3756@googlemail.com"
+#~ msgstr "kittykat3756@googlemail.com"
+
+#~ msgid "System Log Viewer Manual"
+#~ msgstr "Οδηγός Παρακολούθησης καταγραφών συστήματος"
+
+#~ msgid ""
+#~ "System Log Viewer is a graphical user interface to view and monitor "
+#~ "system log files."
+#~ msgstr ""
+#~ "Η παρακολούθηση καταγραφών συστήματος είναι ένα γραφικό περιβάλλον για να "
+#~ "παρακολουθείτε και να ελέγχετε τα αρχεία καταγραφών του συστήματος."
+
+#~ msgid "2003"
+#~ msgstr "2003"
+
+#~ msgid "Sun Microsystems"
+#~ msgstr "Sun Microsystems "
+
+#~ msgid "2000"
+#~ msgstr "2000"
+
+#~ msgid "Judith Samson"
+#~ msgstr "Judith Samson"
+
+#~ msgid "GNOME Documentation Project"
+#~ msgstr "Έργο Τεκμηρίωσης GNOME"
+
+#~ msgid ""
+#~ "Permission is granted to copy, distribute and/or modify this document "
+#~ "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#~ "or any later version published by the Free Software Foundation with no "
+#~ "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#~ "can find a copy of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl"
+#~ "\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
+#~ msgstr ""
+#~ "Δίνεται άδεια για αντιγραφή, διανομή και/ή τροποποίηση του εγγράφου υπό "
+#~ "τους όρους της Ελεύθερης Άδειας Τεκμηρίωσης GNU (GFDL), Έκδοση 1.1 ή "
+#~ "μεταγενέστερη εκδιδόμενη από το Ίδρυμα Ελεύθερου Λογισμικού χωρίς Σταθερά "
+#~ "Εδάφια, χωρίς Εξώφυλλα Κειμένου, και χωρίς Οπισθόφυλλα Κειμένου. Μπορείτε "
+#~ "να βρείτε ένα αντίγραφο της GFDL σε αυτόν τον <ulink type=\"help\" url="
+#~ "\"ghelp:fdl\">σύνδεσμο</ulink> ή στο αρχείο COPYING-DOCS που διανεμήθηκε "
+#~ "με αυτόν τον οδηγό."
+
+#~ msgid ""
+#~ "This manual is part of a collection of GNOME manuals distributed under "
+#~ "the GFDL. If you want to distribute this manual separately from the "
+#~ "collection, you can do so by adding a copy of the license to the manual, "
+#~ "as described in section 6 of the license."
+#~ msgstr ""
+#~ "Αυτή η τεκμηρίωση είναι μέρος της συλλογής τεκμηρίωσης του GNOME όπως "
+#~ "διανέμεται υπό τους όρους του GFDL. Εάν επιθυμείτε να διανείμετε αυτή την "
+#~ "τεκμηρίωση ξεχωριστά από την συλλογή, μπορείτε να το κάνετε εάν η "
+#~ "τεκμηρίωση συνοδεύεται από αντίγραφο της άδειας (GFDL) όπως περιγράφεται "
+#~ "στον τομέα 6 της άδειας."
+
+#~ msgid ""
+#~ "Many of the names used by companies to distinguish their products and "
+#~ "services are claimed as trademarks. Where those names appear in any GNOME "
+#~ "documentation, and the members of the GNOME Documentation Project are "
+#~ "made aware of those trademarks, then the names are in capital letters or "
+#~ "initial capital letters."
+#~ msgstr ""
+#~ "Πολλά από τα ονόματα που χρησιμοποιούνται από εταιρίες για να ξεχωρίσουν "
+#~ "τα προϊόντα και τις υπηρεσίες είναι σήματα κατατεθέντα. Όπου αυτά τα "
+#~ "ονόματα εμφανίζονται στην τεκμηρίωση GNOME, και τα μέλη της ομάδας "
+#~ "τεκμηρίωσης GNOME έχουν γνώση αυτών, τότε αυτά αναγράφονται με κεφαλαίους "
+#~ "χαρακτήρες ή με αρχικούς κεφαλαίους χαρακτήρες."
+
+#~ msgid ""
+#~ "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+#~ "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES "
+#~ "THAT THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+#~ "MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+#~ "RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+#~ "MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+#~ "MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+#~ "WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+#~ "SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES "
+#~ "AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED "
+#~ "VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS "
+#~ "DISCLAIMER; AND"
+#~ msgstr ""
+#~ "Η ΤΕΚΜΗΡΙΩΣΗ ΑΥΤΗ ΠΑΡΕΧΕΤΑΙ \"ΩΣ ΕΧΕΙ\", ΧΩΡΙΣ ΚΑΜΙΑ ΕΓΓΥΗΣΗ ΟΤΙ ΜΠΟΡΕΙ "
+#~ "ΝΑ ΕΞΥΠΗΡΕΤΗΣΕΙ ΚΑΠΟΙΟ ΣΚΟΠΟ Η ΟΤΙ ΕΙΝΑΙ ΧΩΡΙΣ ΣΦΑΛΜΑ. ΟΛΟΚΛΗΡΗ Η ΕΥΘΥΝΗ "
+#~ "ΓΙΑ ΤΗΝ ΠΟΙΟΤΗΤΑ, ΑΚΡΙΒΕΙΑ ΚΑΙ ΛΕΙΤΟΥΡΓΙΚΟΤΗΤΑ ΤΗΣ ΤΕΚΜΗΡΙΩΣΗΣ Ή "
+#~ "ΠΑΡΑΛΛΑΓΩΝ ΑΥΤΗΣ ΑΝΗΚΕΙ ΣΕ ΕΣΑΣ. ΕΑΝ Η ΤΕΚΜΗΡΙΩΣΗ ΑΥΤΗ Ή ΠΑΡΑΛΛΑΓΗ ΑΥΤΗΣ "
+#~ "ΕΙΝΑΙ ΛΑΘΟΣ ΚΑΤΑ ΚΑΠΟΙΟ ΤΡΟΠΟ ΕΣΕΙΣ ΑΝΑΛΑΜΒΑΝΕΤΕ ΤΗΝ ΕΥΘΥΝΗ ΤΗΣ "
+#~ "ΔΙΟΡΘΩΣΗΣ. Η ΑΠΑΛΛΑΓΗ ΕΥΘΥΝΗΣ ΠΟΥ ΣΥΝΟΔΕΥΕΙ ΑΥΤΗ ΤΗΝ ΤΕΚΜΗΡΙΩΣΗ ΕΙΝΑΙ "
+#~ "ΑΝΑΠΟΣΠΑΣΤΟ ΚΟΜΜΑΤΙ ΑΥΤΗΣ. ΚΑΜΙΑ ΧΡΗΣΗ ΤΗΣ ΤΕΚΜΗΡΙΩΣΗΣ Ή ΠΑΡΑΛΛΑΓΩΝ ΑΥΤΗΣ "
+#~ "ΔΕΝ ΕΠΙΤΡΕΠΕΤΑΙ ΠΑΡΑ ΜΟΝΟ ΕΑΝ ΣΥΝΟΔΕΥΕΤΑΙ ΑΠΟ ΤΗΝ ΑΠΑΛΛΑΓΗ ΕΥΘΥΝΗΣ."
+
+#~ msgid ""
+#~ "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT "
+#~ "(INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL "
+#~ "WRITER, ANY CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED "
+#~ "VERSION OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE "
+#~ "LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR "
+#~ "CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, "
+#~ "DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR "
+#~ "MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR LOSSES ARISING OUT OF OR "
+#~ "RELATING TO USE OF THE DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT, "
+#~ "EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH "
+#~ "DAMAGES."
+#~ msgstr ""
+#~ "ΣΕ ΚΑΜΙΑ ΠΕΡΙΠΤΩΣΗ ΚΑΙ ΥΠΟ ΚΑΜΙΑ ΝΟΜΙΚΗ ΣΥΝΘΗΚΗ, ΕΙΤΕ ΜΕΣΩ ΣΥΜΒΟΛΑΙΩΝ Ή "
+#~ "ΑΛΛΙΩΣ, ΔΕΝ ΕΥΘΥΝΟΝΤΑΙ Ο ΣΥΓΓΡΑΦΕΑΣ, Ο ΔΙΑΝΟΜΕΑΣ, Η ΑΛΛΟΣ ΣΥΝΥΠΕΥΘΥΝΟΣ "
+#~ "ΓΙΑ ΤΗΝ ΣΥΓΓΡΑΦΗ ΤΗΣ ΤΕΚΜΗΡΙΩΣΗΣ, ΓΙΑ ΕΜΜΕΣΕΣ Η ΑΜΕΣΕΣ, ΤΥΧΑΙΕΣ Ή ΜΗ "
+#~ "ΖΗΜΙΕΣ ΠΑΝΤΩΣ ΦΥΣΕΩΣ ΠΟΥ ΠΡΟΕΡΧΟΝΤΑΙ ΑΠΟ ΤΗΝ ΧΡΗΣΗ ΤΗΣ ΤΕΚΜΗΡΙΩΣΗΣ ΚΑΙ/Ή "
+#~ "ΠΑΡΑΛΛΑΓΩΝ ΑΥΤΗΣ ΑΚΟΜΑ ΚΑΙ ΕΑΝ ΕΧΕΙ ΥΠΑΡΞΕΙ ΠΡΟΕΙΔΟΠΟΙΗΣΗ ΓΙΑ ΤΗΝ "
+#~ "ΠΙΘΑΝΟΤΗΤΑ ΥΠΑΡΞΗΣ ΤΕΤΟΙΩΝ ΖΗΜΙΩΝ."
+
+#~ msgid ""
+#~ "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE "
+#~ "TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER "
+#~ "UNDERSTANDING THAT: <placeholder-1/>"
+#~ msgstr ""
+#~ "ΤΟ ΈΓΓΡΑΦΟ ΚΑΙ ΟΙ ΤΡΟΠΟΠΟΙΗΜΕΝΕΣ ΕΚΔΟΣΕΙΣ ΑΥΤΟΥ ΠΑΡΕΧΟΝΤΑΙ ΥΠΟ ΤΟΥΣ ΟΡΟΥΣ "
+#~ "ΤΗΣ ΑΔΕΙΑΣ GNU FREE DOCUMENTATION ΜΕ ΤΗΝ ΠΕΡΑΙΤΕΡΩ ΔΙΕΥΚΡΙΝΙΣΗ ΟΤΙ: "
+#~ "<placeholder-1/>"
+
+#~ msgid "Sun"
+#~ msgstr "Sun"
+
+#~ msgid "GNOME Documentation Team"
+#~ msgstr "Ομάδα Τεκμηρίωσης GNOME"
+
+#~ msgid "gdocteam@sun.com"
+#~ msgstr "gdocteam@sun.com"
+
+#~ msgid "Judith"
+#~ msgstr "Judith"
+
+#~ msgid "Samson"
+#~ msgstr "Samson"
+
+#~ msgid "judith@samsonsource.com"
+#~ msgstr "judith@samsonsource.com"
+
+#~ msgid "Paul"
+#~ msgstr "Paul"
+
+#~ msgid "Cutler"
+#~ msgstr "Cutler"
+
+#~ msgid "pcutler@gnome.org"
+#~ msgstr "pcutler@gnome.org"
+
+#~ msgid "Vincent"
+#~ msgstr "Vincent"
+
+#~ msgid "Noel"
+#~ msgstr "Noel"
+
+#~ msgid "vincent.noel@gmail.com"
+#~ msgstr "vincent.noel@gmail.com"

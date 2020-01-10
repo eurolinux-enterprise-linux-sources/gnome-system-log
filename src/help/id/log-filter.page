@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="log-filter" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <link type="seealso" xref="log-search"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Sertakan atau keluarkan baris-baris yang ditampilkan memakai ekspresi reguler.</desc>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Saring log</title>
+
+  <p>Penampil log memungkinkan Anda menyaring isi log berdasarkan ekspresi reguler. Untuk menyiapkan atau mengelola penyaring baru:</p>
+
+  <steps>
+    <item>
+      <p>Buka dialog manajer penyaring dengan mengklik <guiseq><gui>Penyaring:</gui><gui>Kelola Penyaring</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Klik <gui>Tambah</gui> untuk menambah penyaring baru, atau memilih filter yang ada dan klik <gui>Properti</gui> untuk menyuntingnya.</p>
+    </item>
+    <item>
+      <p>Isi formulir atau sunting ruas yang hendak Anda ubah:</p>
+      <terms>
+        <item>
+          <title>Nama:</title>
+          <p>Identifier bagi penyaring</p>
+        </item>
+        <item>
+          <title>Ekspresi Reguler:</title>
+          <p>Penyaring akan menyaring apa</p>
+        </item>
+        <item>
+          <title>Sorot:</title>
+          <p>Opsi ini menegaskan baris yang memuat ekspresi reguler</p>
+          <terms>
+            <item>
+              <title>Latar belakang:</title>
+              <p>Ini adalah warna fonta</p>
+              <note style="tip">
+                <p>Warna fonta baku adalah hitam, yang tidak menegaskan teks.</p>
+              </note>
+            </item>
+            <item>
+              <title>Latar depan:</title>
+              <p>Ini adalah warna sorot</p>
+              <note style="tip">
+                <p>Warna sorot baku adalah hitam, yang menampilkan baris hitam penuh sebagai hasil, sehingga bijak untuk mengubahnya.</p>
+              </note>
+            </item>
+          </terms>
+        </item>
+        <item>
+          <title>Sembunyikan:</title>
+          <p>Opsi ini menyembunyikan baris yang memuat ekspresi reguler dari log yang ditunjukkan</p>
+        </item>
+      </terms>
+    </item>
+    <item>
+      <p>Klik <gui>Terapkan</gui> untuk menyimpan penyaring baru atau menyimpan perubahan ke yang ada</p>
+    </item>
+    <item>
+      <p>Kembali pada dialog manajer penyaring, klik <gui>Tutup</gui> untuk menerapkan perubahan.</p>
+    </item>
+  </steps>
+
+  <p>Contreng kotak di sebelah nama penyaring yang ingin Anda fungsikan dalam <gui>Penyaring:</gui>. Bila Anda hanya ingin melihat penyaring dengan <gui>Sorot</gui> difungsikan dan dicontreng, contreng <guiseq><gui>Penyaring:</gui><gui>Hanya tampilkan yang cocok</gui></guiseq>.</p>
+
+  <note style="tip">
+    <p>Bila ada konflik antara penyaring yang tersembunyi dan yang disorot, baris tersebut mungkin muncul sebagai baris putih kosong.</p>
+  </note>
+
+  <note style="bug">
+    <p>Bila Anda menghapus contreng suatu penyaring ketika melihat hanya yang cocok, log akan menampilkan baris-baris tanpa pemformatan, tak peduli apakah mereka tersembunyi atau disorot sebelumnya. Penyaring mesti reset ketika Anda mencontreng penyaring yang disorot.</p>
+  </note>
+
+</page>

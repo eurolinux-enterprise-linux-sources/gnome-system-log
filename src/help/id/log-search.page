@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="log-search" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Cari teks dalam log yang sedang Anda lihat.</desc>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Cari log</title>
+
+  <p>Untuk mencari pada log yang sedang Anda lihat:</p>
+
+  <steps>
+    <item>
+      <p>Tampilkan bilah <gui>Cari</gui> dengan menekan <keyseq><key>Ctrl</key><key>F</key></keyseq>, atau dengan mengklik <guiseq><gui>Tilik</gui><gui>Cari</gui></guiseq>. Bilah akan ditampilkan di bawah log.</p>
+    </item>
+    <item>
+      <p>Masukkan istilah pencarian Anda ke dalam ruas dan tekan <key>Enter</key> untuk melihat hasil pertama.</p>
+      <note style="tip">
+        <p>Pencarian membedakan huruf besar kecil.</p>
+      </note>
+    </item>
+    <item>
+      <p>Pakai tombol <gui>Cari Sebelumnya</gui> dan <gui>Cari Selanjutnya</gui> untuk meramban hasil.</p>
+      <note style="tip">
+        <p>Bila Anda tak bisa melihat hasil yang disorot, cobalah menggulung ke kiri.</p>
+      </note>
+    </item>
+    <item>
+      <p>Tekan <key>Esc</key> untuk menyembunyikan bilah pencarian begitu Anda selesai mencari.</p>
+      <note style="tip">
+        <p>Anda hanya bisa menyembunyikan <gui>bilah pencarian</gui> bila Anda sedang fokus pada ruas pencarian. Bilah akan menyembunyikan dirinya sendiri ketika Anda melihat log lain.</p>
+      </note>
+    </item>
+  </steps>
+
+
+
+</page>

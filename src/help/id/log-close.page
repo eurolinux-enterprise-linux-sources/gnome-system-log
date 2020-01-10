@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="log-close" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <link type="seealso" xref="log-view"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Membuang log yang sedang Anda tilik dari <gui>panel samping</gui>.</desc>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Tutup log</title>
+
+  <p>Tutup log yang sedang Anda tilik dengan menekan <keyseq><key>Ctrl</key><key>W</key></keyseq>, atau dengan mengklik <guiseq><gui>Berkas</gui><gui>Tutup</gui></guiseq>. Ini membuangnya dari <gui>panel samping</gui> sampai Anda membuka log itu lagi.</p>
+
+</page>

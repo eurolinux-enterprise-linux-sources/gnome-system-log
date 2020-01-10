@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="introduction" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Pengenalan atas <app>Log Sistem GNOME</app>.</desc>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Perkenalan</title>
+
+  <p><app>Penampil Berkas Log</app> adalah suatu penampil grafis yang dikendalikan oleh menu, yang dapat Anda pakai untuk melihat dan memantau log sistem Anda. <app>Penampil Berkas Log</app> hadir dengan beberapa fungsi yang dapat membantu Anda mengelola log sistem Anda, termasuk suatu pemantau log dan tampilan statistik log.</p>
+
+  <p><app>Penampil Berkas Log</app> berguna jika Anda baru mulai mengadministrasi sistem karena memberikan tampilan log Anda yang lebih mudah dan lebih ramah kepada pengguna daripada tampilan teks dari berkas log. Hal ini juga berguna untuk administrator yang lebih berpengalaman, karena mengandung sebuah pemantau yang memungkinkan Anda untuk terus memantau log penting.</p>
+
+  <note style="tip">
+    <p><app>Penampil Berkas Log</app> hanya berguna bagi mereka yang memiliki akses ke berkas log sistem, yang biasanya memerlukan akses root.</p>
+  </note>
+
+  <figure>
+    <title> </title>
+    <media type="image" mime="image/png" src="figures/log-viewer-main.png"/>
+  </figure>
+
+</page>

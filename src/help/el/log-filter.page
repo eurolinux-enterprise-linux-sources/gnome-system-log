@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="log-filter" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <link type="seealso" xref="log-search"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Προσθέστε ή εξαιρέστε γραμμές χρησιμοποιώντας κανονικές εκφράσεις.</desc>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>rizitis</mal:name>
+      <mal:email>elahistos@yahoo.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Efstathios Iosifidis</mal:name>
+      <mal:email>diamond_gr@freemail.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Φίλτρα καταγραφών</title>
+
+  <p>Η παρακολούθηση καταγραφών σας επιτρέπει να φιλτράρετε τα περιεχόμενα των καταγραφών με κανονικές εκφράσεις. Για να ρυθμίσετε ή να διαχειριστείτε ένα νέο φίλτρο:</p>
+
+  <steps>
+    <item>
+      <p>Ανοίξτε το διαχειριστή φίλτρων πατώντας <guiseq><gui>Φίλτρα:</gui> <gui>Διαχείριση φίλτρων</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Πατήστε <gui>Προσθήκη</gui> για να προσθέσετε ένα νέο φίλτρο, ή επιλέξτε ένα υπάρχον φίλτρο και κάντε κλικ στις <gui>Προτιμήσεις</gui> για να το επεξεργαστείτε.</p>
+    </item>
+    <item>
+      <p>Συμπληρώστε τη φόρμα ή επεξεργαστείτε τα πεδία που θέλετε να αλλάξετε:</p>
+      <terms>
+        <item>
+          <title>Όνομα:</title>
+          <p>Το αναγνωριστικό για το φίλτρο</p>
+        </item>
+        <item>
+          <title>Κανονική έκφραση:</title>
+          <p>Τι θα φιλτράρει το φίλτρο</p>
+        </item>
+        <item>
+          <title>Επισήμανση:</title>
+          <p>Η επιλογή δίνει έμφαση στην γραμμή που περιέχει την κανονική έκφραση</p>
+          <terms>
+            <item>
+              <title>Παρασκήνιο:</title>
+              <p>Το χρώμα της γραμματοσειράς</p>
+              <note style="tip">
+                <p>Το προεπιλεγμένο χρώμα της γραμματοσειράς είναι το μαύρο, το οποίο δεν δίνει έμφαση στο κείμενο.</p>
+              </note>
+            </item>
+            <item>
+              <title>Προσκήνιο:</title>
+              <p>Αυτό είναι το χρώμα επισήμανσης</p>
+              <note style="tip">
+                <p>Το προεπιλεγμένο χρώμα επισήμανσης είναι το μαύρο, το οποίο δείχνει μαύρες γραμμές σαν αποτέλεσμα, θα είναι σοφό λοιπόν να το αλλάξετε.</p>
+              </note>
+            </item>
+          </terms>
+        </item>
+        <item>
+          <title>Απόκρυψη:</title>
+          <p>Η επιλογή αυτή κρύβει τις γραμμές που περιέχουν την κανονική έκφραση από την καταγραφή</p>
+        </item>
+      </terms>
+    </item>
+    <item>
+      <p>Πατήστε <gui>Εφαρμογή</gui> για να αποθηκεύσετε το νέο φίλτρο ή αποθηκεύστε τις αλλαγές κάποιου υπάρχοντος.</p>
+    </item>
+    <item>
+      <p>Πίσω στον διαχειριστή φίλτρων, πατήστε <gui>Κλείσιμο</gui> για να εφαρμόσετε τις αλλαγές.</p>
+    </item>
+  </steps>
+
+  <p>Επιλέξτε το κουτί δίπλα στο όνομα του φίλτρου που θέλετε να ενεργοποιήσετε στο μενού <gui>φίλτρα</gui>. Αν θέλετε να δείτε μόνο τα φίλτρα που έχουν ενεργοποιημένη την <gui>επισήμανση</gui> και είναι επιλεγμένα, επιλέξτε το <guiseq><gui>Φίλτρα</gui><gui>Προβολή μόνο τα σχετικών</gui></guiseq>.</p>
+
+  <note style="tip">
+    <p>Αν υπάρχει σύγκρουση μεταξύ ενός κρυφού και ενός επισημασμένου φίλτρου, η γραμμή ίσως εμφανιστεί σαν άσπρη γραμμή.</p>
+  </note>
+
+  <note style="bug">
+    <p>Αν αποεπιλέξετε ένα φίλτρο καθώς κοιτάτε μόνο τις σχετικές εγγραφές, η καταγραφή θα δείξει τις σειρές χωρίς κάποια μορφοποίηση, ανεξαρτήτως αν ήταν κρυφά ή επισημασμένα από πριν. Θα γίνει επαναφορά του φίλτρου όταν επιλέξετε ένα επισημασμένο φίλτρο.</p>
+  </note>
+
+</page>

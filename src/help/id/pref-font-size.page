@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="pref-font-size" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Perbesar atau perkecil ukuran teks.</desc>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Ubah ukuran fonta</title>
+
+  <p>Anda dapat memperbesar, memperkecil, atau mereset ukuran fonta untuk menampilkan log:</p>
+
+  <terms>
+    <item>
+      <title>Perbesar ukuran fonta</title>
+      <p>Klik <guiseq><gui>Tilik</gui><gui>Perbesar</gui></guiseq>, atau tekan <keyseq><key>Ctrl</key><key>+</key></keyseq></p>
+    </item>
+    <item>
+      <title>Perkecil ukuran fonta</title>
+      <p>Klik <guiseq><gui>Tilik</gui><gui>Perkecil</gui></guiseq>, atau tekan <keyseq><key>Ctrl</key><key>-</key></keyseq></p>
+    </item>
+    <item>
+      <title>Reset ke ukuran baku</title>
+      <p>Klik <guiseq><gui>Tilik</gui><gui>Ukuran Normal</gui></guiseq>, atau tekan <keyseq><key>Ctrl</key><key>0</key></keyseq></p>
+    </item>
+  </terms>
+
+</page>

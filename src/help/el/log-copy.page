@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="log-copy" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Αντιγράψτε κείμενο από τις καταγραφές</desc>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>rizitis</mal:name>
+      <mal:email>elahistos@yahoo.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Efstathios Iosifidis</mal:name>
+      <mal:email>diamond_gr@freemail.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Αντιγραφή καταγραφής</title>
+
+  <p>Επιλέξτε με το ποντίκι το κομμάτι της καταγραφής που θέλετε να αντιγράψετε και πατήστε <keyseq><key>Ctrl</key><key>C</key></keyseq>, ή πατήστε <guiseq><gui>Επεξεργασία</gui><gui>Αντιγραφή</gui></guiseq>.</p>
+
+  <note style="tip">
+    <p>Μπορείτε να πατήσετε <keyseq><key>Ctrl</key><key>A</key></keyseq>, ή <guiseq><gui>Επεξεργασία</gui><gui>Επιλογή όλων</gui></guiseq>, για να επιλέξετε όλο το κείμενο της καταγραφής της οποίας δουλεύετε.</p>
+  </note>
+
+</page>

@@ -1,0 +1,16 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/gnome-system-log.desktop.in.in
+data/org.gnome.gnome-system-log.gschema.xml.in
+src/logview-about.h
+src/logview-app.c
+[type: gettext/glade]src/logview-app-menu.ui
+src/logview-filter-manager.c
+[type: gettext/glade]src/logview-filter.ui
+[type: gettext/glade]src/logview-gear-menu.ui
+src/logview-findbar.c
+src/logview-log.c
+src/logview-loglist.c
+src/logview-main.c
+src/logview-utils.c
+src/logview-window.c

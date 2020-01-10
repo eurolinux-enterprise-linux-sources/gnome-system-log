@@ -1,0 +1,310 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Tajik Gnome\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"system-log&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-02-11 19:12+0000\n"
+"PO-Revision-Date: 2013-01-21 14:15+0500\n"
+"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
+"Language-Team: \n"
+"Language: Tajik\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:304
+#: ../src/logview-window.c:1180
+msgid "System Log"
+msgstr "Сабти рӯйдодҳои система"
+
+#: ../data/gnome-system-log.desktop.in.in.h:2
+msgid "View or monitor system log files"
+msgstr ""
+
+#: ../data/gnome-system-log.desktop.in.in.h:3
+msgid "logs;debug;error;"
+msgstr ""
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:1
+msgid "Log file to open up on startup"
+msgstr ""
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:2
+msgid ""
+"Specifies the log file displayed at startup. The default is either /var/adm/"
+"messages or /var/log/messages, depending on your operating system."
+msgstr ""
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:3
+msgid "Size of the font used to display the log"
+msgstr ""
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:4
+msgid ""
+"Specifies the size of the fixed-width font used to display the log in the "
+"main tree view. The default is taken from the default terminal font size."
+msgstr ""
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:5
+msgid "Height of the main window in pixels"
+msgstr ""
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:6
+msgid "Specifies the height of the log viewer main window in pixels."
+msgstr ""
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:7
+msgid "Width of the main window in pixels"
+msgstr ""
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:8
+msgid "Specifies the width of the log viewer main window in pixels."
+msgstr ""
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:9
+msgid "Log files to open up on startup"
+msgstr ""
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:10
+msgid ""
+"Specifies a list of log files to open up at startup. A default list is "
+"created by reading /etc/syslog.conf."
+msgstr ""
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:11
+msgid "List of saved filters"
+msgstr "Рӯйхати филтрҳои захирашуда"
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:12
+msgid "List of saved regexp filters"
+msgstr ""
+
+#: ../src/logview-about.h:49
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: ../src/logview-about.h:53
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
+#: ../src/logview-about.h:57
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+msgstr ""
+
+#. translator credits
+#: ../src/logview-about.h:63
+msgid "translator-credits"
+msgstr ""
+
+#: ../src/logview-app.c:287
+#, c-format
+msgid "There was an error displaying help: %s"
+msgstr ""
+
+#: ../src/logview-app.c:309
+msgid "A system log viewer for GNOME."
+msgstr ""
+
+#: ../src/logview-app.c:440
+#, c-format
+msgid "Impossible to open the file %s"
+msgstr ""
+
+#: ../src/logview-app-menu.ui.h:1
+msgid "Auto Scroll"
+msgstr "Ҳаракати худкор"
+
+#: ../src/logview-app-menu.ui.h:2
+msgid "About System Log"
+msgstr "Дарбораи сабти рӯйдодҳои система"
+
+#: ../src/logview-app-menu.ui.h:3
+msgid "Help"
+msgstr "Кӯмак"
+
+#: ../src/logview-app-menu.ui.h:4
+msgid "Quit"
+msgstr "Баромад"
+
+#: ../src/logview-filter-manager.c:92
+msgid "Filter name is empty!"
+msgstr ""
+
+#: ../src/logview-filter-manager.c:105
+msgid "Filter name may not contain the ':' character"
+msgstr ""
+
+#: ../src/logview-filter-manager.c:128
+msgid "Regular expression is empty!"
+msgstr ""
+
+#: ../src/logview-filter-manager.c:144
+#, c-format
+msgid "Regular expression is invalid: %s"
+msgstr ""
+
+#: ../src/logview-filter-manager.c:238
+msgid "Please specify either foreground or background color!"
+msgstr ""
+
+#: ../src/logview-filter-manager.c:292
+msgid "Edit filter"
+msgstr ""
+
+#: ../src/logview-filter-manager.c:292
+msgid "Add new filter"
+msgstr "Илова кардани филтри нав"
+
+#: ../src/logview-filter-manager.c:506 ../src/logview-gear-menu.ui.h:8
+msgid "Filters"
+msgstr "Филтрҳо"
+
+#: ../src/logview-filter.ui.h:1
+msgid "_Name:"
+msgstr "_Ном"
+
+#: ../src/logview-filter.ui.h:2
+msgid "_Regular Expression:"
+msgstr ""
+
+#: ../src/logview-filter.ui.h:3
+msgid "Highlight"
+msgstr "Ҷудо кардан"
+
+#: ../src/logview-filter.ui.h:4
+msgid "Hide"
+msgstr "Пинҳон кардан"
+
+#: ../src/logview-filter.ui.h:5
+msgid "Foreground:"
+msgstr "Замина:"
+
+#: ../src/logview-filter.ui.h:6
+msgid "Background:"
+msgstr "Пасзамина:"
+
+#: ../src/logview-filter.ui.h:7
+msgid "Effect:"
+msgstr "Таъсир:"
+
+#: ../src/logview-gear-menu.ui.h:1
+msgid "Open..."
+msgstr "Кушодан..."
+
+#: ../src/logview-gear-menu.ui.h:2
+msgid "Close"
+msgstr "Пӯшидан"
+
+#: ../src/logview-gear-menu.ui.h:3
+msgid "Copy"
+msgstr "Нусха бардоштан"
+
+#: ../src/logview-gear-menu.ui.h:4
+msgid "Select All"
+msgstr "Интихоб кардани ҳама"
+
+#: ../src/logview-gear-menu.ui.h:5
+msgid "Zoom In"
+msgstr "Бузург кардани андоза"
+
+#: ../src/logview-gear-menu.ui.h:6
+msgid "Zoom Out"
+msgstr "Хурд кардани андоза"
+
+#: ../src/logview-gear-menu.ui.h:7
+msgid "Normal Size"
+msgstr ""
+
+#: ../src/logview-gear-menu.ui.h:9
+msgid "Show Matches Only"
+msgstr ""
+
+#: ../src/logview-gear-menu.ui.h:10
+msgid "Manage Filters..."
+msgstr ""
+
+#: ../src/logview-findbar.c:163
+msgid "Find previous occurrence of the search string"
+msgstr ""
+
+#: ../src/logview-findbar.c:172
+msgid "Find next occurrence of the search string"
+msgstr ""
+
+#: ../src/logview-log.c:593
+msgid "Error while uncompressing the GZipped log. The file might be corrupt."
+msgstr ""
+
+#: ../src/logview-log.c:640
+msgid "You don't have enough permissions to read the file."
+msgstr ""
+
+#: ../src/logview-log.c:655
+msgid "The file is not a regular file or is not a text file."
+msgstr ""
+
+#: ../src/logview-log.c:737
+msgid "This version of System Log does not support GZipped logs."
+msgstr ""
+
+#: ../src/logview-loglist.c:315
+msgid "Loading..."
+msgstr "Боркунӣ рафта истодааст..."
+
+#: ../src/logview-utils.c:295
+msgid "today"
+msgstr "имрӯз"
+
+#: ../src/logview-utils.c:297
+msgid "yesterday"
+msgstr "дирӯз "
+
+#: ../src/logview-window.c:180 ../src/logview-window.c:356
+#, c-format
+msgid "Search in \"%s\""
+msgstr "Ҷустуҷӯ дар \"%s\""
+
+#. translators: this is part of a label composed with
+#. * a date string, for example "updated today 23:54"
+#.
+#: ../src/logview-window.c:205
+msgid "updated"
+msgstr "навсозишуда"
+
+#: ../src/logview-window.c:324
+msgid "Wrapped"
+msgstr ""
+
+#: ../src/logview-window.c:339
+msgid "No matches found"
+msgstr "Ягон мутобиқат ёфт нашуд"
+
+#: ../src/logview-window.c:688
+#, c-format
+msgid "Can't read from \"%s\""
+msgstr ""
+
+#: ../src/logview-window.c:1076
+msgid "Open Log"
+msgstr ""
+
+#: ../src/logview-window.c:1368
+msgid "Could not open the following files:"
+msgstr ""

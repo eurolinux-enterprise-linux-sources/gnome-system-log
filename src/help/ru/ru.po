@@ -1,0 +1,469 @@
+#
+# Stas Solovey <whats_up@tut.by>, 2012.
+# Yuri Myasoedov <omerta13@yandex.ru>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: log-viewer trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-18 20:39+0000\n"
+"PO-Revision-Date: 2012-10-04 18:49+0400\n"
+"Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
+"Language-Team: русский <gnome-cyr@gnome.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: C/index.page:5(page/title)
+msgid "Log File Viewer Help"
+msgstr "Справка программы просмотра системных журналов"
+
+#: C/index.page:8(section/title)
+msgid "Working with the <app>Log File Viewer</app>"
+msgstr "Работа с <app>Программой просмотра системных журналов</app>"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+#| msgid "translator-credits"
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Сергей Миронов <sergo@bk.ru>, 2007\n"
+"Алексей Кабанов <ak099@mail.ru>, 2012\n"
+"Станислав Соловей <whats_up@tut.by>, 2012"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:40(media)
+#| msgid ""
+#| "@@image: 'figures/log-viewer-main.png'; "
+#| "md5=019eaf56737c3fd7c1ae085e77962384"
+msgctxt "_"
+msgid ""
+"external ref='figures/log-viewer-main.png' "
+"md5='019eaf56737c3fd7c1ae085e77962384'"
+msgstr ""
+"external ref='figures/log-viewer-main.png' "
+"md5='019eaf56737c3fd7c1ae085e77962384'"
+
+#: C/introduction.page:8(info/desc)
+msgid "Introduction to the <app>GNOME System Log</app>."
+msgstr "Введение в <app>Программу просмотра системных журналов GNOME</app>."
+
+#: C/introduction.page:11(credit/name) C/log-close.page:12(credit/name)
+#: C/log-copy.page:11(credit/name) C/log-filter.page:12(credit/name)
+#: C/log-search.page:11(credit/name) C/log-view.page:12(credit/name)
+#: C/pref-font-size.page:11(credit/name)
+msgid "Ekaterina Gerasimova"
+msgstr "Екатерина Герасимова (Ekaterina Gerasimova)"
+
+#: C/introduction.page:16(license/p) C/log-close.page:17(license/p)
+#: C/log-copy.page:16(license/p) C/log-filter.page:17(license/p)
+#: C/log-search.page:16(license/p) C/log-view.page:17(license/p)
+#: C/pref-font-size.page:16(license/p)
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons Share Alike 3.0"
+
+#: C/introduction.page:20(page/title)
+msgid "Introduction"
+msgstr "Введение"
+
+#: C/introduction.page:22(page/p)
+msgid ""
+"<app>Log File Viewer</app> is a graphical, menu-driven viewer that you can "
+"use to view and monitor your system logs. <app>Log File Viewer</app> comes "
+"with a few functions that can help you manage your logs, including a log "
+"monitor and log statistics display."
+msgstr ""
+"<app>Программа просмотра системных журналов</app> — это графическое, "
+"управляемое с помощью меню, средство просмотра и слежения за системными "
+"журналами. <app>Программа просмотра системных журналов</app> содержит "
+"несколько функций, упрощающих управление журналами, в том числе монитор "
+"журналов и показ статистики журналов."
+
+#: C/introduction.page:27(page/p)
+msgid ""
+"<app>Log File Viewer</app> is useful if you are new to system administration "
+"because it provides an easier, more user-friendly display of your logs than "
+"a text display of the log file. It is also useful for more experienced "
+"administrators, as it contains a monitor to enable you to continuously "
+"monitor crucial logs."
+msgstr ""
+"<app>Программа просмотра системных журналов</app> будет полезна, если вы "
+"новичок в системном администрировании, поскольку она предоставляет более "
+"простое и дружественное к пользователю представление журналов, чем обычный "
+"текстовый вывод файла журнала. Она полезна и для более опытных "
+"администраторов, так как содержит монитор, позволяющий непрерывно "
+"отслеживать изменения в критически важных журналах."
+
+#: C/introduction.page:34(note/p)
+msgid ""
+"<app>Log File Viewer</app> is useful only to those who have access to the "
+"system log files, which generally requires root access."
+msgstr ""
+"<app>Программа просмотра системных журналов</app> полезна только для тех, "
+"кто имеет доступ к файлам системных журналов. Обычно для этого требуются "
+"права суперпользователя (root)."
+
+#: C/log-close.page:9(info/desc)
+msgid "Remove the log you are currently viewing from the <gui>side pane</gui>."
+msgstr ""
+"Удаление текущего просматриваемого журнала из <gui>боковой панели</gui>."
+
+#: C/log-close.page:21(page/title)
+msgid "Close log"
+msgstr "Закрытие журнала"
+
+#: C/log-close.page:23(page/p)
+msgid ""
+"Close the log that you are currently viewing by pressing <keyseq><key>Ctrl</"
+"key><key>W</key></keyseq>, or by clicking <guiseq><gui>File</gui><gui>Close</"
+"gui></guiseq>. This removes it from the <gui>side pane</gui> until you open "
+"the log again."
+msgstr ""
+"Чтобы закрыть текущий просматриваемый журнал, нажмите <keyseq><key>Ctrl</"
+"key><key>W</key></keyseq> или выберите <guiseq><gui>Файл</gui><gui>Закрыть</"
+"gui></guiseq>. Это действие удалит журнал из <gui>боковой панели</gui>, пока "
+"вы не откроете его снова."
+
+#: C/log-copy.page:8(info/desc)
+msgid "Copy text from the log."
+msgstr "Копирование текста из журнала."
+
+#: C/log-copy.page:20(page/title)
+msgid "Copy log"
+msgstr "Копирование журнала"
+
+#: C/log-copy.page:22(page/p)
+msgid ""
+"Highlight the section of the log that you want to copy with the cursor and "
+"press <keyseq><key>Ctrl</key><key>C</key></keyseq>, or click "
+"<guiseq><gui>Edit</gui><gui>Copy</gui></guiseq>."
+msgstr ""
+"Выделите курсором часть текста журнала, которую нужно скопировать и нажмите "
+"<keyseq><key>Ctrl</key><key>C</key></keyseq> или выберите "
+"<guiseq><gui>Правка</gui><gui>Копировать</gui></guiseq>."
+
+#: C/log-copy.page:27(note/p)
+msgid ""
+"You can press <keyseq><key>Ctrl</key><key>A</key></keyseq>, or click "
+"<guiseq><gui>Edit</gui><gui>Select All</gui></guiseq>, to select all the "
+"text in the log which you are currently viewing."
+msgstr ""
+"Можно нажать <keyseq><key>Ctrl</key><key>A</key></keyseq> или выбрать "
+"<guiseq><gui>Правка</gui><gui>Выделить всё</gui></guiseq>, чтобы выделить "
+"весь текст в просматриваемом журнале."
+
+#: C/log-filter.page:9(info/desc)
+msgid "Include or exclude shown lines using regular expressions."
+msgstr ""
+"Включение или исключение отображаемых строк с помощью регулярных выражений."
+
+#: C/log-filter.page:22(page/title)
+msgid "Filter log"
+msgstr "Фильтрация журнала"
+
+#: C/log-filter.page:24(page/p)
+msgid ""
+"The log viewer allows you to filter log content based on regular "
+"expressions. To set up or manage a new filter:"
+msgstr ""
+"Программа просмотра системных журналов позволяет фильтровать содержимое "
+"журнала с помощью регулярных выражений. Чтобы создать или изменить фильтр:"
+
+#: C/log-filter.page:29(item/p)
+#, fuzzy
+#| msgid ""
+#| "Open the filter manager dialog by clicking <guiseq><gui>Filters:</"
+#| "gui><gui>Manage Filters</gui></guiseq>."
+msgid ""
+"Open the filter manager dialog by clicking <guiseq><gui>Filters:</gui> "
+"<gui>Manage Filters</gui></guiseq>."
+msgstr ""
+"Откройте диалоговое окно управления фильтрами, выбрав <guiseq><gui>Фильтры:</"
+"gui><gui>Управление фильтрами</gui></guiseq>."
+
+#: C/log-filter.page:33(item/p)
+msgid ""
+"Click <gui>Add</gui> to add a new filter, or select an existing filter and "
+"click <gui>Properties</gui> to edit it."
+msgstr ""
+"Нажмите кнопку <gui>Добавить</gui>, чтобы добавить новый фильтр, или "
+"выберите существующий фильтр и нажмите <gui>Свойства</gui> для его изменения."
+
+#: C/log-filter.page:37(item/p)
+msgid "Fill in the form or edit the fields that you wish to change:"
+msgstr "Заполните форму или измените нужные поля:"
+
+#: C/log-filter.page:40(item/title)
+msgid "Name:"
+msgstr "Имя:"
+
+#: C/log-filter.page:41(item/p)
+msgid "The identifier for the filter"
+msgstr "Идентификатор для фильтра"
+
+#: C/log-filter.page:44(item/title)
+msgid "Regular Expression:"
+msgstr "Регулярное выражение:"
+
+#: C/log-filter.page:45(item/p)
+msgid "What the filter will filter for"
+msgstr "Что будет фильтровать данный фильтр"
+
+#: C/log-filter.page:48(item/title)
+msgid "Highlight:"
+msgstr "Подсветка:"
+
+#: C/log-filter.page:49(item/p)
+msgid "This option emphasizes the line containing the regular expression"
+msgstr "Позволяет выделить строку, содержащую заданное регулярное выражение"
+
+#: C/log-filter.page:52(item/title)
+msgid "Background:"
+msgstr "Фон:"
+
+#: C/log-filter.page:53(item/p)
+msgid "This is the font color"
+msgstr "Цвет шрифта"
+
+#: C/log-filter.page:55(note/p)
+msgid "The default font color is black, which does not emphasize the text."
+msgstr "По умолчанию цвет шрифта чёрный, не отличающийся от основного текста."
+
+#: C/log-filter.page:60(item/title)
+msgid "Foreground:"
+msgstr "Текст:"
+
+#: C/log-filter.page:61(item/p)
+msgid "This is the highlight color"
+msgstr "Цвет подсветки"
+
+#: C/log-filter.page:63(note/p)
+msgid ""
+"The default highlight color is black, which shows solid black lines as a "
+"result, so it would be wise to change it."
+msgstr ""
+"По умолчанию цвет подсветки чёрный. В результате строки закрашиваются "
+"сплошным чёрным цветом, так что будет разумным изменить его."
+
+#: C/log-filter.page:70(item/title)
+msgid "Hide:"
+msgstr "Скрыть:"
+
+#: C/log-filter.page:71(item/p)
+msgid ""
+"This option hides the lines containing the regular expression from the shown "
+"log"
+msgstr ""
+"Эта опция позволяет скрыть строки отображаемого журнала, содержащие заданное "
+"регулярное выражение."
+
+#: C/log-filter.page:77(item/p)
+msgid ""
+"Click <gui>Apply</gui> to save the new filter or save changes to an existing "
+"one"
+msgstr ""
+"Нажмите <gui>Применить</gui>, чтобы сохранить созданный фильтр или сохранить "
+"изменения в существующем фильтре."
+
+#: C/log-filter.page:81(item/p)
+msgid ""
+"Back at the filter manager dialog, click <gui>Close</gui> to apply the "
+"changes."
+msgstr ""
+"Вернувшись в диалоговое окно управления фильтрами, нажмите <gui>Закрыть</"
+"gui>, чтобы применить изменения."
+
+#: C/log-filter.page:86(page/p)
+msgid ""
+"Check the box next to the name of the filter that you want to enable in "
+"<gui>Filters:</gui>. If you want to view only the filters which have "
+"<gui>Highlight</gui> enabled and are checked, check <guiseq><gui>Filters:</"
+"gui><gui>Show matches only</gui></guiseq>."
+msgstr ""
+"В меню <gui>Фильтры:</gui> установите отметку рядом с названием фильтра, "
+"который хотите включить. Если нужно, чтобы отображались только строки "
+"журнала, соответствующие активированным фильтрам, в которых включена "
+"<gui>подсветка</gui>, выберите <guiseq><gui>Фильтры:</gui><gui>Показывать "
+"только совпавшие</gui></guiseq>."
+
+#: C/log-filter.page:92(note/p)
+msgid ""
+"If there is a conflict between a hidden and a highlighted filter, the line "
+"many show as an empty white line."
+msgstr ""
+"Если возникает конфликт между подсвечивающими и скрывающими фильтрами, "
+"конфликтные строки журнала отображаются в виде пустых белых строк."
+
+#: C/log-filter.page:97(note/p)
+msgid ""
+"If you uncheck a filter while viewing only matches, the log will show the "
+"lines without any formatting, regardless of whether they were hidden or "
+"highlighted before. The filter should reset when you check a highlighted "
+"filter."
+msgstr ""
+"Если при просмотре только соответствующих фильтру строк, убрать отметку с "
+"фильтра, отобразятся все строки журнала, вне зависимости от того, были они "
+"скрыты или выделены ранее. Фильтрация должна восстановиться, при выборе "
+"выделяющего фильтра."
+
+#: C/log-search.page:8(info/desc)
+msgid "Search the text in the log that you are currently viewing."
+msgstr "Поиск текста в текущем просматриваемом журнале."
+
+#: C/log-search.page:21(page/title)
+msgid "Search log"
+msgstr "Поиск в журнале"
+
+#: C/log-search.page:23(page/p)
+msgid "To search the log you are currently viewing:"
+msgstr "Чтобы выполнить поиск в текущем просматриваемом журнале:"
+
+#: C/log-search.page:27(item/p)
+msgid ""
+"Show the <gui>Find</gui> bar by pressing <keyseq><key>Ctrl</key><key>F</"
+"key></keyseq>, or by clicking <guiseq><gui>View</gui><gui>Find</gui></"
+"guiseq>. The bar will be shown below the log."
+msgstr ""
+"Сделайте видимой <gui>панель поиска</gui>, нажав <keyseq><key>Ctrl</"
+"key><key>F</key></keyseq>, или выбрав <guiseq><gui>Вид</gui><gui>Найти…</"
+"gui></guiseq>. Панель отобразится под журналом."
+
+#: C/log-search.page:33(item/p)
+msgid ""
+"Enter your search term into the field and press <key>Enter</key> to see the "
+"first result."
+msgstr ""
+"Введите текст в поле для поиска и нажмите <key>Enter</key>, чтобы увидеть "
+"первый результат."
+
+#: C/log-search.page:36(note/p)
+msgid "The search is case sensitive."
+msgstr "Поиск чувствителен к регистру символов."
+
+#: C/log-search.page:40(item/p)
+msgid ""
+"Use the <gui>Find Previous</gui> and <gui>Find Next</gui> buttons to browse "
+"through the results."
+msgstr ""
+"Для перемещения по результатам поиска используйте кнопки <gui>Найти "
+"предыдущее</gui> и <gui>Найти следующее</gui>."
+
+#: C/log-search.page:43(note/p)
+msgid "If you can not see the result highlighted, try scrolling to the left."
+msgstr ""
+"Если подсвеченный результат не виден, попробуйте выполнить прокрутку влево."
+
+#: C/log-search.page:47(item/p)
+msgid ""
+"Press <key>Esc</key> to hide the find bar once you are finished with the "
+"search."
+msgstr ""
+"После завершения поиска нажмите <key>Esc</key>, чтобы скрыть панель поиска."
+
+#: C/log-search.page:50(note/p)
+msgid ""
+"You can only hide the <gui>find bar</gui> if you are currently focused on "
+"the search field. The bar will hide itself if you view another log."
+msgstr ""
+"Скрыть <gui>панель поиска</gui> можно, только если фокус ввода находится на "
+"поле «Найти». Панель исчезает сама при переходе к другому журналу."
+
+#: C/log-view.page:9(info/desc)
+msgid "Open and view logs."
+msgstr "Открытие и просмотр журналов."
+
+#: C/log-view.page:22(page/title)
+msgid "Open log"
+msgstr "Открытие журнала"
+
+#: C/log-view.page:24(page/p)
+msgid ""
+"Open logs by clicking <guiseq><gui>File</gui><gui>Open</gui></guiseq>. Your "
+"opened logs will be displayed in the side pane, to the left of the main "
+"area. You can view a log in the side pane by clicking it."
+msgstr ""
+"Чтобы открыть журнал, выберите <guiseq><gui>Файл</gui><gui>Открыть</gui></"
+"guiseq>. Открытые журналы будут отображаться в боковой панели, слева от "
+"основной области окна. Чтобы просмотреть журнал, нажмите на него в боковой "
+"панели."
+
+#: C/log-view.page:29(note/p)
+msgid ""
+"You can expand some logs. This will show you a list of dates. By clicking "
+"one of the dates, you can view only the log lines from that date, instead of "
+"the whole log."
+msgstr ""
+"Некоторые журналы можно развернуть. При этом отобразится список дат. Нажав "
+"на одну из дат, можно просмотреть строки журнала соответствующие только этой "
+"дате."
+
+#: C/log-view.page:34(page/p)
+msgid ""
+"The logs you have open when you quit the log viewer will be opened when you "
+"start it up again."
+msgstr ""
+"Открытые вами журналы запоминаются при выходе из программы просмотра "
+"системных журналов, и при следующем её запуске будут открыты снова."
+
+#: C/pref-font-size.page:8(info/desc)
+msgid "Increase or decrease the size of the text."
+msgstr "Увеличение или уменьшение размера текста."
+
+#: C/pref-font-size.page:21(page/title)
+msgid "Change font size"
+msgstr "Изменение размера шрифта"
+
+#: C/pref-font-size.page:23(page/p)
+msgid ""
+"You can increase, decrease and reset the font size that the log is displayed "
+"in:"
+msgstr ""
+"Можно увеличить, уменьшить или вернуть исходный размер шрифта, используемого "
+"для отображения журнала:"
+
+#: C/pref-font-size.page:28(item/title)
+msgid "Increase font size"
+msgstr "Увеличение размера шрифта"
+
+#: C/pref-font-size.page:29(item/p)
+msgid ""
+"Click <guiseq><gui>View</gui><gui>Zoom In</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>+</key></keyseq>"
+msgstr ""
+"Выберите <guiseq><gui>Вид</gui><gui>Увеличить</gui></guiseq> или нажмите "
+"<keyseq><key>Ctrl</key><key>+</key></keyseq>"
+
+#: C/pref-font-size.page:33(item/title)
+msgid "Decrease font size"
+msgstr "Уменьшение размера шрифта"
+
+#: C/pref-font-size.page:34(item/p)
+msgid ""
+"Click <guiseq><gui>View</gui><gui>Zoom Out</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>-</key></keyseq>"
+msgstr ""
+"Выберите <guiseq><gui>Вид</gui><gui>Уменьшить</gui></guiseq> или нажмите "
+"<keyseq><key>Ctrl</key><key>-</key></keyseq>"
+
+#: C/pref-font-size.page:38(item/title)
+msgid "Reset to default size"
+msgstr "Возврат исходного размера"
+
+#: C/pref-font-size.page:39(item/p)
+msgid ""
+"Click <guiseq><gui>View</gui><gui>Normal Size</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>0</key></keyseq>"
+msgstr ""
+"Выберите <guiseq><gui>Вид</gui><gui>В обычном размере</gui></guiseq> или "
+"нажмите <keyseq><key>Ctrl</key><key>0</key></keyseq>"
+
+#~ msgid "kittykat3756@googlemail.com"
+#~ msgstr "kittykat3756@googlemail.com"

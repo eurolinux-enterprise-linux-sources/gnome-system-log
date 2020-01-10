@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="index" xml:lang="ru">
+
+  <title>Справка программы просмотра системных журналов</title>
+
+  <section id="main" style="2column">
+    <title>Работа с <app>Программой просмотра системных журналов</app></title>
+  </section>
+
+</page>

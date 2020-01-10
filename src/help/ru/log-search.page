@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="log-search" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Поиск текста в текущем просматриваемом журнале.</desc>
+
+    <credit type="author">
+      <name>Екатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Сергей Миронов</mal:name>
+      <mal:email>sergo@bk.ru</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Алексей Кабанов</mal:name>
+      <mal:email>ak099@mail.ru</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Станислав Соловей</mal:name>
+      <mal:email>whats_up@tut.by</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Поиск в журнале</title>
+
+  <p>Чтобы выполнить поиск в текущем просматриваемом журнале:</p>
+
+  <steps>
+    <item>
+      <p>Сделайте видимой <gui>панель поиска</gui>, нажав <keyseq><key>Ctrl</key><key>F</key></keyseq>, или выбрав <guiseq><gui>Вид</gui><gui>Найти…</gui></guiseq>. Панель отобразится под журналом.</p>
+    </item>
+    <item>
+      <p>Введите текст в поле для поиска и нажмите <key>Enter</key>, чтобы увидеть первый результат.</p>
+      <note style="tip">
+        <p>Поиск чувствителен к регистру символов.</p>
+      </note>
+    </item>
+    <item>
+      <p>Для перемещения по результатам поиска используйте кнопки <gui>Найти предыдущее</gui> и <gui>Найти следующее</gui>.</p>
+      <note style="tip">
+        <p>Если подсвеченный результат не виден, попробуйте выполнить прокрутку влево.</p>
+      </note>
+    </item>
+    <item>
+      <p>После завершения поиска нажмите <key>Esc</key>, чтобы скрыть панель поиска.</p>
+      <note style="tip">
+        <p>Скрыть <gui>панель поиска</gui> можно, только если фокус ввода находится на поле «Найти». Панель исчезает сама при переходе к другому журналу.</p>
+      </note>
+    </item>
+  </steps>
+
+
+
+</page>

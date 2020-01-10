@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="pref-font-size" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Увеличение или уменьшение размера текста.</desc>
+
+    <credit type="author">
+      <name>Екатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Сергей Миронов</mal:name>
+      <mal:email>sergo@bk.ru</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Алексей Кабанов</mal:name>
+      <mal:email>ak099@mail.ru</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Станислав Соловей</mal:name>
+      <mal:email>whats_up@tut.by</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Изменение размера шрифта</title>
+
+  <p>Можно увеличить, уменьшить или вернуть исходный размер шрифта, используемого для отображения журнала:</p>
+
+  <terms>
+    <item>
+      <title>Увеличение размера шрифта</title>
+      <p>Выберите <guiseq><gui>Вид</gui><gui>Увеличить</gui></guiseq> или нажмите <keyseq><key>Ctrl</key><key>+</key></keyseq></p>
+    </item>
+    <item>
+      <title>Уменьшение размера шрифта</title>
+      <p>Выберите <guiseq><gui>Вид</gui><gui>Уменьшить</gui></guiseq> или нажмите <keyseq><key>Ctrl</key><key>-</key></keyseq></p>
+    </item>
+    <item>
+      <title>Возврат исходного размера</title>
+      <p>Выберите <guiseq><gui>Вид</gui><gui>В обычном размере</gui></guiseq> или нажмите <keyseq><key>Ctrl</key><key>0</key></keyseq></p>
+    </item>
+  </terms>
+
+</page>

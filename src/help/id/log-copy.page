@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="log-copy" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Salin teks dari log.</desc>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Salin log</title>
+
+  <p>Sorot seksi log yang ingin Anda salin dengan kursor dan tekan <keyseq><key>Ctrl</key><key>C</key></keyseq>, atau klik <guiseq><gui>Sunting</gui><gui>Salin</gui></guiseq>.</p>
+
+  <note style="tip">
+    <p>Anda dapat menekan <keyseq><key>Ctrl</key><key>A</key></keyseq>, atau mengklik <guiseq><gui>Sunting</gui><gui>Pilih Semua</gui></guiseq>, untuk memilih semua teks dalam log yang kini sedang Anda tilik.</p>
+  </note>
+
+</page>

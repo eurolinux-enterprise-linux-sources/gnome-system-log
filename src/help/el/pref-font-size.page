@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="pref-font-size" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Αυξήστε ή ελαττώστε το μέγεθος του κειμένου.</desc>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>rizitis</mal:name>
+      <mal:email>elahistos@yahoo.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Efstathios Iosifidis</mal:name>
+      <mal:email>diamond_gr@freemail.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Αλλαγή μεγέθους γραμματοσειράς</title>
+
+  <p>Μπορείτε να αυξήσετε, να μικρύνεται και να επαναφέρετε το μέγεθος της γραμματοσειράς που εμφανίζεται στην καταγραφή:</p>
+
+  <terms>
+    <item>
+      <title>Αύξηση μεγέθους γραμματοσειράς</title>
+      <p>Πατήστε <guiseq><gui>Προβολή</gui><gui>Σμίκρυνση</gui></guiseq>, ή πατήστε <keyseq><key>Ctrl</key><key>+</key></keyseq></p>
+    </item>
+    <item>
+      <title>Ελάττωση μεγέθους γραμματοσειράς</title>
+      <p>Πατήστε <guiseq><gui>Προβολή</gui><gui>Μεγέθυνση</gui></guiseq>, ή πατήστε <keyseq><key>Ctrl</key><key>-</key></keyseq></p>
+    </item>
+    <item>
+      <title>Επαναφορά στο προεπιλεγμένο μέγεθος</title>
+      <p>Πατήστε <guiseq><gui>Προβολή</gui><gui>Κανονικό μέγεθος</gui></guiseq>, ή πατήστε <keyseq><key>Ctrl</key><key>0</key></keyseq></p>
+    </item>
+  </terms>
+
+</page>

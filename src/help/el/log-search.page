@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="log-search" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Αναζητήστε κείμενο στην καταγραφή που έχετε ανοικτή.</desc>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>rizitis</mal:name>
+      <mal:email>elahistos@yahoo.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Efstathios Iosifidis</mal:name>
+      <mal:email>diamond_gr@freemail.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Αναζήτηση καταγραφής</title>
+
+  <p>Για να αναζητήσετε το αρχείο καταγραφών που βλέπετε:</p>
+
+  <steps>
+    <item>
+      <p>Εμφανίστε τη μπάρα <gui>Αναζήτησης</gui> πατώντας <keyseq><key>Ctrl</key><key>F</key></keyseq>, ή πατώντας <guiseq><gui>Προβολή</gui><gui>Αναζήτηση</gui></guiseq>. Η μπάρα θα εμφανιστεί κάτω από την καταγραφή.</p>
+    </item>
+    <item>
+      <p>Πληκτρολογήστε τον όρο που θέλετε να αναζητήσετε στο πεδία και πατήστε <key>Enter</key> για να δείτε το πρώτο αποτέλεσμα.</p>
+      <note style="tip">
+        <p>Η αναζήτηση έχει διάκριση πεζών/κεφαλαίων.</p>
+      </note>
+    </item>
+    <item>
+      <p>Χρησιμοποιήστε τα κουμπιά <gui>Εύρεση προηγούμενου</gui> και <gui>Εύρεση επόμενου</gui> για να περιηγηθείτε ανάμεσα στα αποτελέσματα.</p>
+      <note style="tip">
+        <p>Αν δεν μπορείτε να δείτε τα αποτελέσματα επισημασμένα, δοκιμάστε να κυλίσετε στα αριστερά.</p>
+      </note>
+    </item>
+    <item>
+      <p>Μόλις τελειώσετε με την αναζήτηση πατήστε <key>Esc</key> για να κρύψετε τη μπάρα αναζήτησης.</p>
+      <note style="tip">
+        <p>Μπορείτε να κρύψετε τη <gui>μπάρα αναζήτησης</gui> μόνο εάν είστε εστιασμένοι στην περιοχή αναζήτησης. Η μπάρα θα κρυφτεί από μόνη της εάν δείτε άλλη καταγραφή.</p>
+      </note>
+    </item>
+  </steps>
+
+
+
+</page>

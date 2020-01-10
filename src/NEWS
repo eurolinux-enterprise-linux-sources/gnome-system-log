@@ -1,0 +1,83 @@
+GNOME System Log 3.8.1 - 15th April 2013
+========================================
+
+- Use locale collation rules to sort logs in the sidebar
+- Fix a crash when quickly closing log files in succession
+- Require GTK 3.8 (Jeremy Bicha)
+
+GNOME System Log 3.8.0 - 25th March 2013
+============================================
+
+- Translation updates
+
+GNOME System Log 3.7.90 - 18th February 2013
+============================================
+
+- Use GdRevealer for sliding the find bar (Carl-Anton Ingmarsson)
+- Translation updates
+
+GNOME System Log 3.6.1 - 12th November 2012
+=============================================
+
+- Use F10 keybinding to activate the gear menu
+- Add accelerator labels for actions in the gear menu
+- Fix missing help screenshot (Jeremy Bicha)
+- Translation updates
+
+GNOME System Log 3.6.0 - 24th September 2012
+=============================================
+
+- Translation updates
+
+GNOME System Log 3.5.92 - 17th September 2012
+=============================================
+
+- Translation updates
+
+GNOME System Log 3.5.91 - 4th September 2012
+============================================
+
+- Use the libgd submodule for GdMainToolbar
+- Translation updates
+
+GNOME System Log 3.5.90 - 20th August 2012
+==========================================
+
+- Port to new documentation infrastructure (Javier Jardon)
+- Translation updates
+
+GNOME System Log 3.5.4 - 16th July 2012
+=======================================
+
+- Rewrite the UI chrome of the application to the GNOME 3 style:
+  * Add an application menu
+  * Port to GMenuModel
+  * Replace the statusbar with a toolbar
+  * Replace the menubar with a gear menu
+
+- Fix restoring the last open log at startup (Sebastien Bacher)
+- Remove stored logs that fail to load from preferences
+- Fix monospace font not working with GTK master
+- Use GResource for builtin data files
+- Define _XOPEN_SOURCE_EXTENDED for OpenBSD (Antoine Jacoutot)
+
+GNOME System Log 3.4.0 - 26th March 2012
+========================================
+
+- Fix crash during initial setup (Matthias Clasen)
+- Fix crash when storing array of saved log files (Matthias Clasen)
+- Ensure GPL v2+ is mentioned in all license headers
+- Translation updates
+
+GNOME System Log 3.3.92 - 19th March 2012
+=========================================
+
+- Insert UTF-8 converted data into the text buffer
+- Fix missing title for the add/edit filter dialog
+- Fix unused variables warnings
+
+GNOME System Log 3.3.1 - 25th October 2011
+==========================================
+
+- First unstable release of the 3.3 cycle
+- First standalone release after the GNOME Utilities module split

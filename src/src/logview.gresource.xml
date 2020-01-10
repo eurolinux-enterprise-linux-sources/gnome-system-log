@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/logview">
+    <file preprocess="xml-stripblanks">logview-app-menu.ui</file>
+    <file preprocess="xml-stripblanks">logview-gear-menu.ui</file>
+    <file preprocess="xml-stripblanks">logview-filter.ui</file>
+  </gresource>
+</gresources>

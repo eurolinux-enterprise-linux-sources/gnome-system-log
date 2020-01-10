@@ -1,0 +1,275 @@
+# Gnome utiliitide eesti keele tõlge.
+# Estonian translation of Gnome-utils.
+#
+# Copyright (C) 1999, 2002, 2005, 2006 Free Software Foundation, Inc.
+# Copyright (C) 2007–2011 The GNOME Project.
+# This file is distributed under the same license as the gnome-utils package.
+#
+# Lauris Kaplinski <lauris ariman ee>, 1999.
+# Tõivo Leedjärv <toivo linux ee>, 2002.
+# Ivar Smolin <okul linux ee>, 2005–2011.
+# Priit Laes <amd store20 com>, 2005.
+# Mattias Põldaru <mahfiaz@gmail.com>, 2012, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-utils MASTER\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"system-log&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-03-10 22:39+0000\n"
+"PO-Revision-Date: 2013-03-12 22:08+0300\n"
+"Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
+"Language-Team: Estonian <gnome-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "System Log"
+msgstr "Süsteemilogi näitaja"
+
+msgid "View or monitor system log files"
+msgstr "Süsteemi logifailide sirvimine või jälgimine"
+
+msgid "logs;debug;error;"
+msgstr "logimine;logid;silumine;viga;vead;veateated;"
+
+msgid "Log file to open up on startup"
+msgstr "Käivitamisel avatav logifail"
+
+msgid ""
+"Specifies the log file displayed at startup. The default is either /var/adm/"
+"messages or /var/log/messages, depending on your operating system."
+msgstr ""
+"Käivitamisel avatava logifaili määramine. Sõltuvalt sinu "
+"operatsioonisüsteemist on selleks vaikimisi kas /var/adm/messages või /var/"
+"log/messages."
+
+msgid "Size of the font used to display the log"
+msgstr "Logi kuvamise kirjatüübi suurus"
+
+msgid ""
+"Specifies the size of the fixed-width font used to display the log in the "
+"main tree view. The default is taken from the default terminal font size."
+msgstr ""
+"Peaakna puuvaates kasutatava fikseeritud laiusega kirjatüübi suuruse "
+"määramine. Vaikimisi võetakse selle väärtus terminali vaikimisi kirjatüübilt."
+
+msgid "Height of the main window in pixels"
+msgstr "Peaakna kõrgus pikslites"
+
+msgid "Specifies the height of the log viewer main window in pixels."
+msgstr "Loginäitaja peaakna kõrguse määramine pikslites."
+
+msgid "Width of the main window in pixels"
+msgstr "Peaakna laius pikslites"
+
+msgid "Specifies the width of the log viewer main window in pixels."
+msgstr "Loginäitaja peaakna laiuse määramine pikslites."
+
+msgid "Log files to open up on startup"
+msgstr "Käivitamisel avatavad logifailid"
+
+msgid ""
+"Specifies a list of log files to open up at startup. A default list is "
+"created by reading /etc/syslog.conf."
+msgstr ""
+"Käivitamisel avatava logifailide loetelu määramine. Vaikimisi loetelu "
+"koostatakse faili /etc/syslog.conf põhjal."
+
+msgid "List of saved filters"
+msgstr "Salvestatud filtrite nimekiri"
+
+msgid "List of saved regexp filters"
+msgstr "Salvestatud regulaaravaldisfiltrite nimekiri"
+
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+"See programm on vaba tarkvara. Te võite seda edasi levitada ja/või muuta "
+"vastavalt GNU Üldise Avaliku Litsentsi tingimustele, nagu need on Vaba "
+"Tarkvara Fondi poolt avaldatud; kas Litsentsi versioon number 2 või "
+"(vastavalt Teie valikule) ükskõik milline hilisem versioon."
+
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+"Seda programmi levitatakse lootuses, et see on kasulik, kuid ILMA IGASUGUSE "
+"GARANTIITA; isegi KESKMISE/TAVALISE KVALITEEDIGARANTIITA või SOBIVUSELE "
+"TEATUD KINDLAKS EESMÄRGIKS. Üksikasjade suhtes vaata GNU Üldist Avalikku "
+"Litsentsi."
+
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+msgstr ""
+"Te peaks olema saanud GNU Üldise Avaliku Litsentsi koopia koos selle "
+"programmiga; kui ei, siis võtke ühendust Free Software Foundation'iga, 51 "
+"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+
+#. translator credits
+msgid "translator-credits"
+msgstr ""
+"Lauris Kaplinski <lauris ariman ee>, 1999.\n"
+"Tõivo Leedjärv <toivo linux ee>, 2002.\n"
+"Ivar Smolin <okul linux ee>, 2005–2011.\n"
+"Priit Laes <amd store20 com>, 2005.\n"
+"Mattias Põldaru <mahfiaz@gmail.com>, 2012."
+
+#, c-format
+msgid "There was an error displaying help: %s"
+msgstr "Abiteabe kuvamisel tekkis viga: %s"
+
+msgid "A system log viewer for GNOME."
+msgstr "Süsteemilogi näitaja GNOME keskkonnale."
+
+#, c-format
+msgid "Impossible to open the file %s"
+msgstr "Faili `%s' pole võimalik avada"
+
+msgid "Auto Scroll"
+msgstr "Automaatkerimine"
+
+msgid "About System Log"
+msgstr "Süsteemilogi näitajast lähemalt"
+
+msgid "Help"
+msgstr "Abi"
+
+msgid "Quit"
+msgstr "Lõpeta"
+
+msgid "Filter name is empty!"
+msgstr "Filtri nimi on tühi!"
+
+msgid "Filter name may not contain the ':' character"
+msgstr "Filtri nimes ei tohi olla märki ':'"
+
+msgid "Regular expression is empty!"
+msgstr "Regulaaravaldis on tühi!"
+
+#, c-format
+msgid "Regular expression is invalid: %s"
+msgstr "Regulaaravaldis on vigane: %s"
+
+msgid "Please specify either foreground or background color!"
+msgstr "Palun määra teksti- ja taustavärvused!"
+
+msgid "Edit filter"
+msgstr "Redigeeri filtrit"
+
+msgid "Add new filter"
+msgstr "Lisa uus filter"
+
+msgid "Filters"
+msgstr "Filtrid"
+
+msgid "_Name:"
+msgstr "_Nimi:"
+
+msgid "_Regular Expression:"
+msgstr "_Regulaaravaldis:"
+
+msgid "Highlight"
+msgstr "Esiletõstmine"
+
+msgid "Hide"
+msgstr "Peitmine"
+
+msgid "Foreground:"
+msgstr "Kiri:"
+
+msgid "Background:"
+msgstr "Taust:"
+
+msgid "Effect:"
+msgstr "Efekt:"
+
+msgid "Open..."
+msgstr "Ava..."
+
+msgid "Close"
+msgstr "Sulge"
+
+msgid "Copy"
+msgstr "Kopeeri"
+
+msgid "Select All"
+msgstr "Vali kõik"
+
+msgid "Zoom In"
+msgstr "Suurenda"
+
+msgid "Zoom Out"
+msgstr "Vähenda"
+
+msgid "Normal Size"
+msgstr "Tavasuurus"
+
+msgid "Show Matches Only"
+msgstr "Näidatakse ainult vastavusi"
+
+msgid "Manage Filters..."
+msgstr "Halda filtreid..."
+
+msgid "Find previous occurrence of the search string"
+msgstr "Stringi eelmise esinemiskoha leidmine"
+
+msgid "Find next occurrence of the search string"
+msgstr "Stringi järgmise esinemiskoha leidmine"
+
+msgid "Error while uncompressing the GZipped log. The file might be corrupt."
+msgstr "Viga gzipiga pakitud logi lahtipakkimisel. Võib-olla on fail rikutud."
+
+msgid "You don't have enough permissions to read the file."
+msgstr "Sul puudub õigus seda faili lugeda."
+
+msgid "The file is not a regular file or is not a text file."
+msgstr "See fail pole kas tekstifail või pole see üldse tavaline fail."
+
+msgid "This version of System Log does not support GZipped logs."
+msgstr ""
+"See süsteemi logiraamatu näitaja versioon ei toeta gzipiga pakitud logisid."
+
+msgid "Loading..."
+msgstr "Laadimine..."
+
+msgid "today"
+msgstr "täna"
+
+msgid "yesterday"
+msgstr "eile"
+
+#, c-format
+msgid "Search in \"%s\""
+msgstr "Otsi kohast \"%s\""
+
+#. translators: this is part of a label composed with
+#. * a date string, for example "updated today 23:54"
+#.
+msgid "updated"
+msgstr "uuendatud"
+
+msgid "Wrapped"
+msgstr "Murtud"
+
+msgid "No matches found"
+msgstr "Ühtegi vastet ei leitud"
+
+#, c-format
+msgid "Can't read from \"%s\""
+msgstr "Allikast \"%s\" pole võimalik lugeda"
+
+msgid "Open Log"
+msgstr "Logi avamine"
+
+msgid "Could not open the following files:"
+msgstr "Järgnevaid faile pole võimalik avada:"

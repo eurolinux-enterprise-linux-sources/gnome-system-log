@@ -1,0 +1,459 @@
+# Indonesian translation for gnome-system-log.
+# Copyright (C) 2012 gnome-system-log's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-system-log package.
+# Andika Triwidada <andika@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-system-log master\n"
+"POT-Creation-Date: 2012-08-18 20:39+0000\n"
+"PO-Revision-Date: 2012-09-15 18:49+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"Language-Team: Indonesian <gnome@i15n.org>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.3\n"
+
+#: C/index.page:5(page/title)
+msgid "Log File Viewer Help"
+msgstr "Bantuan Penampil Berkas Log"
+
+#: C/index.page:8(section/title)
+msgid "Working with the <app>Log File Viewer</app>"
+msgstr "Bekerja memakai <app>Penampil Berkas Log</app>"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+#| msgid "translator-credits"
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Andika Triwidada <andika@gmail.com>, 2012"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:40(media)
+#| msgid ""
+#| "@@image: 'figures/log-viewer-main.png'; "
+#| "md5=019eaf56737c3fd7c1ae085e77962384"
+msgctxt "_"
+msgid ""
+"external ref='figures/log-viewer-main.png' "
+"md5='019eaf56737c3fd7c1ae085e77962384'"
+msgstr ""
+"external ref='figures/log-viewer-main.png' "
+"md5='019eaf56737c3fd7c1ae085e77962384'"
+
+#: C/introduction.page:8(info/desc)
+msgid "Introduction to the <app>GNOME System Log</app>."
+msgstr "Pengenalan atas <app>Log Sistem GNOME</app>."
+
+#: C/introduction.page:11(credit/name) C/log-close.page:12(credit/name)
+#: C/log-copy.page:11(credit/name) C/log-filter.page:12(credit/name)
+#: C/log-search.page:11(credit/name) C/log-view.page:12(credit/name)
+#: C/pref-font-size.page:11(credit/name)
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#: C/introduction.page:16(license/p) C/log-close.page:17(license/p)
+#: C/log-copy.page:16(license/p) C/log-filter.page:17(license/p)
+#: C/log-search.page:16(license/p) C/log-view.page:17(license/p)
+#: C/pref-font-size.page:16(license/p)
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons Share Alike 3.0"
+
+#: C/introduction.page:20(page/title)
+msgid "Introduction"
+msgstr "Perkenalan"
+
+#: C/introduction.page:22(page/p)
+msgid ""
+"<app>Log File Viewer</app> is a graphical, menu-driven viewer that you can "
+"use to view and monitor your system logs. <app>Log File Viewer</app> comes "
+"with a few functions that can help you manage your logs, including a log "
+"monitor and log statistics display."
+msgstr ""
+"<app>Penampil Berkas Log</app> adalah suatu penampil grafis yang "
+"dikendalikan oleh menu, yang dapat Anda pakai untuk melihat dan memantau log "
+"sistem Anda. <app>Penampil Berkas Log</app> hadir dengan beberapa fungsi "
+"yang dapat membantu Anda mengelola log sistem Anda, termasuk suatu pemantau "
+"log dan tampilan statistik log."
+
+#: C/introduction.page:27(page/p)
+msgid ""
+"<app>Log File Viewer</app> is useful if you are new to system administration "
+"because it provides an easier, more user-friendly display of your logs than "
+"a text display of the log file. It is also useful for more experienced "
+"administrators, as it contains a monitor to enable you to continuously "
+"monitor crucial logs."
+msgstr ""
+"<app>Penampil Berkas Log</app> berguna jika Anda baru mulai mengadministrasi "
+"sistem karena memberikan tampilan log Anda yang lebih mudah dan lebih ramah "
+"kepada pengguna daripada tampilan teks dari berkas log. Hal ini juga berguna "
+"untuk administrator yang lebih berpengalaman, karena mengandung sebuah "
+"pemantau yang memungkinkan Anda untuk terus memantau log penting."
+
+#: C/introduction.page:34(note/p)
+msgid ""
+"<app>Log File Viewer</app> is useful only to those who have access to the "
+"system log files, which generally requires root access."
+msgstr ""
+"<app>Penampil Berkas Log</app> hanya berguna bagi mereka yang memiliki akses "
+"ke berkas log sistem, yang biasanya memerlukan akses root."
+
+#: C/log-close.page:9(info/desc)
+msgid "Remove the log you are currently viewing from the <gui>side pane</gui>."
+msgstr "Membuang log yang sedang Anda tilik dari <gui>panel samping</gui>."
+
+#: C/log-close.page:21(page/title)
+msgid "Close log"
+msgstr "Tutup log"
+
+#: C/log-close.page:23(page/p)
+msgid ""
+"Close the log that you are currently viewing by pressing <keyseq><key>Ctrl</"
+"key><key>W</key></keyseq>, or by clicking <guiseq><gui>File</gui><gui>Close</"
+"gui></guiseq>. This removes it from the <gui>side pane</gui> until you open "
+"the log again."
+msgstr ""
+"Tutup log yang sedang Anda tilik dengan menekan <keyseq><key>Ctrl</"
+"key><key>W</key></keyseq>, atau dengan mengklik <guiseq><gui>Berkas</"
+"gui><gui>Tutup</gui></guiseq>. Ini membuangnya dari <gui>panel samping</gui> "
+"sampai Anda membuka log itu lagi."
+
+#: C/log-copy.page:8(info/desc)
+msgid "Copy text from the log."
+msgstr "Salin teks dari log."
+
+#: C/log-copy.page:20(page/title)
+msgid "Copy log"
+msgstr "Salin log"
+
+#: C/log-copy.page:22(page/p)
+msgid ""
+"Highlight the section of the log that you want to copy with the cursor and "
+"press <keyseq><key>Ctrl</key><key>C</key></keyseq>, or click "
+"<guiseq><gui>Edit</gui><gui>Copy</gui></guiseq>."
+msgstr ""
+"Sorot seksi log yang ingin Anda salin dengan kursor dan tekan "
+"<keyseq><key>Ctrl</key><key>C</key></keyseq>, atau klik "
+"<guiseq><gui>Sunting</gui><gui>Salin</gui></guiseq>."
+
+#: C/log-copy.page:27(note/p)
+msgid ""
+"You can press <keyseq><key>Ctrl</key><key>A</key></keyseq>, or click "
+"<guiseq><gui>Edit</gui><gui>Select All</gui></guiseq>, to select all the "
+"text in the log which you are currently viewing."
+msgstr ""
+"Anda dapat menekan <keyseq><key>Ctrl</key><key>A</key></keyseq>, atau "
+"mengklik <guiseq><gui>Sunting</gui><gui>Pilih Semua</gui></guiseq>, untuk "
+"memilih semua teks dalam log yang kini sedang Anda tilik."
+
+#: C/log-filter.page:9(info/desc)
+msgid "Include or exclude shown lines using regular expressions."
+msgstr ""
+"Sertakan atau keluarkan baris-baris yang ditampilkan memakai ekspresi "
+"reguler."
+
+#: C/log-filter.page:22(page/title)
+msgid "Filter log"
+msgstr "Saring log"
+
+#: C/log-filter.page:24(page/p)
+msgid ""
+"The log viewer allows you to filter log content based on regular "
+"expressions. To set up or manage a new filter:"
+msgstr ""
+"Penampil log memungkinkan Anda menyaring isi log berdasarkan ekspresi "
+"reguler. Untuk menyiapkan atau mengelola penyaring baru:"
+
+#: C/log-filter.page:29(item/p)
+#| msgid ""
+#| "Open the filter manager dialog by clicking <guiseq><gui>Filters:</"
+#| "gui><gui>Manage Filters</gui></guiseq>."
+msgid ""
+"Open the filter manager dialog by clicking <guiseq><gui>Filters:</gui> "
+"<gui>Manage Filters</gui></guiseq>."
+msgstr ""
+"Buka dialog manajer penyaring dengan mengklik <guiseq><gui>Penyaring:</"
+"gui><gui>Kelola Penyaring</gui></guiseq>."
+
+#: C/log-filter.page:33(item/p)
+msgid ""
+"Click <gui>Add</gui> to add a new filter, or select an existing filter and "
+"click <gui>Properties</gui> to edit it."
+msgstr ""
+"Klik <gui>Tambah</gui> untuk menambah penyaring baru, atau memilih filter "
+"yang ada dan klik <gui>Properti</gui> untuk menyuntingnya."
+
+#: C/log-filter.page:37(item/p)
+msgid "Fill in the form or edit the fields that you wish to change:"
+msgstr "Isi formulir atau sunting ruas yang hendak Anda ubah:"
+
+#: C/log-filter.page:40(item/title)
+msgid "Name:"
+msgstr "Nama:"
+
+#: C/log-filter.page:41(item/p)
+msgid "The identifier for the filter"
+msgstr "Identifier bagi penyaring"
+
+#: C/log-filter.page:44(item/title)
+msgid "Regular Expression:"
+msgstr "Ekspresi Reguler:"
+
+#: C/log-filter.page:45(item/p)
+msgid "What the filter will filter for"
+msgstr "Penyaring akan menyaring apa"
+
+#: C/log-filter.page:48(item/title)
+msgid "Highlight:"
+msgstr "Sorot:"
+
+#: C/log-filter.page:49(item/p)
+msgid "This option emphasizes the line containing the regular expression"
+msgstr "Opsi ini menegaskan baris yang memuat ekspresi reguler"
+
+#: C/log-filter.page:52(item/title)
+msgid "Background:"
+msgstr "Latar belakang:"
+
+#: C/log-filter.page:53(item/p)
+msgid "This is the font color"
+msgstr "Ini adalah warna fonta"
+
+#: C/log-filter.page:55(note/p)
+msgid "The default font color is black, which does not emphasize the text."
+msgstr "Warna fonta baku adalah hitam, yang tidak menegaskan teks."
+
+#: C/log-filter.page:60(item/title)
+msgid "Foreground:"
+msgstr "Latar depan:"
+
+#: C/log-filter.page:61(item/p)
+msgid "This is the highlight color"
+msgstr "Ini adalah warna sorot"
+
+#: C/log-filter.page:63(note/p)
+msgid ""
+"The default highlight color is black, which shows solid black lines as a "
+"result, so it would be wise to change it."
+msgstr ""
+"Warna sorot baku adalah hitam, yang menampilkan baris hitam penuh sebagai "
+"hasil, sehingga bijak untuk mengubahnya."
+
+#: C/log-filter.page:70(item/title)
+msgid "Hide:"
+msgstr "Sembunyikan:"
+
+#: C/log-filter.page:71(item/p)
+msgid ""
+"This option hides the lines containing the regular expression from the shown "
+"log"
+msgstr ""
+"Opsi ini menyembunyikan baris yang memuat ekspresi reguler dari log yang "
+"ditunjukkan"
+
+#: C/log-filter.page:77(item/p)
+msgid ""
+"Click <gui>Apply</gui> to save the new filter or save changes to an existing "
+"one"
+msgstr ""
+"Klik <gui>Terapkan</gui> untuk menyimpan penyaring baru atau menyimpan "
+"perubahan ke yang ada"
+
+#: C/log-filter.page:81(item/p)
+msgid ""
+"Back at the filter manager dialog, click <gui>Close</gui> to apply the "
+"changes."
+msgstr ""
+"Kembali pada dialog manajer penyaring, klik <gui>Tutup</gui> untuk "
+"menerapkan perubahan."
+
+#: C/log-filter.page:86(page/p)
+msgid ""
+"Check the box next to the name of the filter that you want to enable in "
+"<gui>Filters:</gui>. If you want to view only the filters which have "
+"<gui>Highlight</gui> enabled and are checked, check <guiseq><gui>Filters:</"
+"gui><gui>Show matches only</gui></guiseq>."
+msgstr ""
+"Contreng kotak di sebelah nama penyaring yang ingin Anda fungsikan dalam "
+"<gui>Penyaring:</gui>. Bila Anda hanya ingin melihat penyaring dengan "
+"<gui>Sorot</gui> difungsikan dan dicontreng, contreng <guiseq><gui>Penyaring:"
+"</gui><gui>Hanya tampilkan yang cocok</gui></guiseq>."
+
+# 'the line many shows' -> 'the line may shows'?
+#: C/log-filter.page:92(note/p)
+msgid ""
+"If there is a conflict between a hidden and a highlighted filter, the line "
+"many show as an empty white line."
+msgstr ""
+"Bila ada konflik antara penyaring yang tersembunyi dan yang disorot, baris "
+"tersebut mungkin muncul sebagai baris putih kosong."
+
+#: C/log-filter.page:97(note/p)
+msgid ""
+"If you uncheck a filter while viewing only matches, the log will show the "
+"lines without any formatting, regardless of whether they were hidden or "
+"highlighted before. The filter should reset when you check a highlighted "
+"filter."
+msgstr ""
+"Bila Anda menghapus contreng suatu penyaring ketika melihat hanya yang "
+"cocok, log akan menampilkan baris-baris tanpa pemformatan, tak peduli apakah "
+"mereka tersembunyi atau disorot sebelumnya. Penyaring mesti reset ketika "
+"Anda mencontreng penyaring yang disorot."
+
+#: C/log-search.page:8(info/desc)
+msgid "Search the text in the log that you are currently viewing."
+msgstr "Cari teks dalam log yang sedang Anda lihat."
+
+#: C/log-search.page:21(page/title)
+msgid "Search log"
+msgstr "Cari log"
+
+#: C/log-search.page:23(page/p)
+msgid "To search the log you are currently viewing:"
+msgstr "Untuk mencari pada log yang sedang Anda lihat:"
+
+#: C/log-search.page:27(item/p)
+msgid ""
+"Show the <gui>Find</gui> bar by pressing <keyseq><key>Ctrl</key><key>F</"
+"key></keyseq>, or by clicking <guiseq><gui>View</gui><gui>Find</gui></"
+"guiseq>. The bar will be shown below the log."
+msgstr ""
+"Tampilkan bilah <gui>Cari</gui> dengan menekan <keyseq><key>Ctrl</"
+"key><key>F</key></keyseq>, atau dengan mengklik <guiseq><gui>Tilik</"
+"gui><gui>Cari</gui></guiseq>. Bilah akan ditampilkan di bawah log."
+
+#: C/log-search.page:33(item/p)
+msgid ""
+"Enter your search term into the field and press <key>Enter</key> to see the "
+"first result."
+msgstr ""
+"Masukkan istilah pencarian Anda ke dalam ruas dan tekan <key>Enter</key> "
+"untuk melihat hasil pertama."
+
+#: C/log-search.page:36(note/p)
+msgid "The search is case sensitive."
+msgstr "Pencarian membedakan huruf besar kecil."
+
+#: C/log-search.page:40(item/p)
+msgid ""
+"Use the <gui>Find Previous</gui> and <gui>Find Next</gui> buttons to browse "
+"through the results."
+msgstr ""
+"Pakai tombol <gui>Cari Sebelumnya</gui> dan <gui>Cari Selanjutnya</gui> "
+"untuk meramban hasil."
+
+#: C/log-search.page:43(note/p)
+msgid "If you can not see the result highlighted, try scrolling to the left."
+msgstr ""
+"Bila Anda tak bisa melihat hasil yang disorot, cobalah menggulung ke kiri."
+
+#: C/log-search.page:47(item/p)
+msgid ""
+"Press <key>Esc</key> to hide the find bar once you are finished with the "
+"search."
+msgstr ""
+"Tekan <key>Esc</key> untuk menyembunyikan bilah pencarian begitu Anda "
+"selesai mencari."
+
+#: C/log-search.page:50(note/p)
+msgid ""
+"You can only hide the <gui>find bar</gui> if you are currently focused on "
+"the search field. The bar will hide itself if you view another log."
+msgstr ""
+"Anda hanya bisa menyembunyikan <gui>bilah pencarian</gui> bila Anda sedang "
+"fokus pada ruas pencarian. Bilah akan menyembunyikan dirinya sendiri ketika "
+"Anda melihat log lain."
+
+#: C/log-view.page:9(info/desc)
+msgid "Open and view logs."
+msgstr "Buka dan tilik log."
+
+#: C/log-view.page:22(page/title)
+msgid "Open log"
+msgstr "Buka log"
+
+#: C/log-view.page:24(page/p)
+msgid ""
+"Open logs by clicking <guiseq><gui>File</gui><gui>Open</gui></guiseq>. Your "
+"opened logs will be displayed in the side pane, to the left of the main "
+"area. You can view a log in the side pane by clicking it."
+msgstr ""
+"Buka log dengan mengklik <guiseq><gui>Berkas</gui><gui>Buka</gui></guiseq>. "
+"Log Anda yang terbuka akan ditampilkan dalam panel samping, di sebelah kiri "
+"area utama. Anda dapat melihat log di panel samping dengan mengkliknya."
+
+#: C/log-view.page:29(note/p)
+msgid ""
+"You can expand some logs. This will show you a list of dates. By clicking "
+"one of the dates, you can view only the log lines from that date, instead of "
+"the whole log."
+msgstr ""
+"Anda dapat mengembangkan beberapa log. Ini akan menunjukkan kepada Anda "
+"daftar tanggal. Dengan mengklik salah satu tanggal, Anda dapat melihat hanya "
+"baris-baris log dari tanggal tersebut, bukan seluruh log."
+
+#: C/log-view.page:34(page/p)
+msgid ""
+"The logs you have open when you quit the log viewer will be opened when you "
+"start it up again."
+msgstr ""
+"Log yang Anda buka ketika Anda keluar dari penampil log akan dibuka lagi "
+"ketika Anda memulai lagi."
+
+#: C/pref-font-size.page:8(info/desc)
+msgid "Increase or decrease the size of the text."
+msgstr "Perbesar atau perkecil ukuran teks."
+
+#: C/pref-font-size.page:21(page/title)
+msgid "Change font size"
+msgstr "Ubah ukuran fonta"
+
+#: C/pref-font-size.page:23(page/p)
+msgid ""
+"You can increase, decrease and reset the font size that the log is displayed "
+"in:"
+msgstr ""
+"Anda dapat memperbesar, memperkecil, atau mereset ukuran fonta untuk "
+"menampilkan log:"
+
+#: C/pref-font-size.page:28(item/title)
+msgid "Increase font size"
+msgstr "Perbesar ukuran fonta"
+
+#: C/pref-font-size.page:29(item/p)
+msgid ""
+"Click <guiseq><gui>View</gui><gui>Zoom In</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>+</key></keyseq>"
+msgstr ""
+"Klik <guiseq><gui>Tilik</gui><gui>Perbesar</gui></guiseq>, atau tekan "
+"<keyseq><key>Ctrl</key><key>+</key></keyseq>"
+
+#: C/pref-font-size.page:33(item/title)
+msgid "Decrease font size"
+msgstr "Perkecil ukuran fonta"
+
+#: C/pref-font-size.page:34(item/p)
+msgid ""
+"Click <guiseq><gui>View</gui><gui>Zoom Out</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>-</key></keyseq>"
+msgstr ""
+"Klik <guiseq><gui>Tilik</gui><gui>Perkecil</gui></guiseq>, atau tekan "
+"<keyseq><key>Ctrl</key><key>-</key></keyseq>"
+
+#: C/pref-font-size.page:38(item/title)
+msgid "Reset to default size"
+msgstr "Reset ke ukuran baku"
+
+#: C/pref-font-size.page:39(item/p)
+msgid ""
+"Click <guiseq><gui>View</gui><gui>Normal Size</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>0</key></keyseq>"
+msgstr ""
+"Klik <guiseq><gui>Tilik</gui><gui>Ukuran Normal</gui></guiseq>, atau tekan "
+"<keyseq><key>Ctrl</key><key>0</key></keyseq>"

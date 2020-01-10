@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="introduction" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Εισαγωγή στο <app>Σύστημα καταγραφών του GNOME</app></desc>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>rizitis</mal:name>
+      <mal:email>elahistos@yahoo.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Efstathios Iosifidis</mal:name>
+      <mal:email>diamond_gr@freemail.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Εισαγωγή</title>
+
+  <p>Η <app>Παρακολούθηση καταγραφών συστήματος</app> είναι μια εφαρμογή γραφικού περιβάλλοντος, όπου με χρήση μενού μπορείτε δείτε και να ελέγξετε τις καταγραφές του συστήματος σας. Η <app>Παρακολούθηση καταγραφών συστήματος</app> εμπεριέχει λειτουργίες που θα σας βοηθήσουν να διαχειριστείτε τις καταγραφές σας, συμπεριλαμβάνοντας έναν διαχειριστή καταγραφών και εμφάνιση στατιστικών για τις καταγραφές σας.</p>
+
+  <p>Η <app>Παρακολούθηση καταγραφών συστήματος</app> είναι χρήσιμη εάν είστε νέοι στη διαχείριση συστημάτων επειδή παρέχει μια ευκολότερη, φιλικότερη προς το χρήστη εμφάνιση των καταγραφών σας από ότι η απλή προβολή κειμένου του αρχείου καταγραφών. Είναι επίσης χρήσιμο για τους πιο πεπειραμένους διαχειριστές, καθώς περιέχει και εργαλείο διαχείρισης για να ελέγχονται συνεχώς οι κρίσιμες καταγραφές.</p>
+
+  <note style="tip">
+    <p>Η <app> Παρακολούθηση καταγραφών συστήματος</app> είναι χρήσιμη μόνο στους χρήστες που έχουν δικαιώματα root στα αρχεία καταγραφής συστήματος.</p>
+  </note>
+
+  <figure>
+    <title> </title>
+    <media type="image" mime="image/png" src="figures/log-viewer-main.png"/>
+  </figure>
+
+</page>

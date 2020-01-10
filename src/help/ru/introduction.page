@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="introduction" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Введение в <app>Программу просмотра системных журналов GNOME</app>.</desc>
+
+    <credit type="author">
+      <name>Екатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Сергей Миронов</mal:name>
+      <mal:email>sergo@bk.ru</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Алексей Кабанов</mal:name>
+      <mal:email>ak099@mail.ru</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Станислав Соловей</mal:name>
+      <mal:email>whats_up@tut.by</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Введение</title>
+
+  <p><app>Программа просмотра системных журналов</app> — это графическое, управляемое с помощью меню, средство просмотра и слежения за системными журналами. <app>Программа просмотра системных журналов</app> содержит несколько функций, упрощающих управление журналами, в том числе монитор журналов и показ статистики журналов.</p>
+
+  <p><app>Программа просмотра системных журналов</app> будет полезна, если вы новичок в системном администрировании, поскольку она предоставляет более простое и дружественное к пользователю представление журналов, чем обычный текстовый вывод файла журнала. Она полезна и для более опытных администраторов, так как содержит монитор, позволяющий непрерывно отслеживать изменения в критически важных журналах.</p>
+
+  <note style="tip">
+    <p><app>Программа просмотра системных журналов</app> полезна только для тех, кто имеет доступ к файлам системных журналов. Обычно для этого требуются права суперпользователя (root).</p>
+  </note>
+
+  <figure>
+    <title> </title>
+    <media type="image" mime="image/png" src="figures/log-viewer-main.png"/>
+  </figure>
+
+</page>

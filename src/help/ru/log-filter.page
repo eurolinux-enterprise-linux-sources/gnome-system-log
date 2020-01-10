@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="log-filter" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <link type="seealso" xref="log-search"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Включение или исключение отображаемых строк с помощью регулярных выражений.</desc>
+
+    <credit type="author">
+      <name>Екатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Сергей Миронов</mal:name>
+      <mal:email>sergo@bk.ru</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Алексей Кабанов</mal:name>
+      <mal:email>ak099@mail.ru</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Станислав Соловей</mal:name>
+      <mal:email>whats_up@tut.by</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Фильтрация журнала</title>
+
+  <p>Программа просмотра системных журналов позволяет фильтровать содержимое журнала с помощью регулярных выражений. Чтобы создать или изменить фильтр:</p>
+
+  <steps>
+    <item>
+      <p>Open the filter manager dialog by clicking <guiseq><gui>Filters:</gui>
+      <gui>Manage Filters</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Нажмите кнопку <gui>Добавить</gui>, чтобы добавить новый фильтр, или выберите существующий фильтр и нажмите <gui>Свойства</gui> для его изменения.</p>
+    </item>
+    <item>
+      <p>Заполните форму или измените нужные поля:</p>
+      <terms>
+        <item>
+          <title>Имя:</title>
+          <p>Идентификатор для фильтра</p>
+        </item>
+        <item>
+          <title>Регулярное выражение:</title>
+          <p>Что будет фильтровать данный фильтр</p>
+        </item>
+        <item>
+          <title>Подсветка:</title>
+          <p>Позволяет выделить строку, содержащую заданное регулярное выражение</p>
+          <terms>
+            <item>
+              <title>Фон:</title>
+              <p>Цвет шрифта</p>
+              <note style="tip">
+                <p>По умолчанию цвет шрифта чёрный, не отличающийся от основного текста.</p>
+              </note>
+            </item>
+            <item>
+              <title>Текст:</title>
+              <p>Цвет подсветки</p>
+              <note style="tip">
+                <p>По умолчанию цвет подсветки чёрный. В результате строки закрашиваются сплошным чёрным цветом, так что будет разумным изменить его.</p>
+              </note>
+            </item>
+          </terms>
+        </item>
+        <item>
+          <title>Скрыть:</title>
+          <p>Эта опция позволяет скрыть строки отображаемого журнала, содержащие заданное регулярное выражение.</p>
+        </item>
+      </terms>
+    </item>
+    <item>
+      <p>Нажмите <gui>Применить</gui>, чтобы сохранить созданный фильтр или сохранить изменения в существующем фильтре.</p>
+    </item>
+    <item>
+      <p>Вернувшись в диалоговое окно управления фильтрами, нажмите <gui>Закрыть</gui>, чтобы применить изменения.</p>
+    </item>
+  </steps>
+
+  <p>В меню <gui>Фильтры:</gui> установите отметку рядом с названием фильтра, который хотите включить. Если нужно, чтобы отображались только строки журнала, соответствующие активированным фильтрам, в которых включена <gui>подсветка</gui>, выберите <guiseq><gui>Фильтры:</gui><gui>Показывать только совпавшие</gui></guiseq>.</p>
+
+  <note style="tip">
+    <p>Если возникает конфликт между подсвечивающими и скрывающими фильтрами, конфликтные строки журнала отображаются в виде пустых белых строк.</p>
+  </note>
+
+  <note style="bug">
+    <p>Если при просмотре только соответствующих фильтру строк, убрать отметку с фильтра, отобразятся все строки журнала, вне зависимости от того, были они скрыты или выделены ранее. Фильтрация должна восстановиться, при выборе выделяющего фильтра.</p>
+  </note>
+
+</page>

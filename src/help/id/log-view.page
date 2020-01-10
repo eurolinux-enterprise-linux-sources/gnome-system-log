@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="log-view" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <link type="seealso" xref="log-search"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Buka dan tilik log.</desc>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Buka log</title>
+
+  <p>Buka log dengan mengklik <guiseq><gui>Berkas</gui><gui>Buka</gui></guiseq>. Log Anda yang terbuka akan ditampilkan dalam panel samping, di sebelah kiri area utama. Anda dapat melihat log di panel samping dengan mengkliknya.</p>
+
+  <note style="tip">
+    <p>Anda dapat mengembangkan beberapa log. Ini akan menunjukkan kepada Anda daftar tanggal. Dengan mengklik salah satu tanggal, Anda dapat melihat hanya baris-baris log dari tanggal tersebut, bukan seluruh log.</p>
+  </note>
+
+  <p>Log yang Anda buka ketika Anda keluar dari penampil log akan dibuka lagi ketika Anda memulai lagi.</p>
+
+</page>

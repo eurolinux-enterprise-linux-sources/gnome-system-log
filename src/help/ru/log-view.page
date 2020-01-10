@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="log-view" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <link type="seealso" xref="log-search"/>
+    <revision version="3.3" date="2011-10-30" status="review"/>
+    <desc>Открытие и просмотр журналов.</desc>
+
+    <credit type="author">
+      <name>Екатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@googlemail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Сергей Миронов</mal:name>
+      <mal:email>sergo@bk.ru</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Алексей Кабанов</mal:name>
+      <mal:email>ak099@mail.ru</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Станислав Соловей</mal:name>
+      <mal:email>whats_up@tut.by</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Открытие журнала</title>
+
+  <p>Чтобы открыть журнал, выберите <guiseq><gui>Файл</gui><gui>Открыть</gui></guiseq>. Открытые журналы будут отображаться в боковой панели, слева от основной области окна. Чтобы просмотреть журнал, нажмите на него в боковой панели.</p>
+
+  <note style="tip">
+    <p>Некоторые журналы можно развернуть. При этом отобразится список дат. Нажав на одну из дат, можно просмотреть строки журнала соответствующие только этой дате.</p>
+  </note>
+
+  <p>Открытые вами журналы запоминаются при выходе из программы просмотра системных журналов, и при следующем её запуске будут открыты снова.</p>
+
+</page>
